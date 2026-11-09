@@ -1,0 +1,9 @@
+# Copy to scripts/config.local.sh and edit. Anything not set here takes the default in config.sh.
+# FECD_BASE=/path/to/FECD_GWAS                      # project folder (default: ~/FECD_GWAS)
+# METAXCAN_PY=/path/to/conda/envs/fecd_metaxcan/bin/python   # Python with MetaXcan dependencies (environment_metaxcan.yml).
+#   Use the interpreter path (or "conda run --no-capture-output -n fecd_metaxcan python"): plain "conda run"
+#   does not pass stdin, so the steps that feed Python a heredoc would silently do nothing.
+# FOCUS_PY=/path/to/python3.11                       # Python 3.11 used to build the FOCUS venv (default: python3.11)
+# TABIX=/path/to/conda/envs/fecd_metaxcan/bin/tabix
+# H185_FILE=/path/to/H185_MVP_FinnGen_UKB+AoU_SNPsinatleast2studies.gz   # private; bundled derived table used if absent
+# GLAUCOMA_COND_XLSX=/path/to/workbook.xlsx                               # private; bundled derived table used if absent

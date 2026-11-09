@@ -1,0 +1,49 @@
+trait	analysis	used_by	reference_variant	rsid	status	source_duplicates	n_source_records	input_record	source_records
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs189456124	rs189456124	allele_inconsistent_dropped_by_harmonisation	conflicting	2	G/C Z=-0.6972	G/C Z=-0.6972; G/T Z=0.8123
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs189456124	rs189456124	allele_inconsistent_dropped_by_harmonisation	conflicting	2	G/T Z=0.8123	G/C Z=-0.6972; G/T Z=0.8123
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs189456124	rs189456124	ambiguous_conflicting_source_records	conflicting	2	G/C Z=-0.6972; G/T Z=0.8123	G/C Z=-0.6972; G/T Z=0.8123
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs11819955	rs11819955	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/G Z=2.051	A/G Z=2.051; A/T Z=0.7667
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs11819955	rs11819955	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/T Z=0.7667	A/G Z=2.051; A/T Z=0.7667
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs11819955	rs11819955	ambiguous_conflicting_source_records	conflicting	2	A/G Z=2.051; A/T Z=0.7667	A/G Z=2.051; A/T Z=0.7667
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs874896	rs874896	allele_inconsistent_dropped_by_harmonisation	conflicting	2	C/G Z=-0.09564	C/G Z=-0.09564; C/T Z=-1.079
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs874896	rs874896	allele_inconsistent_dropped_by_harmonisation	conflicting	2	C/T Z=-1.079	C/G Z=-0.09564; C/T Z=-1.079
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs874896	rs874896	ambiguous_conflicting_source_records	conflicting	2	C/G Z=-0.09564; C/T Z=-1.079	C/G Z=-0.09564; C/T Z=-1.079
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs59409510	rs59409510	ambiguous_conflicting_source_records	conflicting	2	C/T Z=-0.1447; C/T Z=-0.2403	C/T Z=-0.1447; C/T Z=-0.2403
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/C Z=1.32	A/C Z=1.32; A/G Z=-1.166
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/G Z=-1.166	A/C Z=1.32; A/G Z=-1.166
+FECD_multiancestry	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	ambiguous_conflicting_source_records	conflicting	2	A/C Z=1.32; A/G Z=-1.166	A/C Z=1.32; A/G Z=-1.166
+FECD_European	cis-MR	eQTLGen NR1H3	rs189456124	rs189456124	allele_inconsistent_dropped_by_harmonisation	conflicting	2	G/C Z=-0.8099	G/C Z=-0.8099; G/T Z=0.993
+FECD_European	cis-MR	eQTLGen NR1H3	rs189456124	rs189456124	allele_inconsistent_dropped_by_harmonisation	conflicting	2	G/T Z=0.993	G/C Z=-0.8099; G/T Z=0.993
+FECD_European	cis-MR	eQTLGen NR1H3	rs189456124	rs189456124	ambiguous_conflicting_source_records	conflicting	2	G/C Z=-0.8099; G/T Z=0.993	G/C Z=-0.8099; G/T Z=0.993
+FECD_European	cis-MR	eQTLGen NR1H3	rs11819955	rs11819955	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/G Z=1.805	A/G Z=1.805; A/T Z=1.063
+FECD_European	cis-MR	eQTLGen NR1H3	rs11819955	rs11819955	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/T Z=1.063	A/G Z=1.805; A/T Z=1.063
+FECD_European	cis-MR	eQTLGen NR1H3	rs11819955	rs11819955	ambiguous_conflicting_source_records	conflicting	2	A/G Z=1.805; A/T Z=1.063	A/G Z=1.805; A/T Z=1.063
+FECD_European	cis-MR	eQTLGen NR1H3	rs874896	rs874896	allele_inconsistent_dropped_by_harmonisation	conflicting	2	C/G Z=-0.1688	C/G Z=-0.1688; C/T Z=0.8817
+FECD_European	cis-MR	eQTLGen NR1H3	rs874896	rs874896	allele_inconsistent_dropped_by_harmonisation	conflicting	2	C/T Z=0.8817	C/G Z=-0.1688; C/T Z=0.8817
+FECD_European	cis-MR	eQTLGen NR1H3	rs874896	rs874896	ambiguous_conflicting_source_records	conflicting	2	C/G Z=-0.1688; C/T Z=0.8817	C/G Z=-0.1688; C/T Z=0.8817
+FECD_European	cis-MR	eQTLGen NR1H3	rs59409510	rs59409510	ambiguous_conflicting_source_records	conflicting	2	C/T Z=1.039; C/T Z=0.8516	C/T Z=1.039; C/T Z=0.8516
+FECD_European	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/C Z=1.1	A/C Z=1.1; A/G Z=-1.169
+FECD_European	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/G Z=-1.169	A/C Z=1.1; A/G Z=-1.169
+FECD_European	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	ambiguous_conflicting_source_records	conflicting	2	A/C Z=1.1; A/G Z=-1.169	A/C Z=1.1; A/G Z=-1.169
+Glaucoma	S-PrediXcan	model variant (any gene)	chr6_33410570_G_GGGAGGGCGGGGCTGGGGCTAACAGCGAGT_b38	rs9282516	position_inconsistent		1	rs9282516 chr6:33410582 CT/C Z=1.445	
+Glaucoma	cis-MR	eQTLGen NR1H3	rs189456124	rs189456124	allele_inconsistent_dropped_by_harmonisation	conflicting	2	C/G Z=2.159	C/G Z=2.159; T/G Z=-3.52
+Glaucoma	cis-MR	eQTLGen NR1H3	rs189456124	rs189456124	ambiguous_conflicting_source_records	conflicting	2	C/G Z=2.159	C/G Z=2.159; T/G Z=-3.52
+Glaucoma	cis-MR	eQTLGen NR1H3	rs61882744	rs61882744	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/G Z=0.7207	A/G Z=0.7207; T/G Z=-2.969
+Glaucoma	cis-MR	eQTLGen NR1H3	rs61882744	rs61882744	ambiguous_conflicting_source_records	conflicting	2	A/G Z=0.7207	A/G Z=0.7207; T/G Z=-2.969
+Glaucoma	cis-MR	eQTLGen NR1H3	rs11819955	rs11819955	ambiguous_conflicting_source_records	conflicting	2	G/A Z=5.868	G/A Z=5.868; T/A Z=-0.6574
+Glaucoma	cis-MR	eQTLGen NR1H3	rs4357651	rs4357651	ambiguous_conflicting_source_records	conflicting	2	A/G Z=-3.748	A/G Z=-3.748; T/G Z=-3.627
+Glaucoma	cis-MR	eQTLGen NR1H3	rs7120775	rs7120775	ambiguous_conflicting_source_records	conflicting	2	G/C Z=3.263	G/C Z=3.263; T/C Z=0.1235
+Glaucoma	cis-MR	eQTLGen NR1H3	rs17198985	rs17198985	allele_inconsistent_dropped_by_harmonisation	conflicting	2	A/T Z=-0.3497	A/T Z=-0.3497; C/T Z=3.103
+Glaucoma	cis-MR	eQTLGen NR1H3	rs17198985	rs17198985	ambiguous_conflicting_source_records	conflicting	2	A/T Z=-0.3497	A/T Z=-0.3497; C/T Z=3.103
+Glaucoma	cis-MR	eQTLGen NR1H3	rs61896015	rs61896015	ambiguous_conflicting_source_records	conflicting	2	A/C Z=2.456	A/C Z=2.456; T/C Z=-0.1211
+Glaucoma	cis-MR	eQTLGen NR1H3	rs2171667	rs2171667	ambiguous_conflicting_source_records	conflicting	2	G/C Z=-0.6715	G/C Z=-0.6715; T/C Z=2.564
+Glaucoma	cis-MR	eQTLGen NR1H3	rs112598354	rs112598354	ambiguous_conflicting_source_records	conflicting	2	A/C Z=-0.7508	A/C Z=-0.7508; T/C Z=2.53
+Glaucoma	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	ambiguous_conflicting_source_records	conflicting	2	C/A Z=-0.6748	C/A Z=-0.6748; G/A Z=0.2658
+Glaucoma	cis-MR	eQTLGen NR1H3	rs187629888	rs187629888	ambiguous_conflicting_source_records	conflicting	2	A/G Z=-1.378	A/G Z=-1.378; T/G Z=-0.679
+Glaucoma	FUSION	Whole_Blood FNBP4 (susie)	rs12798703	rs12798703	matched	conflicting	2	T/G Z=-1.966	A/G Z=-0.5336; T/G Z=-1.966 | LD ref T/G
+Glaucoma	FUSION	Whole_Blood NUP160 (top1)	rs12798703	rs12798703	matched	conflicting	2	T/G Z=-1.966	A/G Z=-0.5336; T/G Z=-1.966 | LD ref T/G
+Glaucoma	FUSION	Whole_Blood PTPRJ (susie)	rs12798703	rs12798703	matched	conflicting	2	T/G Z=-1.966	A/G Z=-0.5336; T/G Z=-1.966 | LD ref T/G
+IOP	S-PrediXcan	model variant (any gene)	chr22_42138065_C_T_b38	rs4993392	position_inconsistent		1	rs4993392 chr22_KI270928v1_alt:60413 T/C Z=-0.4883	
+IOP	cis-MR	eQTLGen NR1H3	rs7120775	rs7120775	ambiguous_conflicting_source_records	conflicting	2	G/C Z=0.6807	G/C Z=0.6807; T/C Z=-0.5928
+IOP	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	allele_inconsistent_dropped_by_harmonisation	conflicting	2	G/A Z=-0.5261	G/A Z=-0.5261; C/A Z=-0.2653
+IOP	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	ambiguous_conflicting_source_records	conflicting	2	G/A Z=-0.5261	G/A Z=-0.5261; C/A Z=-0.2653

@@ -1,0 +1,18 @@
+# Inputs downloaded by scripts/00_download_inputs.sh and everything the pipeline writes (not redistributed)
+data/*
+!data/gene_symbol_display.tsv
+!data/derived/
+!data/tophits21/
+data/tophits21/*
+!data/tophits21/genes_coloc.tsv
+analysis/
+results/
+logs/
+figures/
+software/
+work/
+scripts/config.local.sh
+*.bak_*
+.DS_Store
+__pycache__/
+*.pyc

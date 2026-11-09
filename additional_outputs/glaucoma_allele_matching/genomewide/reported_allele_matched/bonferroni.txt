@@ -1,0 +1,2 @@
+models_with_TWAS_P	8111
+bonferroni_threshold	6.164468e-06

@@ -1,0 +1,22 @@
+ENSG	symbol	chr	tss	smx_rank	smx_p	sprediXcan_bonferroni_tissues	locus_id	distance_to_nearest_lead_kb	nearest_lead_sources	classification
+ENSG00000267325	LINC01415	18	55781722	1	3.153288771749823e-188	Cells,Skin,Esophagus	L45	52	Afshari 2017; Baratz 2010; Gorman 2024 (AFR); Gorman 2024 (EUR); Gorman 2024 (HIS); Gorman 2024 (multi); Insawang 2026; Verma 2024 (AFR); Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000196628	TCF4	18	55664787	2	7.251036581163852e-35	Skin	L45	3	Afshari 2017; Baratz 2010; Gorman 2024 (AFR); Gorman 2024 (EUR); Gorman 2024 (HIS); Gorman 2024 (multi); Insawang 2026; Verma 2024 (AFR); Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000166510	CCDC68	18	54959519	3	7.640317086901289e-14	Cells	L45	141	Afshari 2017; Baratz 2010; Gorman 2024 (AFR); Gorman 2024 (EUR); Gorman 2024 (HIS); Gorman 2024 (multi); Insawang 2026; Verma 2024 (AFR); Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000135862	LAMC1	1	183023199	4	2.170008248259416e-12	Esophagus	L06	69	Afshari 2017; Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000255142	AP006621.6	11	781645	5	9.929363474527309e-11	Cells,Skin,Esophagus	L31	10	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000177666	PNPLA2	11	818907	6	1.0001692789818074e-10	Esophagus	L31	6	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000177595	PIDD1	11	809753	7	1.5596093109024773e-10	Cells,Skin,Esophagus	L31	3	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000255284	AP006621.5	11	777570	8	2.510287345755618e-10	Cells,Skin,Esophagus	L31	14	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000274897	PANO1	11	818000	9	4.4010174128289913e-10	Cells,Skin,Esophagus	L31	7	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000184524	CEND1	11	790113	10	7.783003739128955e-09	Esophagus	L31	1	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000177156	TALDO1	11	747399	11	1.5364835519628077e-08	Skin,Esophagus	L31	44	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000177225	PDDC1	11	777507	12	2.165735670265804e-08		L31	14	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000177685	CRACR2B	11	826137	13	2.2422856409947933e-07	Skin,Esophagus	L31	1	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000079819	EPB41L2	6	131063367	14	4.4475225380826894e-07	Esophagus	L21	65	Insawang 2026	locus-recapturing
+ENSG00000058085	LAMC2	1	183186057	15	1.4400650382488805e-06		L06	55	Afshari 2017; Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000118507	AKAP7	6	131135216	16	2.6356368680399225e-06		L21	7	Insawang 2026	locus-recapturing
+ENSG00000175213	ZNF408	11	46701011	17	1.7163426446255324e-05			42341		not previously reported
+ENSG00000177542	SLC25A22	11	798321	18	2.3314552325036212e-05		L31	7	Gorman 2024 (EUR); Gorman 2024 (multi); Insawang 2026; Verma 2024 (EUR); Verma 2024 (multi); Verma 2024 EUR; Verma 2024 multi-ancestry	locus-recapturing
+ENSG00000237515	SHISA9	16	12901592	19	5.034913476673912e-05			4651		not previously reported
+ENSG00000182612	TSPAN10	17	81637171	20	5.887964966995386e-05			2718		not previously reported
+ENSG00000025434	NR1H3	11	47248300	21	7.684413681152053e-05			41794		not previously reported

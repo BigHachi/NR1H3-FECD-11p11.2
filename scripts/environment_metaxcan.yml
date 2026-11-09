@@ -1,0 +1,21 @@
+# Conda environment for MetaXcan (S-PrediXcan / S-MultiXcan), the GWAS-format
+# helpers and tabix, at the versions used for the manuscript.
+#   conda env create -f scripts/environment_metaxcan.yml
+#   then in scripts/config.local.sh:  METAXCAN_PY=<conda envs dir>/fecd_metaxcan/bin/python
+#                                     TABIX=<conda envs dir>/fecd_metaxcan/bin/tabix
+#   (use the interpreter path, not plain "conda run", which does not pass stdin to Python)
+name: fecd_metaxcan
+channels: [conda-forge, bioconda]
+dependencies:
+  - python=3.11.12
+  - numpy=1.26.4
+  - scipy=1.15.3
+  - pandas=2.2.3
+  - statsmodels=0.14.6
+  - patsy=1.0.2
+  - h5py=3.15.1
+  - htslib=1.24
+  - openpyxl=3.1.5
+  - pip
+  - pip:
+      - pyliftover==0.4.1

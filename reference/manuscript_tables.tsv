@@ -1,0 +1,241 @@
+table	row	column	value
+Table 1	1	Rank	1
+Table 1	1	Symbol	LINC01415
+Table 1	1	S-MultiXcan P	3.15e-188
+Table 1	1	Cytoband	18q21.2
+Table 1	1	Gene region	TCF4
+Table 1	1	P value of locus	<1e-300
+Table 1	2	Rank	2
+Table 1	2	Symbol	TCF4
+Table 1	2	S-MultiXcan P	7.25e-35
+Table 1	2	Cytoband	18q21.2
+Table 1	2	Gene region	TCF4
+Table 1	2	P value of locus	<1e-300
+Table 1	3	Rank	3
+Table 1	3	Symbol	CCDC68
+Table 1	3	S-MultiXcan P	7.64e-14
+Table 1	3	Cytoband	18q21.2
+Table 1	3	Gene region	TCF4
+Table 1	3	P value of locus	<1e-300
+Table 1	4	Rank	4
+Table 1	4	Symbol	LAMC1
+Table 1	4	S-MultiXcan P	2.17e-12
+Table 1	4	Cytoband	1q25.3
+Table 1	4	Gene region	LAMC1
+Table 1	4	P value of locus	7e-16
+Table 1	5	Rank	5
+Table 1	5	Symbol	AP006621.6
+Table 1	5	S-MultiXcan P	9.93e-11
+Table 1	5	Cytoband	11p15.5
+Table 1	5	Gene region	PIDD1
+Table 1	5	P value of locus	2.5e-12
+Table 1	6	Rank	6
+Table 1	6	Symbol	PNPLA2
+Table 1	6	S-MultiXcan P	1.00e-10
+Table 1	6	Cytoband	11p15.5
+Table 1	6	Gene region	PIDD1
+Table 1	6	P value of locus	2.5e-12
+Table 1	7	Rank	7
+Table 1	7	Symbol	PIDD1
+Table 1	7	S-MultiXcan P	1.56e-10
+Table 1	7	Cytoband	11p15.5
+Table 1	7	Gene region	PIDD1
+Table 1	7	P value of locus	2.5e-12
+Table 1	8	Rank	8
+Table 1	8	Symbol	GATD1-DT
+Table 1	8	S-MultiXcan P	2.51e-10
+Table 1	8	Cytoband	11p15.5
+Table 1	8	Gene region	PIDD1
+Table 1	8	P value of locus	2.5e-12
+Table 1	9	Rank	9
+Table 1	9	Symbol	PANO1
+Table 1	9	S-MultiXcan P	4.40e-10
+Table 1	9	Cytoband	11p15.5
+Table 1	9	Gene region	PIDD1
+Table 1	9	P value of locus	2.5e-12
+Table 1	10	Rank	10
+Table 1	10	Symbol	CEND1
+Table 1	10	S-MultiXcan P	7.78e-09
+Table 1	10	Cytoband	11p15.5
+Table 1	10	Gene region	PIDD1
+Table 1	10	P value of locus	2.5e-12
+Table 1	11	Rank	11
+Table 1	11	Symbol	TALDO1
+Table 1	11	S-MultiXcan P	1.54e-08
+Table 1	11	Cytoband	11p15.5
+Table 1	11	Gene region	PIDD1
+Table 1	11	P value of locus	2.5e-12
+Table 1	12	Rank	12
+Table 1	12	Symbol	GATD1
+Table 1	12	S-MultiXcan P	2.17e-08
+Table 1	12	Cytoband	11p15.5
+Table 1	12	Gene region	PIDD1
+Table 1	12	P value of locus	2.5e-12
+Table 1	13	Rank	13
+Table 1	13	Symbol	CRACR2B
+Table 1	13	S-MultiXcan P	2.24e-07
+Table 1	13	Cytoband	11p15.5
+Table 1	13	Gene region	PIDD1
+Table 1	13	P value of locus	2.5e-12
+Table 1	14	Rank	14
+Table 1	14	Symbol	EPB41L2
+Table 1	14	S-MultiXcan P	4.45e-07
+Table 1	14	Cytoband	6q23.2
+Table 1	14	Gene region	AKAP7/EPB41L2
+Table 1	14	P value of locus	5.6e-08
+Table 1	15	Rank	15
+Table 1	15	Symbol	LAMC2
+Table 1	15	S-MultiXcan P	1.44e-06
+Table 1	15	Cytoband	1q25.3
+Table 1	15	Gene region	LAMC1
+Table 1	15	P value of locus	7e-16
+Table 1	16	Rank	16
+Table 1	16	Symbol	AKAP7
+Table 1	16	S-MultiXcan P	2.64e-06
+Table 1	16	Cytoband	6q23.2
+Table 1	16	Gene region	AKAP7/EPB41L2
+Table 1	16	P value of locus	5.6e-08
+Table 1	17	Rank	17
+Table 1	17	Symbol	ZNF408
+Table 1	17	S-MultiXcan P	1.72e-05
+Table 1	17	Cytoband	11p11.2
+Table 1	17	Gene region	NR1H3
+Table 1	17	P value of locus	3.5e-05
+Table 1	18	Rank	18
+Table 1	18	Symbol	SLC25A22
+Table 1	18	S-MultiXcan P	2.33e-05
+Table 1	18	Cytoband	11p15.5
+Table 1	18	Gene region	PIDD1
+Table 1	18	P value of locus	2.5e-12
+Table 1	19	Rank	19
+Table 1	19	Symbol	SHISA9
+Table 1	19	S-MultiXcan P	5.03e-05
+Table 1	19	Cytoband	16p13.12
+Table 1	19	Gene region	SHISA9
+Table 1	19	P value of locus	1.1e-07
+Table 1	20	Rank	20
+Table 1	20	Symbol	TSPAN10
+Table 1	20	S-MultiXcan P	5.89e-05
+Table 1	20	Cytoband	17q25.3
+Table 1	20	Gene region	TSPAN10
+Table 1	20	P value of locus	2.5e-07
+Table 1	21	Rank	21
+Table 1	21	Symbol	NR1H3
+Table 1	21	S-MultiXcan P	7.68e-05
+Table 1	21	Cytoband	11p11.2
+Table 1	21	Gene region	NR1H3
+Table 1	21	P value of locus	3.6e-05
+Table 2	1	Tissue	Cultured fibroblasts
+Table 2	1	n SNPs	3
+Table 2	1	Z	−3.58
+Table 2	1	β	−0.861
+Table 2	1	SE	0.241
+Table 2	1	P	3.5 × 10⁻⁴
+Table 2	2	Tissue	Skin not sun exposed suprapubic
+Table 2	2	n SNPs	2
+Table 2	2	Z	−4.02
+Table 2	2	β	−0.954
+Table 2	2	SE	0.237
+Table 2	2	P	5.8 × 10⁻⁵
+Table 2	3	Tissue	Oesophagus mucosa
+Table 2	3	n SNPs	2
+Table 2	3	Z	−1.95
+Table 2	3	β	−0.675
+Table 2	3	SE	0.347
+Table 2	3	P	5.2 × 10⁻²
+Table 3	1	Outcome phenotype	Glaucoma
+Table 3	1	MR method	Inverse variance weighted
+Table 3	1	Effect estimate	-0.18
+Table 3	1	Standard error	0.04
+Table 3	1	P	6.93e-06
+Table 3	1	I2	0.994
+Table 3	1	Egger intercept P	0.306
+Table 3	1	Cochran's Q P	0.0417
+Table 3	2	Outcome phenotype	Glaucoma
+Table 3	2	MR method	Weighted median
+Table 3	2	Effect estimate	-0.18
+Table 3	2	Standard error	0.02
+Table 3	2	P	5.13e-14
+Table 3	2	I2	0.994
+Table 3	2	Egger intercept P	0.306
+Table 3	2	Cochran's Q P	0.0417
+Table 3	3	Outcome phenotype	Glaucoma
+Table 3	3	MR method	Weighted mode
+Table 3	3	Effect estimate	-0.19
+Table 3	3	Standard error	0.15
+Table 3	3	P	0.30
+Table 3	3	I2	0.994
+Table 3	3	Egger intercept P	0.306
+Table 3	3	Cochran's Q P	0.0417
+Table 3	4	Outcome phenotype	Glaucoma
+Table 3	4	MR method	MR Egger
+Table 3	4	Effect estimate	-0.27
+Table 3	4	Standard error	0.08
+Table 3	4	P	0.07
+Table 3	4	I2	0.994
+Table 3	4	Egger intercept P	0.306
+Table 3	4	Cochran's Q P	0.0417
+Table 3	5	Outcome phenotype	IOP
+Table 3	5	MR method	Inverse variance weighted
+Table 3	5	Effect estimate	-0.20
+Table 3	5	Standard error	0.11
+Table 3	5	P	0.07
+Table 3	5	I2	0.994
+Table 3	5	Egger intercept P	0.21
+Table 3	5	Cochran's Q P	0.0522
+Table 3	6	Outcome phenotype	IOP
+Table 3	6	MR method	Weighted median
+Table 3	6	Effect estimate	-0.23
+Table 3	6	Standard error	0.07
+Table 3	6	P	0.0010
+Table 3	6	I2	0.994
+Table 3	6	Egger intercept P	0.21
+Table 3	6	Cochran's Q P	0.0522
+Table 3	7	Outcome phenotype	IOP
+Table 3	7	MR method	Weighted mode
+Table 3	7	Effect estimate	-0.23
+Table 3	7	Standard error	0.32
+Table 3	7	P	0.52
+Table 3	7	I2	0.994
+Table 3	7	Egger intercept P	0.21
+Table 3	7	Cochran's Q P	0.0522
+Table 3	8	Outcome phenotype	IOP
+Table 3	8	MR method	MR Egger
+Table 3	8	Effect estimate	-0.48
+Table 3	8	Standard error	0.18
+Table 3	8	P	0.11
+Table 3	8	I2	0.994
+Table 3	8	Egger intercept P	0.21
+Table 3	8	Cochran's Q P	0.0522
+Table 3	9	Outcome phenotype	Refractive error
+Table 3	9	MR method	Inverse variance weighted
+Table 3	9	Effect estimate	0.043
+Table 3	9	Standard error	0.0081
+Table 3	9	P	7.25e-08
+Table 3	9	I2	0.994
+Table 3	9	Egger intercept P	0.99
+Table 3	9	Cochran's Q P	0.3290
+Table 3	10	Outcome phenotype	Refractive error
+Table 3	10	MR method	Weighted median
+Table 3	10	Effect estimate	0.042
+Table 3	10	Standard error	0.0076
+Table 3	10	P	4.22e-08
+Table 3	10	I2	0.994
+Table 3	10	Egger intercept P	0.99
+Table 3	10	Cochran's Q P	0.3290
+Table 3	11	Outcome phenotype	Refractive error
+Table 3	11	MR method	Weighted mode
+Table 3	11	Effect estimate	0.042
+Table 3	11	Standard error	0.032
+Table 3	11	P	0.28
+Table 3	11	I2	0.994
+Table 3	11	Egger intercept P	0.99
+Table 3	11	Cochran's Q P	0.3290
+Table 3	12	Outcome phenotype	Refractive error
+Table 3	12	MR method	MR Egger
+Table 3	12	Effect estimate	0.044
+Table 3	12	Standard error	0.021
+Table 3	12	P	0.17
+Table 3	12	I2	0.994
+Table 3	12	Egger intercept P	0.99
+Table 3	12	Cochran's Q P	0.3290

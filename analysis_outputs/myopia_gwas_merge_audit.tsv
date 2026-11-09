@@ -1,0 +1,29 @@
+category	n
+orig_rows	8754054
+orig_unparseable	0
+orig_non_autosomal	0
+orig_invalid_values	0
+liftover_failed	3526
+liftover_multiple	0
+liftover_other_chrom	951
+harm_rows	8679200
+harm_non_autosomal	0
+missing_no_harmonised_record	74215
+allele_inconsistent_submitted_order	0
+allele_inconsistent_other_alleles_at_pos	15
+allele_inconsistent_with_harmonised	1
+ambiguous_source_duplicate_key	0
+ambiguous_harmonised_duplicate_key	3
+inconsistent_hm_position	0
+inconsistent_p_or_eaf	10
+no_rsid	0
+ambiguous_duplicate_rsid	0
+written	8675333
+written_palindromic	1309454
+hm_code_orientation_agrees	8675333
+hm_code_orientation_disagrees	0
+# hm_code x liftover strand x palindromic x applied sign (accepted records before rsID filter)
+#  hm_code=10	strand=+	palindromic=0	sign=+1	4106127
+#  hm_code=11	strand=+	palindromic=0	sign=-1	3259752
+#  hm_code=5	strand=+	palindromic=1	sign=+1	654817
+#  hm_code=6	strand=+	palindromic=1	sign=-1	654637

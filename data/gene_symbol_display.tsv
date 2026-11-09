@@ -1,0 +1,6 @@
+ENSG	display_symbol	gencode_v26_name	note
+ENSG00000267325	LINC01415	LINC01415	HGNC symbol; absent from org.Hs.eg.db
+ENSG00000255142	AP006621.6	AP006621.6	no HGNC symbol (Ensembl: novel lncRNA)
+ENSG00000255284	GATD1-DT	AP006621.5	HGNC symbol (GATD1 divergent transcript)
+ENSG00000177225	GATD1	PDDC1	HGNC symbol (renamed from PDDC1)
+ENSG00000279672	ENSG00000279672	ENSG00000279672	retired from current Ensembl; no symbol

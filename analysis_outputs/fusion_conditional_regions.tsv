@@ -1,0 +1,6 @@
+trait	tissue	conditional_input	region_GRCh37	models_in_region	models_tested	models_in_joint_model	weight_snps_in_ld_reference	matched	missing_imputed	allele_inconsistent	strand_ambiguous_removed	fusion_report
+FECD_European	Cells_Cultured_fibroblasts	results/fusion_11p11_conditional/Cells_Cultured_fibroblasts_11p11.dat	chr11:45755998-48387931	16	16	NR1H3	654	653	1	0	0	report P0-P1 45757401-48387275, hit genes 16
+FECD_European	Skin_Not_Sun_Exposed_Suprapubic	results/fusion_11p11_conditional/Skin_Not_Sun_Exposed_Suprapubic_11p11.dat	chr11:45803194-48597603	22	22	ARHGAP1	674	673	1	0	0	report P0-P1 45807404-48593125, hit genes 22
+Glaucoma	Whole_Blood	results/twas_wb_conditional/glaucoma_wb_chr11.dat	chr11:45087178-48597603	17	17	NR1H3	1028	1024	4	0	0	
+IOP	Whole_Blood	results/twas_wb_conditional/iop_wb_chr11.dat	chr11:45087178-48597603	17	17	PTPRJ	1028	1028	0	0	0	
+Refractive_error	Whole_Blood	results/twas_wb_conditional/myopia_wb_chr11.dat	chr11:45087178-48597603	17	17	C1QTNF4,CHST1	1028	1024	4	0	0	

@@ -1,0 +1,2 @@
+ancestry	outcome_gwas	k	R2	N_eqtl	F_set	clump_kb	Q_pval	egger_int	egger_int_p
+multiancestry	FECD GWAS multi-ancestry (GCST90480062; 3,928/566,393)	4	0.0700723191042267	31684	596.772480942955	5000	0.249675980251356	-0.0649743220633455	0.219638668428865

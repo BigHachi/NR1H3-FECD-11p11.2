@@ -1,0 +1,8 @@
+European GWAS variants in region: 10955; min P 3.75e-05 (rs3136447); cor(log10 P, log10 P from z) = 0.9979
+ABF European: 95% credible set = 6902 variants spanning 46.201-48.300 Mb; top rs3136447 (PIP 0.013, P 3.75e-05); P(no causal variant in region | prior) not modelled
+Multi-ancestry GWAS variants in region: 9729; min P 3.64e-05 (rs4752929)
+ABF Multi-ancestry: 95% credible set = 5118 variants spanning 46.200-48.300 Mb; top rs4752929 (PIP 0.012, P 3.64e-05); P(no causal variant in region | prior) not modelled
+Variants matched to the LD panel (position + alleles): 3910 of 10955 (min P among matched 3.75e-05, rs3136447)
+LD mismatch estimate s = 0.039 (0 = consistent; > 0.2 suggests substantial mismatch between GWAS and LD panel)
+Possible allele flips / LD outliers (kriging logLR > 2 and |z| > 2): 0
+SuSiE-RSS converged: TRUE; credible sets (95%, purity >= 0.5): 0; max PIP 0.016 (rs3136447)

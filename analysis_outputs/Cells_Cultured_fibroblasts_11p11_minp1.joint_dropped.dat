@@ -1,0 +1,16 @@
+FILE	ID	TWAS.Z	TWAS.P	COND.BETA	COND.BETA.SE	COND.Z	COND.P
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000149091.15.wgt.RDat	ENSG00000149091.15	-1.72	0.08520	-1.721	1.00	-1.721	8.5e-02
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000110492.15.wgt.RDat	ENSG00000110492.15	 0.54	0.58700	 0.543	1.00	 0.543	5.9e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000175224.16.wgt.RDat	ENSG00000175224.16	-0.69	0.49300	-0.686	1.00	-0.686	4.9e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000175220.11.wgt.RDat	ENSG00000175220.11	 3.13	0.00177	 1.133	0.85	 1.340	1.8e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000134569.9.wgt.RDat	ENSG00000134569.9	 3.65	0.00026	 0.794	0.64	 1.232	2.2e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000149179.13.wgt.RDat	ENSG00000149179.13	 2.36	0.01840	 0.524	0.87	 0.601	5.5e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000149182.14.wgt.RDat	ENSG00000149182.14	 1.34	0.18100	 1.339	1.00	 1.339	1.8e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000165912.15.wgt.RDat	ENSG00000165912.15	 1.17	0.24300	-1.829	0.60	-3.059	2.2e-03
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000134575.9.wgt.RDat	ENSG00000134575.9	 1.63	0.10300	-0.297	0.86	-0.346	7.3e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000110514.19.wgt.RDat	ENSG00000110514.19	 0.56	0.57300	 0.564	1.00	 0.564	5.7e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000165915.13.wgt.RDat	ENSG00000165915.13	 0.30	0.76600	-2.915	0.51	-5.698	1.2e-08
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000165916.8.wgt.RDat	ENSG00000165916.8	-0.17	0.86400	-0.171	1.00	-0.171	8.6e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000213619.9.wgt.RDat	ENSG00000213619.9	 1.29	0.19700	 1.290	1.00	 1.290	2.0e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000172247.3.wgt.RDat	ENSG00000172247.3	 1.12	0.26200	 1.121	1.00	 1.121	2.6e-01
+data/weights_eur//GTExv8.EUR.Cells_Cultured_fibroblasts/ENSG00000109920.12.wgt.RDat	ENSG00000109920.12	-2.29	0.02190	-0.076	0.81	-0.094	9.3e-01

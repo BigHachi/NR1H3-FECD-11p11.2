@@ -1,0 +1,209 @@
+trait	method	tissue	gene	model_id	model	n_weight_variants	used_audit	used_reported	agrees	matched	missing	allele_inconsistent	position_inconsistent	ambiguous_conflicting	impute_fraction	nonzero_weights	nonzero_missing	nonzero_allele_inconsistent	nonzero_ambiguous_conflicting	TWAS_Z	TWAS_P	region	joint
+FECD_multiancestry	S-PrediXcan	Adipose_Subcutaneous	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Adipose_Subcutaneous	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Adipose_Visceral_Omentum	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Adipose_Visceral_Omentum	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Adrenal_Gland	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Adrenal_Gland	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Artery_Aorta	NR1H3	ENSG00000025434	MASHR	4	4	4	True	4	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Artery_Aorta	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Artery_Coronary	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Artery_Coronary	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Artery_Tibial	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Artery_Tibial	ZNF408	ENSG00000175213	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Amygdala	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Amygdala	ZNF408	ENSG00000175213	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Anterior_cingulate_cortex_BA24	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Anterior_cingulate_cortex_BA24	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Caudate_basal_ganglia	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Caudate_basal_ganglia	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Cerebellar_Hemisphere	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Cerebellar_Hemisphere	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Cerebellum	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Cerebellum	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Cortex	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Frontal_Cortex_BA9	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Frontal_Cortex_BA9	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Hippocampus	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Hippocampus	ZNF408	ENSG00000175213	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Hypothalamus	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Hypothalamus	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Nucleus_accumbens_basal_ganglia	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Nucleus_accumbens_basal_ganglia	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Putamen_basal_ganglia	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Putamen_basal_ganglia	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Spinal_cord_cervical_c-1	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Spinal_cord_cervical_c-1	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Substantia_nigra	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Brain_Substantia_nigra	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Breast_Mammary_Tissue	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Breast_Mammary_Tissue	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Cells_Cultured_fibroblasts	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Cells_Cultured_fibroblasts	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Cells_EBV-transformed_lymphocytes	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Cells_EBV-transformed_lymphocytes	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Colon_Sigmoid	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Colon_Sigmoid	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Colon_Transverse	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Colon_Transverse	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Esophagus_Gastroesophageal_Junction	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Esophagus_Gastroesophageal_Junction	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Esophagus_Mucosa	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Esophagus_Mucosa	ZNF408	ENSG00000175213	MASHR	1	0		True	0	1	0	0	0									
+FECD_multiancestry	S-PrediXcan	Esophagus_Muscularis	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Esophagus_Muscularis	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Heart_Atrial_Appendage	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Heart_Atrial_Appendage	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Heart_Left_Ventricle	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Heart_Left_Ventricle	ZNF408	ENSG00000175213	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Kidney_Cortex	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Kidney_Cortex	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Liver	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Lung	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Lung	ZNF408	ENSG00000175213	MASHR	3	3	3	True	3	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Minor_Salivary_Gland	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Minor_Salivary_Gland	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Muscle_Skeletal	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Muscle_Skeletal	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Nerve_Tibial	NR1H3	ENSG00000025434	MASHR	4	4	4	True	4	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Nerve_Tibial	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Ovary	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Ovary	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Pancreas	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Pancreas	ZNF408	ENSG00000175213	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Pituitary	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Pituitary	ZNF408	ENSG00000175213	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Prostate	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Prostate	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Skin_Not_Sun_Exposed_Suprapubic	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Skin_Not_Sun_Exposed_Suprapubic	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Skin_Sun_Exposed_Lower_leg	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Skin_Sun_Exposed_Lower_leg	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Small_Intestine_Terminal_Ileum	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Small_Intestine_Terminal_Ileum	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Spleen	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Spleen	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Stomach	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Stomach	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Testis	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Testis	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Thyroid	NR1H3	ENSG00000025434	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Thyroid	ZNF408	ENSG00000175213	MASHR	1	1	1	True	1	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Uterus	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Uterus	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Vagina	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Vagina	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Whole_Blood	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+FECD_multiancestry	S-PrediXcan	Whole_Blood	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+FECD_European	FUSION	Cells_Cultured_fibroblasts	DGKZ	ENSG00000149091.15	susie	237	237	237	True	237	0	0		0	0.000	237	0	0	0	-1.72128	8.52e-02	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	MDK	ENSG00000110492.15	top1	241	241	241	True	241	0	0		0	0.000	1	0	0	0	0.54270	5.87e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	ATG13	ENSG00000175224.16	susie	235	235	235	True	235	0	0		0	0.000	235	0	0	0	-0.68588	4.93e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	ARHGAP1	ENSG00000175220.11	enet	238	238	238	True	237	1	0		0	0.004	12	0	0	0	3.12607	1.77e-03	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	LRP4	ENSG00000134569.9	susie	279	279	279	True	278	1	0		0	0.004	279	1	0	0	3.65186	2.60e-04	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	C11orf49	ENSG00000149179.13	lasso	281	281	281	True	280	1	0		0	0.004	3	0	0	0	2.35764	1.84e-02	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	ARFGAP2	ENSG00000149182.14	susie	292	292	292	True	291	1	0		0	0.003	292	1	0	0	1.33897	1.81e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	PACSIN3	ENSG00000165912.15	top1	293	293	293	True	292	1	0		0	0.003	1	0	0	0	1.16758	2.43e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	NR1H3	ENSG00000025434.18	susie	296	296	296	True	295	1	0		0	0.003	296	1	0	0	-3.73822	1.85e-04	chr11:45755998-48387931	True
+FECD_European	FUSION	Cells_Cultured_fibroblasts	ACP2	ENSG00000134575.9	lasso	297	297	297	True	296	1	0		0	0.003	4	0	0	0	1.62983	1.03e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	MADD	ENSG00000110514.19	susie	302	302	302	True	301	1	0		0	0.003	302	1	0	0	0.56359	5.73e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	SLC39A13	ENSG00000165915.13	top1	288	288	288	True	287	1	0		0	0.003	1	0	0	0	0.29704	7.66e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	PSMC3	ENSG00000165916.8	enet	288	288	288	True	287	1	0		0	0.003	16	0	0	0	-0.17112	8.64e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	NDUFS3	ENSG00000213619.9	lasso	275	275	275	True	274	1	0		0	0.004	12	0	0	0	1.29011	1.97e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	C1QTNF4	ENSG00000172247.3	susie	286	286	286	True	285	1	0		0	0.003	286	1	0	0	1.12085	2.62e-01	chr11:45755998-48387931	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	FNBP4	ENSG00000109920.12	top1	282	282	282	True	282	0	0		0	0.000	1	0	0	0	-2.29280	2.19e-02	chr11:45755998-48387931	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	MDK	ENSG00000110492.15	enet	241	241	241	True	241	0	0		0	0.000	14	0	0	0	2.43803	1.48e-02	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	CHRM4	ENSG00000180720.7	top1	237	237	237	True	237	0	0		0	0.000	1	0	0	0	0.66158	5.08e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	AMBRA1	ENSG00000110497.14	enet	232	232	232	True	232	0	0		0	0.000	26	0	0	0	0.10214	9.19e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	ATG13	ENSG00000175224.16	enet	235	235	235	True	235	0	0		0	0.000	20	0	0	0	0.23073	8.18e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	ARHGAP1	ENSG00000175220.11	enet	238	238	238	True	237	1	0		0	0.004	18	0	0	0	3.97048	7.17e-05	chr11:45803194-48597603	True
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	C11orf49	ENSG00000149179.13	susie	281	281	281	True	280	1	0		0	0.004	281	1	0	0	1.20904	2.27e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	ARFGAP2	ENSG00000149182.14	susie	292	292	292	True	291	1	0		0	0.003	292	1	0	0	-2.30797	2.10e-02	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	PACSIN3	ENSG00000165912.15	susie	293	293	293	True	292	1	0		0	0.003	293	1	0	0	-0.96020	3.37e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	DDB2	ENSG00000134574.11	susie	298	298	298	True	297	1	0		0	0.003	298	1	0	0	-2.91239	3.59e-03	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	ENSG00000256897	ENSG00000256897.1	susie	296	296	296	True	295	1	0		0	0.003	296	1	0	0	-2.77307	5.55e-03	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	NR1H3	ENSG00000025434.18	susie	296	296	296	True	295	1	0		0	0.003	296	1	0	0	-3.52629	4.21e-04	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	ACP2	ENSG00000134575.9	enet	297	297	297	True	296	1	0		0	0.003	26	0	0	0	2.87504	4.04e-03	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	MADD	ENSG00000110514.19	enet	302	302	302	True	301	1	0		0	0.003	32	0	0	0	0.70913	4.78e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	MYBPC3	ENSG00000134571.10	susie	296	296	296	True	295	1	0		0	0.003	296	1	0	0	-0.31777	7.51e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	SLC39A13	ENSG00000165915.13	top1	288	288	288	True	287	1	0		0	0.003	1	0	0	0	-1.68701	9.16e-02	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	PSMC3	ENSG00000165916.8	susie	288	288	288	True	287	1	0		0	0.003	288	1	0	0	-2.38234	1.72e-02	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	RAPSN	ENSG00000165917.9	susie	286	286	286	True	285	1	0		0	0.003	286	1	0	0	-0.73657	4.61e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	FAM180B	ENSG00000196666.4	enet	278	278	278	True	277	1	0		0	0.004	15	0	0	0	1.55994	1.19e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	C1QTNF4	ENSG00000172247.3	lasso	286	286	286	True	285	1	0		0	0.003	2	0	0	0	1.19809	2.31e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	MTCH2	ENSG00000109919.9	top1	288	288	288	True	288	0	0		0	0.000	1	0	0	0	-1.11489	2.65e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	NUP160	ENSG00000030066.13	top1	263	263	263	True	263	0	0		0	0.000	1	0	0	0	-0.24889	8.03e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	PTPRJ	ENSG00000149177.12	lasso	237	237	237	True	237	0	0		0	0.000	5	0	0	0	-0.95981	3.37e-01	chr11:45803194-48597603	False
+FECD_European	FUSION	Cells_Cultured_fibroblasts	NR1H3	ENSG00000025434.18	susie	296	296	296	True	295	1	0		0	0.003	296	1	0	0	-3.73822	1.85e-04	genome-wide TWAS (S3, Figure 1)	
+FECD_European	FUSION	Skin_Not_Sun_Exposed_Suprapubic	NR1H3	ENSG00000025434.18	susie	296	296	296	True	295	1	0		0	0.003	296	1	0	0	-3.52629	4.21e-04	genome-wide TWAS (S3, Figure 1)	
+Glaucoma	S-PrediXcan	Brain_Cortex	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+Glaucoma	S-PrediXcan	Cells_Cultured_fibroblasts	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+Glaucoma	S-PrediXcan	Cells_Cultured_fibroblasts	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+Glaucoma	S-PrediXcan	Esophagus_Mucosa	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+Glaucoma	S-PrediXcan	Esophagus_Mucosa	ZNF408	ENSG00000175213	MASHR	1	1	1	True	1	0	0	0	0									
+Glaucoma	S-PrediXcan	Skin_Not_Sun_Exposed_Suprapubic	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+Glaucoma	S-PrediXcan	Skin_Not_Sun_Exposed_Suprapubic	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+Glaucoma	S-PrediXcan	Whole_Blood	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+Glaucoma	S-PrediXcan	Whole_Blood	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+Glaucoma	FUSION	Whole_Blood	CHST1	ENSG00000175264.7	susie	433	433	433	True	432	1	0		0	0.002	433	1	0	0	-0.56850	5.70e-01	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	SLC35C1	ENSG00000181830.8	top1	394	394	394	True	393	1	0		0	0.003	1	0	0	0	1.00942	3.13e-01	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	CRY2	ENSG00000121671.11	enet	383	383	383	True	382	1	0		0	0.003	14	1	0	0	-2.09927	3.58e-02	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	MAPK8IP1	ENSG00000121653.11	lasso	375	375	375	True	374	1	0		0	0.003	8	0	0	0	3.03745	2.39e-03	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	DGKZ	ENSG00000149091.15	susie	237	237	237	True	237	0	0		0	0.000	237	0	0	0	-0.24696	8.05e-01	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	ATG13	ENSG00000175224.16	susie	235	235	235	True	235	0	0		0	0.000	235	0	0	0	0.76737	4.43e-01	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	ARHGAP1	ENSG00000175220.11	susie	238	238	238	True	238	0	0		0	0.000	238	0	0	0	-1.04659	2.95e-01	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	NR1H3	ENSG00000025434.18	enet	296	296	296	True	294	2	0		0	0.007	3	0	0	0	-7.72052	1.16e-14	chr11:45087178-48597603	True
+Glaucoma	FUSION	Whole_Blood	ACP2	ENSG00000134575.9	enet	297	297	297	True	295	2	0		0	0.007	16	0	0	0	-7.32055	2.47e-13	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	MADD	ENSG00000110514.19	susie	302	302	302	True	299	3	0		0	0.010	302	3	0	0	3.70016	2.15e-04	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	MYBPC3	ENSG00000134571.10	susie	296	296	296	True	293	3	0		0	0.010	296	3	0	0	4.25010	2.14e-05	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	SLC39A13	ENSG00000165915.13	top1	288	288	288	True	285	3	0		0	0.010	1	0	0	0	-7.00642	2.44e-12	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	CELF1	ENSG00000149187.17	enet	276	276	276	True	273	3	0		0	0.011	12	0	0	0	1.93762	5.27e-02	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	C1QTNF4	ENSG00000172247.3	top1	286	286	286	True	283	3	0		0	0.010	1	0	0	0	4.90018	9.57e-07	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	FNBP4	ENSG00000109920.12	susie	282	282	282	True	279	3	0		1	0.011	282	3	0	1	0.59660	5.51e-01	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	NUP160	ENSG00000030066.13	top1	263	263	263	True	260	3	0		1	0.011	1	0	0	0	-5.67194	1.41e-08	chr11:45087178-48597603	False
+Glaucoma	FUSION	Whole_Blood	PTPRJ	ENSG00000149177.12	susie	237	237	237	True	235	2	0		1	0.008	237	2	0	1	4.53106	5.87e-06	chr11:45087178-48597603	False
+IOP	S-PrediXcan	Cells_Cultured_fibroblasts	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+IOP	S-PrediXcan	Cells_Cultured_fibroblasts	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+IOP	S-PrediXcan	Esophagus_Mucosa	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+IOP	S-PrediXcan	Esophagus_Mucosa	ZNF408	ENSG00000175213	MASHR	1	0		True	0	1	0	0	0									
+IOP	S-PrediXcan	Skin_Not_Sun_Exposed_Suprapubic	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+IOP	S-PrediXcan	Skin_Not_Sun_Exposed_Suprapubic	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+IOP	FUSION	Whole_Blood	CHST1	ENSG00000175264.7	susie	433	433	433	True	433	0	0		0	0.000	433	0	0	0	-0.126031	9.00e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	SLC35C1	ENSG00000181830.8	top1	394	394	394	True	394	0	0		0	0.000	1	0	0	0	1.001931	3.16e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	CRY2	ENSG00000121671.11	enet	383	383	383	True	383	0	0		0	0.000	14	0	0	0	-0.458585	6.47e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	MAPK8IP1	ENSG00000121653.11	lasso	375	375	375	True	375	0	0		0	0.000	8	0	0	0	1.043339	2.97e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	DGKZ	ENSG00000149091.15	susie	237	237	237	True	237	0	0		0	0.000	237	0	0	0	-0.041482	9.67e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	ATG13	ENSG00000175224.16	susie	235	235	235	True	235	0	0		0	0.000	235	0	0	0	0.357671	7.21e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	ARHGAP1	ENSG00000175220.11	susie	238	238	238	True	238	0	0		0	0.000	238	0	0	0	-1.219646	2.23e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	NR1H3	ENSG00000025434.18	enet	296	296	296	True	296	0	0		0	0.000	3	0	0	0	-3.835649	1.25e-04	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	ACP2	ENSG00000134575.9	enet	297	297	297	True	297	0	0		0	0.000	16	0	0	0	-3.619596	2.95e-04	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	MADD	ENSG00000110514.19	susie	302	302	302	True	302	0	0		0	0.000	302	0	0	0	1.140946	2.54e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	MYBPC3	ENSG00000134571.10	susie	296	296	296	True	296	0	0		0	0.000	296	0	0	0	1.628602	1.03e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	SLC39A13	ENSG00000165915.13	top1	288	288	288	True	288	0	0		0	0.000	1	0	0	0	-4.155477	3.25e-05	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	CELF1	ENSG00000149187.17	enet	276	276	276	True	276	0	0		0	0.000	12	0	0	0	-0.085228	9.32e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	C1QTNF4	ENSG00000172247.3	top1	286	286	286	True	286	0	0		0	0.000	1	0	0	0	2.882784	3.94e-03	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	FNBP4	ENSG00000109920.12	susie	282	282	282	True	282	0	0		0	0.000	282	0	0	0	1.424657	1.54e-01	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	NUP160	ENSG00000030066.13	top1	263	263	263	True	263	0	0		0	0.000	1	0	0	0	-4.956790	7.17e-07	chr11:45087178-48597603	False
+IOP	FUSION	Whole_Blood	PTPRJ	ENSG00000149177.12	susie	237	237	237	True	237	0	0		0	0.000	237	0	0	0	5.551840	2.83e-08	chr11:45087178-48597603	True
+Refractive_error	S-PrediXcan	Cells_Cultured_fibroblasts	NR1H3	ENSG00000025434	MASHR	3	3	3	True	3	0	0	0	0									
+Refractive_error	S-PrediXcan	Cells_Cultured_fibroblasts	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+Refractive_error	S-PrediXcan	Esophagus_Mucosa	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+Refractive_error	S-PrediXcan	Esophagus_Mucosa	ZNF408	ENSG00000175213	MASHR	1	0		True	0	1	0	0	0									
+Refractive_error	S-PrediXcan	Skin_Not_Sun_Exposed_Suprapubic	NR1H3	ENSG00000025434	MASHR	2	2	2	True	2	0	0	0	0									
+Refractive_error	S-PrediXcan	Skin_Not_Sun_Exposed_Suprapubic	ZNF408	ENSG00000175213	MASHR	2	2	2	True	2	0	0	0	0									
+Refractive_error	FUSION	Whole_Blood	CHST1	ENSG00000175264.7	susie	433	433	433	True	432	1	0		0	0.002	433	1	0	0	4.57200	4.83e-06	chr11:45087178-48597603	True
+Refractive_error	FUSION	Whole_Blood	SLC35C1	ENSG00000181830.8	top1	394	394	394	True	393	1	0		0	0.003	1	0	0	0	0.26000	7.95e-01	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	CRY2	ENSG00000121671.11	enet	383	383	383	True	381	2	0		0	0.005	14	0	0	0	0.19075	8.49e-01	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	MAPK8IP1	ENSG00000121653.11	lasso	375	375	375	True	373	2	0		0	0.005	8	0	0	0	-2.51530	1.19e-02	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	DGKZ	ENSG00000149091.15	susie	237	237	237	True	235	2	0		0	0.008	237	2	0	0	0.11180	9.11e-01	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	ATG13	ENSG00000175224.16	susie	235	235	235	True	233	2	0		0	0.009	235	2	0	0	-0.08533	9.32e-01	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	ARHGAP1	ENSG00000175220.11	susie	238	238	238	True	236	2	0		0	0.008	238	2	0	0	0.81901	4.13e-01	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	NR1H3	ENSG00000025434.18	enet	296	296	296	True	296	0	0		0	0.000	3	0	0	0	6.10937	1.00e-09	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	ACP2	ENSG00000134575.9	enet	297	297	297	True	297	0	0		0	0.000	16	0	0	0	4.82723	1.38e-06	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	MADD	ENSG00000110514.19	susie	302	302	302	True	302	0	0		0	0.000	302	0	0	0	-4.19945	2.68e-05	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	MYBPC3	ENSG00000134571.10	susie	296	296	296	True	296	0	0		0	0.000	296	0	0	0	-6.37123	1.88e-10	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	SLC39A13	ENSG00000165915.13	top1	288	288	288	True	288	0	0		0	0.000	1	0	0	0	6.32000	2.62e-10	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	CELF1	ENSG00000149187.17	enet	276	276	276	True	276	0	0		0	0.000	12	0	0	0	-0.44658	6.55e-01	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	C1QTNF4	ENSG00000172247.3	top1	286	286	286	True	286	0	0		0	0.000	1	0	0	0	-6.40200	1.53e-10	chr11:45087178-48597603	True
+Refractive_error	FUSION	Whole_Blood	FNBP4	ENSG00000109920.12	susie	282	282	282	True	282	0	0		0	0.000	282	0	0	0	3.01023	2.61e-03	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	NUP160	ENSG00000030066.13	top1	263	263	263	True	263	0	0		0	0.000	1	0	0	0	3.25600	1.13e-03	chr11:45087178-48597603	False
+Refractive_error	FUSION	Whole_Blood	PTPRJ	ENSG00000149177.12	susie	237	237	237	True	236	1	0		0	0.004	237	1	0	0	-4.03314	5.50e-05	chr11:45087178-48597603	False

@@ -1,0 +1,11 @@
+gene	tissue	n_sig_pairs	eGene	lead_snp	lead_P	GW_sig_snps	GW_sig_snps_not_in_LDref
+NR1H3	Cells_Cultured_fibroblasts	146	yes	rs35378256	2.4e-06		
+NR1H3	Skin_Not_Sun_Exposed_Suprapubic	325	yes	rs7119517	1.2e-08	rs7119517,rs2203712	rs7119517,rs2203712
+NR1H3	Esophagus_Mucosa	3	yes	rs144102533	6.3e-05		
+NR1H3	Whole_Blood	196	yes	rs117724975	3.2e-07		
+NR1H3	Brain_Cortex	0	no				
+ZNF408	Cells_Cultured_fibroblasts	0	no				
+ZNF408	Skin_Not_Sun_Exposed_Suprapubic	0	no				
+ZNF408	Esophagus_Mucosa	153	yes	rs10769228	1.4e-05		
+ZNF408	Whole_Blood	0	no				
+ZNF408	Brain_Cortex	6	yes	rs111647854	9.9e-06		

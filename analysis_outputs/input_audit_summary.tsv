@@ -1,0 +1,224 @@
+trait	analysis	input	reference	category	n
+FECD_multiancestry	source	data/gwas/raw/GCST90480062.tsv.gz		source_rows	17658291
+FECD_multiancestry	source	data/gwas/raw/GCST90480062.tsv.gz		source_non_autosomal	0
+FECD_multiancestry	source	data/gwas/raw/GCST90480062.tsv.gz		source_invalid_statistics	19
+FECD_multiancestry	source	data/gwas/raw/GCST90480062.tsv.gz		source_valid_autosomal	17658272
+FECD_multiancestry	source	data/gwas/raw/GCST90480062.tsv.gz		source_without_rsid	0
+FECD_multiancestry	source	data/gwas/raw/GCST90480062.tsv.gz		source_with_several_rsids_in_one_field	0
+FECD_multiancestry	source	data/gwas/raw/GCST90480062.tsv.gz		source_rsids_with_more_than_one_record	47929
+FECD_multiancestry	source	data/gwas/raw/GCST90480062.tsv.gz		source_records_sharing_an_rsid	96768
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	reference_variants	237405
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	input_rows	221276
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	input_duplicate_varid_rows	0
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	matched	221276
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	allele_inconsistent_dropped_by_sprediXcan	0
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	position_inconsistent	0
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	missing_no_source_record	16129
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	missing_source_record_not_carried	0
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	ambiguous_identical_source_records	0
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	ambiguous_conflicting_source_records	51
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	reproduces_first_source_record	221276
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	reproduces_later_source_record	0
+FECD_multiancestry	S-PrediXcan	data/gwas/fecd_alltissue_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 49 tissues (237405)	reproduces_no_source_record	0
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reference_variants	2444
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	matched	2330
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	allele_inconsistent_dropped_by_harmonisation	4
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_no_source_record	110
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_source_record_not_carried	0
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_several_input_rows	5
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_identical_source_records	0
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_conflicting_source_records	5
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_source_record	2339
+FECD_multiancestry	cis-MR	data/gwas/fecd_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_no_source_record	0
+FECD_European	source	data/gwas/fecd_eur_GCST90475865.tsv.gz		source_rows	19656904
+FECD_European	source	data/gwas/fecd_eur_GCST90475865.tsv.gz		source_non_autosomal	0
+FECD_European	source	data/gwas/fecd_eur_GCST90475865.tsv.gz		source_invalid_statistics	19
+FECD_European	source	data/gwas/fecd_eur_GCST90475865.tsv.gz		source_valid_autosomal	19656885
+FECD_European	source	data/gwas/fecd_eur_GCST90475865.tsv.gz		source_without_rsid	0
+FECD_European	source	data/gwas/fecd_eur_GCST90475865.tsv.gz		source_with_several_rsids_in_one_field	0
+FECD_European	source	data/gwas/fecd_eur_GCST90475865.tsv.gz		source_rsids_with_more_than_one_record	53073
+FECD_European	source	data/gwas/fecd_eur_GCST90475865.tsv.gz		source_records_sharing_an_rsid	107096
+FECD_European	FUSION	results/fusion_11p11_conditional/fecd_eur_chr11.sumstats	rows of the main FUSION input	subset_rows	60683
+FECD_European	FUSION	results/fusion_11p11_conditional/fecd_eur_chr11.sumstats	rows of the main FUSION input	subset_rows_not_identical_to_main_input	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs (1190321)	reference_variants	1190321
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	input_rows	19602881
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	input_duplicate_rsid_rows	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	input_non_finite_z	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	matched	1183054
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	allele_inconsistent_used_unaligned_by_fusion	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	removed_by_fusion_strand_ambiguous_or_not_snv	4
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	missing_no_source_record	7263
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	missing_source_record_not_carried	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	missing_source_record_under_multi_rsid_key	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_identical_source_records	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_conflicting_source_records	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_conflicting_kept_record_inconsistent_other_consistent	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	reproduces_first_source_record	1183058
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	reproduces_later_source_record	0
+FECD_European	FUSION	data/gwas/fecd_eur_fusion.tsv	1000G EUR LD reference SNPs	reproduces_no_source_record	0
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reference_variants	2444
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	matched	2342
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	allele_inconsistent_dropped_by_harmonisation	4
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_no_source_record	98
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_source_record_not_carried	0
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_several_input_rows	5
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_identical_source_records	0
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_conflicting_source_records	5
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_source_record	2351
+FECD_European	cis-MR	data/gwas/fecd_eur_nr1h3_eqtlgen_region.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_no_source_record	0
+Glaucoma	source	data/gwas/finngen_R12_H7_GLAUCOMA.gz		source_rows	21327062
+Glaucoma	source	data/gwas/finngen_R12_H7_GLAUCOMA.gz		source_non_autosomal	838376
+Glaucoma	source	data/gwas/finngen_R12_H7_GLAUCOMA.gz		source_invalid_statistics	0
+Glaucoma	source	data/gwas/finngen_R12_H7_GLAUCOMA.gz		source_valid_autosomal	20488686
+Glaucoma	source	data/gwas/finngen_R12_H7_GLAUCOMA.gz		source_without_rsid	671137
+Glaucoma	source	data/gwas/finngen_R12_H7_GLAUCOMA.gz		source_with_several_rsids_in_one_field	471098
+Glaucoma	source	data/gwas/finngen_R12_H7_GLAUCOMA.gz		source_rsids_with_more_than_one_record	107152
+Glaucoma	source	data/gwas/finngen_R12_H7_GLAUCOMA.gz		source_records_sharing_an_rsid	235362
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion_chr11.tsv	rows of the main FUSION input	subset_rows	60509
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion_chr11.tsv	rows of the main FUSION input	subset_rows_not_identical_to_main_input	0
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs (1190321)	reference_variants	1190321
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_rows	19683514
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_duplicate_rsid_rows	0
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_non_finite_z	0
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	matched	1181857
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	allele_inconsistent_used_unaligned_by_fusion	0
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	removed_by_fusion_strand_ambiguous_or_not_snv	7
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_no_source_record	8445
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_source_record_not_carried	8
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_source_record_under_multi_rsid_key	4
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_identical_source_records	0
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_conflicting_source_records	2118
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_conflicting_kept_record_inconsistent_other_consistent	0
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_first_source_record	1180808
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_later_source_record	1056
+Glaucoma	FUSION	data/gwas/glaucoma_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_no_source_record	0
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	reference_variants	80005
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	input_rows	19683522
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	input_duplicate_varid_rows	0
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	model_rsids_with_more_than_one_varid	0
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	linked_by_model_rsid	67221
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	linked_by_position_under_another_rsid	9368
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	matched	76548
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	allele_inconsistent_dropped_by_sprediXcan	40
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	position_inconsistent	1
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	missing_no_source_record	3416
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	missing_source_record_not_carried	0
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	ambiguous_identical_source_records	0
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	ambiguous_conflicting_source_records	99
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	reproduces_first_source_record	76589
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	reproduces_later_source_record	0
+Glaucoma	S-PrediXcan	data/gwas/glaucoma_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 5 tissues (80005)	reproduces_no_source_record	0
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reference_variants	2444
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	matched	2261
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	allele_inconsistent_dropped_by_harmonisation	3
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_no_source_record	180
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_source_record_not_carried	0
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_several_input_rows	0
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_identical_source_records	0
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_conflicting_source_records	11
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_source_record	2264
+Glaucoma	cis-MR	data/gwas/glaucoma_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_no_source_record	0
+IOP	source	data/gwas/iop_gwas_raw.txt.gz		source_rows	16041358
+IOP	source	data/gwas/iop_gwas_raw.txt.gz		source_non_autosomal	0
+IOP	source	data/gwas/iop_gwas_raw.txt.gz		source_invalid_statistics	0
+IOP	source	data/gwas/iop_gwas_raw.txt.gz		source_valid_autosomal	16041358
+IOP	source	data/gwas/iop_gwas_raw.txt.gz		source_without_rsid	1010597
+IOP	source	data/gwas/iop_gwas_raw.txt.gz		source_with_several_rsids_in_one_field	0
+IOP	source	data/gwas/iop_gwas_raw.txt.gz		source_rsids_with_more_than_one_record	5269
+IOP	source	data/gwas/iop_gwas_raw.txt.gz		source_records_sharing_an_rsid	10540
+IOP	FUSION	data/gwas/iop_gwas_fusion_chr11.tsv	rows of the main FUSION input	subset_rows	60948
+IOP	FUSION	data/gwas/iop_gwas_fusion_chr11.tsv	rows of the main FUSION input	subset_rows_not_identical_to_main_input	0
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs (1190321)	reference_variants	1190321
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_rows	15020895
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_duplicate_rsid_rows	0
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_non_finite_z	0
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	matched	1189381
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	allele_inconsistent_used_unaligned_by_fusion	13
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	removed_by_fusion_strand_ambiguous_or_not_snv	3
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_no_source_record	448
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_source_record_not_carried	476
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_source_record_under_multi_rsid_key	0
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_identical_source_records	0
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_conflicting_source_records	19
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_conflicting_kept_record_inconsistent_other_consistent	11
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_first_source_record	1189397
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_later_source_record	0
+IOP	FUSION	data/gwas/iop_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_no_source_record	0
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	reference_variants	59391
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	input_rows	16031265
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	input_duplicate_varid_rows	0
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	model_rsids_with_more_than_one_varid	0
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	linked_by_model_rsid	45600
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	linked_by_position_under_another_rsid	3747
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	matched	49306
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	allele_inconsistent_dropped_by_sprediXcan	40
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	position_inconsistent	1
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	missing_no_source_record	10013
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	missing_source_record_not_carried	31
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	ambiguous_identical_source_records	0
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	ambiguous_conflicting_source_records	0
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	reproduces_first_source_record	49347
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	reproduces_later_source_record	0
+IOP	S-PrediXcan	data/gwas/iop_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	reproduces_no_source_record	0
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reference_variants	2444
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	matched	2275
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	allele_inconsistent_dropped_by_harmonisation	1
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_no_source_record	168
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_source_record_not_carried	0
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_several_input_rows	0
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_identical_source_records	0
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_conflicting_source_records	2
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_source_record	2276
+IOP	cis-MR	data/gwas/iop_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_no_source_record	0
+Refractive_error	source	data/gwas/myopia_gwas_full.tsv		source_rows	8675333
+Refractive_error	source	data/gwas/myopia_gwas_full.tsv		source_non_autosomal	0
+Refractive_error	source	data/gwas/myopia_gwas_full.tsv		source_invalid_statistics	0
+Refractive_error	source	data/gwas/myopia_gwas_full.tsv		source_valid_autosomal	8675333
+Refractive_error	source	data/gwas/myopia_gwas_full.tsv		source_without_rsid	0
+Refractive_error	source	data/gwas/myopia_gwas_full.tsv		source_with_several_rsids_in_one_field	0
+Refractive_error	source	data/gwas/myopia_gwas_full.tsv		source_rsids_with_more_than_one_record	0
+Refractive_error	source	data/gwas/myopia_gwas_full.tsv		source_records_sharing_an_rsid	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion_chr11.tsv	rows of the main FUSION input	subset_rows	60421
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion_chr11.tsv	rows of the main FUSION input	subset_rows_not_identical_to_main_input	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs (1190321)	reference_variants	1190321
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_rows	8675333
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_duplicate_rsid_rows	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	input_non_finite_z	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	matched	1179368
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	allele_inconsistent_used_unaligned_by_fusion	3
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	removed_by_fusion_strand_ambiguous_or_not_snv	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_no_source_record	10950
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_source_record_not_carried	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	missing_source_record_under_multi_rsid_key	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_identical_source_records	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_conflicting_source_records	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	ambiguous_conflicting_kept_record_inconsistent_other_consistent	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_first_source_record	1179371
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_later_source_record	0
+Refractive_error	FUSION	data/gwas/myopia_gwas_fusion.tsv	1000G EUR LD reference SNPs	reproduces_no_source_record	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	reference_variants	59391
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	input_rows	8675333
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	input_duplicate_varid_rows	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	model_rsids_with_more_than_one_varid	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	linked_by_model_rsid	44019
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	linked_by_position_under_another_rsid	4357
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	matched	48376
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	allele_inconsistent_dropped_by_sprediXcan	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	position_inconsistent	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	missing_no_source_record	11015
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	missing_source_record_not_carried	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	ambiguous_identical_source_records	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	ambiguous_conflicting_source_records	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	reproduces_first_source_record	48376
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	reproduces_later_source_record	0
+Refractive_error	S-PrediXcan	data/gwas/myopia_gwas_sprediXcan.txt.gz	GTEx v8 MASHR model variants, 3 tissues (59391)	reproduces_no_source_record	0
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reference_variants	2444
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	matched	2182
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	allele_inconsistent_dropped_by_harmonisation	0
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_no_source_record	262
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	missing_source_record_not_carried	0
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_several_input_rows	0
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_identical_source_records	0
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	ambiguous_conflicting_source_records	0
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_source_record	2182
+Refractive_error	cis-MR	data/gwas/myopia_gwas_full.tsv	eQTLGen NR1H3 cis-eQTL variants (2444)	reproduces_no_source_record	0

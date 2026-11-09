@@ -1,0 +1,26 @@
+table	rows	cells	mismatches	note
+S1_FECD_S-PrediXcan_all	41978	671648	0	exact; row order identical
+S2_FECD_S-MultiXcan_all	17285	345700	0	exact; row order identical
+S3_FUSION_all	28071	533349	0	exact; row order identical
+S10_NR1H3_ZNF408_49tissues	95	760	0	exact; row order identical
+S11_S-MultiXcan_49tissues	22222	222220	0	exact; row order identical
+S4_FinnGen_lookup	12	120	0	
+S5_Conditional_11p11.2	38	190	0	
+S6_Colocalisation_FECD	162	2430	0	
+S7_cisMR_FECD	8	120	0	
+S8_crosstrait_FUSION_WB	1389	6945	0	
+S9 Panel A	5	20	0	
+S9 Panel B	6	12	0	
+S9 Panel C	3	36	0	
+S12 Panel A	51	408	0	
+S12 Panel B	21	210	0	
+S13 Panel B	25	175	0	
+S13 Panel C	50	200	0	
+S13 Panel D	50	200	0	
+S13 Panel E	25	125	0	
+S13 Panel F	78	312	0	
+S13 Panel G	79	316	0	
+S14_Endothelium_RNAseq_samples	30	60	0	
+Table 1	21	105	0	
+Table 2	3	15	0	
+Table 3	12	72	0	

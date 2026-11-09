@@ -1,0 +1,31 @@
+sample_in_analysis	group	batch_in_model
+RNA16	FECD, CTG18.1 expansion-positive	1
+RNA15	FECD, CTG18.1 expansion-positive	1
+RNA19	FECD, CTG18.1 expansion-positive	1
+RNA10	FECD, CTG18.1 expansion-positive	1
+RNA20	FECD, expansion-negative	1
+RNA79	FECD, expansion-negative	1
+RNA90	FECD, CTG18.1 expansion-positive	2
+RNA100	FECD, CTG18.1 expansion-positive	2
+RNA102	FECD, CTG18.1 expansion-positive	2
+RNA111	FECD, CTG18.1 expansion-positive	2
+RNA112	FECD, CTG18.1 expansion-positive	2
+RNA120	FECD, CTG18.1 expansion-positive	2
+RNA27	FECD, CTG18.1 expansion-positive	2
+RNA28	FECD, CTG18.1 expansion-positive	2
+RNA124	FECD, CTG18.1 expansion-positive	2
+RNA121	FECD, CTG18.1 expansion-positive	2
+RNA114	FECD, CTG18.1 expansion-positive	2
+RNA87	FECD, expansion-negative	2
+RNA183	FECD, CTG18.1 expansion-positive	3
+RNA193	FECD, CTG18.1 expansion-positive	3
+RNA141	FECD, CTG18.1 expansion-positive	3
+RNA142	FECD, expansion-negative	3
+RNA166	FECD, expansion-negative	3
+RNA167	FECD, expansion-negative	3
+RNA115	control	2
+RNA136	control	2
+RNA84	control	2
+RNA89	control	2
+GSE101872_Control_1	control	1
+GSE101872_Control_2	control	1

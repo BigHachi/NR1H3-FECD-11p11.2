@@ -1,0 +1,6 @@
+tissue	gene	n_snps	Z	beta	SE	P	FDR_within_tissue	genes_tested
+Cells_Cultured_fibroblasts	ZNF408	2	4.30	0.837	0.195	1.7e-05	0.029	13504
+Cells_Cultured_fibroblasts	NR1H3	3	-3.58	-0.861	0.241	0.00035	0.36	13504
+Skin_Not_Sun_Exposed_Suprapubic	ZNF408	2	4.30	0.921	0.214	1.7e-05	0.022	14424
+Skin_Not_Sun_Exposed_Suprapubic	NR1H3	2	-4.02	-0.954	0.237	5.8e-05	0.053	14424
+Esophagus_Mucosa	NR1H3	2	-1.95	-0.675	0.347	0.052	0.95	14050

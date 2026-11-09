@@ -1,0 +1,32 @@
+{
+  "title": "Analysis code: integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs endothelial corneal dystrophy",
+  "upload_type": "software",
+  "description": "Scripts, installation instructions, compatibility patches and checks that reproduce every table and figure of the article (TWAS with S-PrediXcan, S-MultiXcan and FUSION; colocalisation; fine-mapping; cis-Mendelian randomisation; cross-trait analyses of glaucoma, intraocular pressure and refractive error). Public inputs are downloaded by the pipeline and are not redistributed. See README.md.",
+  "creators": [
+    {
+      "name": "Ngo, Clinton",
+      "affiliation": "The University of Newcastle; Hunter Medical Research Institute"
+    },
+    {
+      "name": "Adams, Danielle M.",
+      "affiliation": "The University of Newcastle; Hunter Medical Research Institute"
+    },
+    {
+      "name": "Wu, Darren Y.",
+      "affiliation": "The University of Newcastle; Hunter Medical Research Institute"
+    },
+    {
+      "name": "Cairns, Murray J.",
+      "affiliation": "The University of Newcastle; Hunter Medical Research Institute"
+    }
+  ],
+  "keywords": [
+    "Fuchs endothelial corneal dystrophy",
+    "TWAS",
+    "colocalisation",
+    "Mendelian randomisation",
+    "NR1H3",
+    "ZNF408"
+  ],
+  "license": "MIT"
+}

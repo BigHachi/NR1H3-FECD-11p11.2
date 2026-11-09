@@ -1,0 +1,8 @@
+FILE	ID	TWAS.Z	TWAS.P	COND.BETA	COND.BETA.SE	COND.Z	COND.P
+data/weights_eur//GTExv8.EUR.Skin_Not_Sun_Exposed_Suprapubic/ENSG00000110492.15.wgt.RDat	ENSG00000110492.15	 2.4	0.01480	-0.15	0.76	-0.20	0.844
+data/weights_eur//GTExv8.EUR.Skin_Not_Sun_Exposed_Suprapubic/ENSG00000149182.14.wgt.RDat	ENSG00000149182.14	-2.3	0.02100	 0.60	0.68	 0.87	0.382
+data/weights_eur//GTExv8.EUR.Skin_Not_Sun_Exposed_Suprapubic/ENSG00000134574.11.wgt.RDat	ENSG00000134574.11	-2.9	0.00359	 0.28	0.60	 0.46	0.643
+data/weights_eur//GTExv8.EUR.Skin_Not_Sun_Exposed_Suprapubic/ENSG00000256897.1.wgt.RDat	ENSG00000256897.1	-2.8	0.00555	-0.57	0.83	-0.69	0.493
+data/weights_eur//GTExv8.EUR.Skin_Not_Sun_Exposed_Suprapubic/ENSG00000025434.18.wgt.RDat	ENSG00000025434.18	-3.5	0.00042	-1.48	0.86	-1.73	0.084
+data/weights_eur//GTExv8.EUR.Skin_Not_Sun_Exposed_Suprapubic/ENSG00000134575.9.wgt.RDat	ENSG00000134575.9	 2.9	0.00404	 0.56	0.81	 0.69	0.488
+data/weights_eur//GTExv8.EUR.Skin_Not_Sun_Exposed_Suprapubic/ENSG00000165916.8.wgt.RDat	ENSG00000165916.8	-2.4	0.01720	-2.38	1.00	-2.38	0.017

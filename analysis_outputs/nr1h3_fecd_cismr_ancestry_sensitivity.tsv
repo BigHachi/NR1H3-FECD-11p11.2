@@ -1,0 +1,9 @@
+ancestry	method	nsnp	OR	CI	P	F_set	Q_pval	egger_int_p	outcome_gwas
+multiancestry	Inverse variance weighted	4	1.08	0.93-1.26	0.317	597	0.25	0.22	FECD GWAS multi-ancestry (GCST90480062; 3,928/566,393)
+multiancestry	MR Egger	4	1.349	0.73-2.48	0.17	597	0.25	0.22	FECD GWAS multi-ancestry (GCST90480062; 3,928/566,393)
+multiancestry	Weighted median	4	1.087	0.94-1.25	0.246	597	0.25	0.22	FECD GWAS multi-ancestry (GCST90480062; 3,928/566,393)
+multiancestry	Weighted mode	4	1.127	0.61-2.09	0.73	597	0.25	0.22	FECD GWAS multi-ancestry (GCST90480062; 3,928/566,393)
+EUR	Inverse variance weighted	4	1.064	0.93-1.22	0.373	597	0.428	0.29	FECD GWAS European subset (GCST90475865; 3,473/445,239)
+EUR	MR Egger	4	1.278	0.68-2.40	0.236	597	0.428	0.29	FECD GWAS European subset (GCST90475865; 3,473/445,239)
+EUR	Weighted median	4	1.07	0.92-1.24	0.376	597	0.428	0.29	FECD GWAS European subset (GCST90475865; 3,473/445,239)
+EUR	Weighted mode	4	1.107	0.62-1.97	0.751	597	0.428	0.29	FECD GWAS European subset (GCST90475865; 3,473/445,239)
