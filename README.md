@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14**, `NR1H3_FECD_code_bundle_20261110_v14`, 10 November 2026; the
+endothelial corneal dystrophy"* (release **v14.1**, `NR1H3_FECD_code_bundle_20261110_v14.1`, 10 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v14.1 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -366,6 +366,12 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v14.1 (10 November 2026)
+
+Figure 7 only (step 70b): the glaucoma column now has a single arrow running down the centre line from between the
+FinnGen R12 and GTEx v8 boxes to "Glaucoma TWAS" (v14 joined the two boxes with a bracket). No analysis, table or
+other figure changed; v14's reproducibility check applies unchanged (step 140 does not involve Figure 7).
 
 ## Changes for release v14 (10 November 2026)
 

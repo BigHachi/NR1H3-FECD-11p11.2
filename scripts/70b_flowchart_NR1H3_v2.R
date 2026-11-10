@@ -78,21 +78,17 @@ head_r <- data.table(x = 8.275, y = R[1], lab = "Cross-trait analysis: glaucoma"
 
 # arrows: x, from y, to y (one per target box)
 L1 <- 1.625; L2 <- 4.875; RC <- 8.275
-# the two glaucoma data boxes (equal widths either side of the column's centre line) join in a bracket that feeds
-# one arrow on the centre line, so every arrow in the glaucoma column is centred on its boxes
-GX <- c((6.65 + 8.225) / 2, (8.325 + 9.90) / 2); JY <- bot[1] - 0.25
-join <- data.table(x = c(GX, GX[1]), xend = c(GX, GX[2]), y = c(bot[1], bot[1], JY), yend = c(JY, JY, JY))
+# the two glaucoma data boxes sit at equal widths either side of the column's centre line, and one arrow runs down
+# that line from between them, so every arrow in the glaucoma column is centred
 arr <- data.table(
   x    = c(3.25, L1, L2, L1, L2, L1, L2, L1, L2, RC, RC, RC, RC),
-  y    = c(bot[1], bot[2], bot[2], bot[3], bot[3], bot[4], bot[4], bot[5], bot[5], JY, bot[2], bot[3], bot[5]),
+  y    = c(bot[1], bot[2], bot[2], bot[3], bot[3], bot[4], bot[4], bot[5], bot[5], bot[1], bot[2], bot[3], bot[5]),
   yend = c(top[2], top[3], top[3], top[4], top[4], top[5], top[5], top[6], top[6], top[2], top[3], top[5], top[6]))
 arr[, yend := yend + 0.03]
 
 p <- ggplot() +
   geom_rect(data = b, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), fill = b$fill, colour = b$border,
             linewidth = 0.6) +
-  geom_segment(data = join, aes(x = x, y = y, xend = xend, yend = yend), linewidth = 0.5, colour = "grey25",
-               lineend = "square") +
   geom_segment(data = arr, aes(x = x, y = y, xend = x, yend = yend), linewidth = 0.5, colour = "grey25",
                arrow = arrow(length = unit(0.16, "cm"), type = "closed")) +
   geom_richtext(data = b, aes(cx, ty, label = label), vjust = 1, size = BODY_PT / .pt, family = FIG_FONT,
