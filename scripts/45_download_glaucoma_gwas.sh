@@ -2,6 +2,10 @@
 # ============================================================
 # Glaucoma Analysis - Step 45: Download FinnGen R12 H7_GLAUCOMA
 # and convert to standard analysis format
+# Source  : FinnGen release 12 (Kurki et al., Nature 2023), endpoint H7_GLAUCOMA:
+#           26,591 cases / 473,757 controls (FinnGen R12 manifest,
+#           https://storage.googleapis.com/finngen-public-data-r12/summary_stats/finngen_R12_manifest.tsv)
+# Download: https://storage.googleapis.com/finngen-public-data-r12/summary_stats/release/finngen_R12_H7_GLAUCOMA.gz
 # ============================================================
 source "$(dirname "${BASH_SOURCE[0]}")/config.sh"   # FECD_BASE, FUSION_DIR, METAXCAN_DIR, METAXCAN_PY, PLINK, SMR, TABIX
 set -e

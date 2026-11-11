@@ -1,7 +1,10 @@
 #!/bin/bash
 # ============================================================
 # IOP Analysis - Step 50: Convert IOP GWAS + liftover GRCh37->GRCh38
-# GCST009413 | PMID 31798171 | N=31,269 European
+# Source  : International Glaucoma Genetics Consortium IOP meta-analysis released with
+#           Bonnemaijer et al., Commun Biol 2019 (GCST009413, PMID 31798171):
+#           N = 31,269 European-ancestry individuals (GWAS Catalog; = maximum per-variant Ntot)
+# Download: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST009001-GCST010000/GCST009413/Bonnemaijer_Intraocular_pressure_pmid.txt.gz
 # Uses pyliftover (streaming Python) for minimal RAM usage
 # ============================================================
 source "$(dirname "${BASH_SOURCE[0]}")/config.sh"   # FECD_BASE, FUSION_DIR, METAXCAN_DIR, METAXCAN_PY, PLINK, SMR, TABIX

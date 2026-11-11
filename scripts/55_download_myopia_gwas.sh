@@ -1,7 +1,13 @@
 #!/bin/bash
 # ============================================================
 # Myopia Analysis - Step 55: Merge Hysi 2020 refractive-error GWAS
-# GCST010003 | PMID 32231278 | public subset (excl. 23andMe), European
+# Source  : Hysi et al., Nat Genet 2020 (GCST010003, PMID 32231278), public subset without
+#           23andMe: METAL Z-score meta-analysis of UK Biobank (measured spherical equivalent;
+#           imputed myopia status), GERA and the non-UK CREAM cohorts (study ReadMe.txt).
+#           N = 351,091 European-ancestry individuals (GWAS Catalog); the per-variant METAL
+#           Weight (up to 260,974) is used as the per-variant N.
+# Download: https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST010001-GCST011000/GCST010003/Hysi_Choquet_Khawaja_et_al_Refracive_Error_NatGenet_2020.txt.gz
+#           and harmonised/32231278-GCST010003-HP_0000539.h.tsv.gz (GRCh38 positions, rsIDs)
 # Original METAL file (GRCh37 MarkerName, Allele1/Allele2, Freq1, Weight, Zscore)
 # linked to the GWAS Catalog harmonised file (GRCh38, rsID, reference-aligned
 # alleles) by VARIANT IDENTITY: chromosome + GRCh38 position (UCSC liftOver of

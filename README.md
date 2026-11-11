@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14.2**, `NR1H3_FECD_code_bundle_20261111_v14.2`, 11 November 2026; the
+endothelial corneal dystrophy"* (release **v14.3**, `NR1H3_FECD_code_bundle_20261111_v14.3`, 11 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14.2 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v14.3 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -56,9 +56,9 @@ step 11). Run time: about 9 hours on a laptop, mostly S-PrediXcan over 49 tissue
 |---|---|---|
 | FECD GWAS, multi-ancestry | **GCST90480062**, Verma et al., *Science* 2024 (PMID 39024449); MVP PheCode 364.51; 3,928 cases / 566,393 controls | S-PrediXcan, S-MultiXcan, colocalisation |
 | FECD GWAS, European | **GCST90475865**, Verma et al. 2024; 3,473 cases / 445,239 controls (SE derived from the 95% CI) | FUSION TWAS, cis-MR (primary) |
-| FinnGen R12 | `H7_CORNEALDYSTROPHY` (ICD-10 H18.4), `H7_KERATOCONUS` (H18.5), `H7_GLAUCOMA` | FECD look-up; glaucoma cross-trait |
-| Refractive error | Hysi et al. 2020, public subset (UKB + GERA + CREAM; Z-score meta-analysis) | cross-trait |
-| IOP | IGGC meta-analysis released with Bonnemaijer et al. 2019, **GCST009413** (n = 31,269) | cross-trait |
+| FinnGen R12 | `H7_CORNEALDYSTROPHY` (ICD-10 H18.4), `H7_KERATOCONUS` (H18.5), `H7_GLAUCOMA` (26,591 cases / 473,757 controls; R12 manifest); [finngen_R12_H7_GLAUCOMA.gz](https://storage.googleapis.com/finngen-public-data-r12/summary_stats/release/finngen_R12_H7_GLAUCOMA.gz) | FECD look-up; glaucoma cross-trait |
+| Refractive error | Hysi et al. 2020, **GCST010003**, public subset without 23andMe (UKB + GERA + CREAM; Z-score meta-analysis); n = 351,091 (per-variant METAL weight up to 260,974); [GWAS Catalog files](https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST010001-GCST011000/GCST010003/) | cross-trait |
+| IOP | IGGC meta-analysis released with Bonnemaijer et al. 2019, **GCST009413** (n = 31,269 Europeans); [GWAS Catalog files](https://ftp.ebi.ac.uk/pub/databases/gwas/summary_statistics/GCST009001-GCST010000/GCST009413/) | cross-trait |
 | GTEx v8 | PredictDB MASHR models (Zenodo 3518299); FUSION EUR weights; GTEx Portal API v2 (significant eQTLs) | TWAS, FOCUS, tissue MR, eGene status |
 | eQTLGen phase I | cis-eQTLs FDR < 0.05 (N ≤ 31,684); per-SNP allele frequencies (`2018-07-18_SNP_AF_for_AlleleB_combined_allele_counts_and_MAF_pos_added.txt.gz`) | cis-MR exposure (effects standardised with the eQTLGen allele frequency, step 83a) |
 | eQTL Catalogue release 6 | GTEx v8 full cis summary statistics (all variant–gene pairs) for every S6 gene in fibroblasts, skin and oesophagus mucosa, and for NR1H3 including whole blood; SuSiE eQTL credible sets | all colocalisation (steps 102c, 79b, 108); eQTL fine-mapping (112b) |
@@ -366,6 +366,14 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v14.3 (11 November 2026)
+
+Documentation only: the download steps of the cross-trait GWAS state the sample sizes and the download links, and
+*Data sources* lists them. Step 45: FinnGen R12 `H7_GLAUCOMA`, 26,591 cases / 473,757 controls (FinnGen R12 manifest).
+Step 50: IOP, GCST009413, 31,269 Europeans. Step 55: refractive error, GCST010003 public subset without 23andMe,
+351,091 Europeans (GWAS Catalog; the per-variant METAL weight, at most 260,974, is the per-variant N used). Every
+link was checked on 11 November 2026. No code that runs, analysis, table or figure changed.
 
 ## Changes for release v14.2 (11 November 2026)
 
