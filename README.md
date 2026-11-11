@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14.3**, `NR1H3_FECD_code_bundle_20261111_v14.3`, 11 November 2026; the
+endothelial corneal dystrophy"* (release **v14.4**, `NR1H3_FECD_code_bundle_20261112_v14.4`, 12 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14.3 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v14.4 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -366,6 +366,17 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v14.4 (12 November 2026)
+
+Figure 7 only (step 70b): the glaucoma column now follows the rows of the FECD column. Row (ii) shows the glaucoma
+GWAS preprocessing (allele matching to model and LD-reference variants; steps 46, 60, 60b), row (iii) the glaucoma
+TWAS methods (S-PrediXcan + S-MultiXcan in brain cortex, fibroblasts and skin; FUSION in whole blood) and row (iv)
+the NR1H3 results (FUSION whole-blood Z and conditional status, read from the step 76d output
+`analysis/nr1h3_crosstrait_fusion_conditional.tsv`; S-MultiXcan P with and without brain cortex). An arrow from
+"Conditional analysis and fine-mapping" (locus prioritisation) into the glaucoma column shows that the cross-trait
+analyses follow up the prioritised FECD locus. The GTEx v8 box of the glaucoma column reads "MASHR models and FUSION
+weights". No analysis, table or other figure changed; v14's reproducibility check applies unchanged.
 
 ## Changes for release v14.3 (11 November 2026)
 

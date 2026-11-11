@@ -11,6 +11,11 @@
 # 11 Nov 2026 (release v14.2): the 1000 Genomes box gives the size of the panel FUSION and the MR clumping use
 #   (FUSION LDREF, 489 Europeans; 503 is the GRCh38 panel of the fine-mapping steps 112-113), and the GTEx v8 box the
 #   European donors behind the FUSION weights (403 fibroblasts, 411 oesophagus mucosa, 430 skin; was "~500").
+# 12 Nov 2026 (release v14.4): the glaucoma column follows the same rows as the FECD column: GWAS preprocessing (row ii),
+#   glaucoma TWAS methods (iii: S-PrediXcan + S-MultiXcan in brain cortex, fibroblasts, skin; FUSION in whole blood),
+#   and the NR1H3 results (iv: FUSION whole-blood Z and conditional status from step 76d, S-MultiXcan P). An arrow from
+#   "Conditional analysis and fine-mapping" (locus prioritisation) into the glaucoma column shows that the cross-trait
+#   analyses follow up the prioritised FECD locus.
 #   Output: analysis/fig7_flowchart_NR1H3_v2.{pdf,svg,png} (+ Figure7.* when FIG_DIR is set)
 # ============================================================
 suppressPackageStartupMessages({ library(ggplot2); library(data.table) })
@@ -26,7 +31,10 @@ P_GL_SMX <- gsm[ens(gene) == "ENSG00000025434", pvalue]
 fe <- fread(file.path(ANA, "nr1h3_eqtlgen_fecd_mr_EUR.tsv"))[method == "Inverse variance weighted"]
 fd <- fread(file.path(ANA, "nr1h3_eqtlgen_fecd_mr_EUR_diagnostics.tsv"))
 t3 <- fread(file.path(ANA, "table3_nr1h3_crosstrait_cismr.tsv"))[outcome == "Glaucoma" & method == "Inverse variance weighted"]
-stopifnot(length(P_NR1H3) == 1, length(P_ZNF408) == 1, length(P_GL_SMX) == 1, nrow(fe) == 1, nrow(t3) == 1)
+fx <- fread(file.path(ANA, "nr1h3_crosstrait_fusion_conditional.tsv"))[trait == "glaucoma" & method == "FUSION"]   # step 76d
+stopifnot(length(P_NR1H3) == 1, length(P_ZNF408) == 1, length(P_GL_SMX) == 1, nrow(fe) == 1, nrow(t3) == 1, nrow(fx) == 1)
+GL_FUSION <- paste0("FUSION (whole blood): *Z* = ", fmt_num(fx$TWAS_Z, 1), ",")
+GL_COND <- if (fx$conditional_status == "conditionally_independent") "conditionally independent" else "conditioned away"
 GL_OR <- sprintf("%.2f", exp(t3$b)); FE_OR <- sprintf("%.2f", exp(fe$b))
 
 BLUE <- c("#D9E2F3", "#3B5C9F"); YEL <- c("#FBF1D0", "#BF9B30"); RED <- c("#F8DDDD", "#B23A3A")
@@ -36,7 +44,7 @@ box <- function(x0, x1, y1, h, col, title, body) data.table(xmin = x0, xmax = x1
   fill = col[1], border = col[2], label = paste0("<span style='font-size:", TITLE_PT, "pt'>**", title, "**</span><br>",
                                                  paste(body, collapse = "<br>")))
 # rows (inches from the bottom of the canvas): section label at T[k], box top at T[k] - 0.3, box height h[k]
-H <- c(1.25, 1.0, 1.25, 1.25, 1.5, 1.0); CANVAS_H <- 0.25 + sum(0.3 + H + 0.55) - 0.55 + 0.1
+H <- c(1.25, 1.0, 1.25, 1.5, 1.5, 1.0); CANVAS_H <- 0.25 + sum(0.3 + H + 0.55) - 0.55 + 0.1
 R <- numeric(6); R[1] <- CANVAS_H - 0.25
 for (k in 2:6) R[k] <- R[k - 1] - 0.3 - H[k - 1] - 0.55
 top <- R - 0.3; bot <- top - H
@@ -46,20 +54,22 @@ b <- rbind(
   box(2.25, 4.25, top[1], H[1], BLUE, "GTEx v8", c("MASHR and FUSION", "weights, 3 proxy tissues", "403–430 EUR donors")),
   box(4.40, 6.40, top[1], H[1], BLUE, "1000 Genomes", c("LD reference (EUR)", "phase 3; n = 489")),
   box(6.65, 8.225, top[1], H[1], YEL,  "FinnGen R12", c("H7_GLAUCOMA", "26,591 cases")),
-  box(8.325, 9.90, top[1], H[1], YEL,  "GTEx v8", c("MASHR models:", "brain cortex,", "fibroblasts, skin")),
+  box(8.325, 9.90, top[1], H[1], YEL,  "GTEx v8", c("MASHR models", "and FUSION", "weights")),
   # (ii) preprocessing
   box(1.00, 5.50, top[2], H[2], BLUE, "GWAS preprocessing", c("custom scripts; allele matching to", "model and LD-reference variants")),
-  box(6.65, 9.90, top[2], H[2], YEL,  "Glaucoma TWAS", c("S-PrediXcan + S-MultiXcan", "brain cortex, fibroblasts, skin")),
+  box(6.65, 9.90, top[2], H[2], YEL,  "GWAS preprocessing", c("allele matching to model and", "LD-reference variants")),
   # (iii) TWAS
   box(0.10, 3.15, top[3], H[3], BLUE, "S-PrediXcan + S-MultiXcan", c("MetaXcan v0.8.1; MASHR models",
       paste0(it("NR1H3"), " *P* = ", fmt_p(P_NR1H3)), paste0(it("ZNF408"), " *P* = ", fmt_p(P_ZNF408)))),
   box(3.35, 6.40, top[3], H[3], BLUE, "FUSION TWAS", c("Gusev et al. 2016", "cultured fibroblasts", "(GTEx v8 EUR weights)")),
-  box(6.65, 9.90, top[3], H[3], YEL,  paste(it("NR1H3"), "in glaucoma"), c("S-MultiXcan (cross-tissue)",
-      paste0("*P* = ", fmt_p(P_GL_SMX), " with brain cortex;"), "not significant without")),
+  box(6.65, 9.90, top[3], H[3], YEL,  "Glaucoma TWAS", c("S-PrediXcan + S-MultiXcan:", "brain cortex, fibroblasts, skin",
+      "FUSION: whole blood (EUR)")),
   # (iv) prioritisation
   box(0.60, 5.90, top[4], H[4], BLUE, "Conditional analysis and fine-mapping",
       c(paste0("FUSION: ", it("NR1H3"), " independent in fibroblasts only"),
         paste0("(no ", it("ZNF408"), " model); SuSiE: no credible set;"), "FOCUS: effector gene unresolved")),
+  box(6.65, 9.90, top[4], H[4], YEL,  paste(it("NR1H3"), "in glaucoma"), c(GL_FUSION, GL_COND,
+      paste0("S-MultiXcan: *P* = ", fmt_p(P_GL_SMX), " with"), "cortex; not significant without")),
   # (v) colocalisation and causal inference
   box(0.10, 3.15, top[5], H[5], BLUE, "Colocalisation", c("coloc.abf, full cis-eQTLs", "(eQTL Catalogue)",
       paste0(it("NR1H3"), " PP4 \u2264 0.23"), paste0(it("ZNF408"), " PP4 \u2264 0.60"))),
@@ -84,15 +94,19 @@ L1 <- 1.625; L2 <- 4.875; RC <- 8.275
 # the two glaucoma data boxes sit at equal widths either side of the column's centre line, and one arrow runs down
 # that line from between them, so every arrow in the glaucoma column is centred
 arr <- data.table(
-  x    = c(3.25, L1, L2, L1, L2, L1, L2, L1, L2, RC, RC, RC, RC),
-  y    = c(bot[1], bot[2], bot[2], bot[3], bot[3], bot[4], bot[4], bot[5], bot[5], bot[1], bot[2], bot[3], bot[5]),
-  yend = c(top[2], top[3], top[3], top[4], top[4], top[5], top[5], top[6], top[6], top[2], top[3], top[5], top[6]))
+  x    = c(3.25, L1, L2, L1, L2, L1, L2, L1, L2, RC, RC, RC, RC, RC),          # glaucoma column: one arrow per row
+  y    = c(bot[1], bot[2], bot[2], bot[3], bot[3], bot[4], bot[4], bot[5], bot[5], bot[1], bot[2], bot[3], bot[4], bot[5]),
+  yend = c(top[2], top[3], top[3], top[4], top[4], top[5], top[5], top[6], top[6], top[2], top[3], top[4], top[5], top[6]))
 arr[, yend := yend + 0.03]
+# locus prioritisation (FECD) -> NR1H3 in glaucoma: the cross-trait analyses follow up the prioritised locus
+harr <- data.table(x = 5.90, xend = 6.65 - 0.03, y = top[4] - H[4] / 2)
 
 p <- ggplot() +
   geom_rect(data = b, aes(xmin = xmin, xmax = xmax, ymin = ymin, ymax = ymax), fill = b$fill, colour = b$border,
             linewidth = 0.6) +
   geom_segment(data = arr, aes(x = x, y = y, xend = x, yend = yend), linewidth = 0.5, colour = "grey25",
+               arrow = arrow(length = unit(0.16, "cm"), type = "closed")) +
+  geom_segment(data = harr, aes(x = x, y = y, xend = xend, yend = y), linewidth = 0.5, colour = "grey25",
                arrow = arrow(length = unit(0.16, "cm"), type = "closed")) +
   geom_richtext(data = b, aes(cx, ty, label = label), vjust = 1, size = BODY_PT / .pt, family = FIG_FONT,
                 lineheight = 1.25, fill = NA, label.colour = NA, label.padding = unit(0, "pt"), colour = "grey10") +
