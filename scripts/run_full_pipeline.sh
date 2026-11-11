@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# NR1H3 / FECD manuscript pipeline — master script (release v14.4, 12 November 2026)
+# NR1H3 / FECD manuscript pipeline — master script (release v14.5, 12 November 2026)
 #
 # Reproduces every result in:
 #   "Integrative transcriptome-wide association, colocalisation, fine-mapping and Mendelian randomisation
@@ -53,7 +53,7 @@ RUN () {
 }
 
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v14.4) started: $(date)"
+echo " NR1H3/FECD pipeline (release v14.5) started: $(date)"
 echo "============================================================"
 
 # ---- 0. INPUTS ----------------------------------------------
@@ -168,5 +168,5 @@ RUN 140_check_reported_tables.py      "Tables 1-3 and S1-S14 against this run"
 
 echo ""
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v14.4) finished: $(date)"
+echo " NR1H3/FECD pipeline (release v14.5) finished: $(date)"
 echo "============================================================"

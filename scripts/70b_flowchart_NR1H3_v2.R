@@ -16,6 +16,9 @@
 #   and the NR1H3 results (iv: FUSION whole-blood Z and conditional status from step 76d, S-MultiXcan P). An arrow from
 #   "Conditional analysis and fine-mapping" (locus prioritisation) into the glaucoma column shows that the cross-trait
 #   analyses follow up the prioritised FECD locus.
+# 12 Nov 2026 (release v14.5): row (v) of the glaucoma column has two boxes like the FECD column: colocalisation
+#   (NR1H3 eQTL x glaucoma in whole blood and fibroblasts, FECD x glaucoma GWAS; PP4 read from the step 108 output
+#   analysis/coloc_11p11_glaucoma_fullcis.tsv) and cis-MR; row (v) is 1.75 in high so the colocalisation box fits.
 #   Output: analysis/fig7_flowchart_NR1H3_v2.{pdf,svg,png} (+ Figure7.* when FIG_DIR is set)
 # ============================================================
 suppressPackageStartupMessages({ library(ggplot2); library(data.table) })
@@ -31,6 +34,9 @@ P_GL_SMX <- gsm[ens(gene) == "ENSG00000025434", pvalue]
 fe <- fread(file.path(ANA, "nr1h3_eqtlgen_fecd_mr_EUR.tsv"))[method == "Inverse variance weighted"]
 fd <- fread(file.path(ANA, "nr1h3_eqtlgen_fecd_mr_EUR_diagnostics.tsv"))
 t3 <- fread(file.path(ANA, "table3_nr1h3_crosstrait_cismr.tsv"))[outcome == "Glaucoma" & method == "Inverse variance weighted"]
+gc <- fread(file.path(ANA, "coloc_11p11_glaucoma_fullcis.tsv"))   # step 108: NR1H3 eQTL x glaucoma and FECD x glaucoma
+stopifnot(all(c("NR1H3 eQTL (fibroblast)", "NR1H3 eQTL (blood)", "FECD (EUR)") %in% gc$trait1))
+pp4 <- function(lab) sprintf("%.2f", gc[trait1 == lab, PP4])
 fx <- fread(file.path(ANA, "nr1h3_crosstrait_fusion_conditional.tsv"))[trait == "glaucoma" & method == "FUSION"]   # step 76d
 stopifnot(length(P_NR1H3) == 1, length(P_ZNF408) == 1, length(P_GL_SMX) == 1, nrow(fe) == 1, nrow(t3) == 1, nrow(fx) == 1)
 GL_FUSION <- paste0("FUSION (whole blood): *Z* = ", fmt_num(fx$TWAS_Z, 1), ",")
@@ -44,7 +50,7 @@ box <- function(x0, x1, y1, h, col, title, body) data.table(xmin = x0, xmax = x1
   fill = col[1], border = col[2], label = paste0("<span style='font-size:", TITLE_PT, "pt'>**", title, "**</span><br>",
                                                  paste(body, collapse = "<br>")))
 # rows (inches from the bottom of the canvas): section label at T[k], box top at T[k] - 0.3, box height h[k]
-H <- c(1.25, 1.0, 1.25, 1.5, 1.5, 1.0); CANVAS_H <- 0.25 + sum(0.3 + H + 0.55) - 0.55 + 0.1
+H <- c(1.25, 1.0, 1.25, 1.5, 1.75, 1.0); CANVAS_H <- 0.25 + sum(0.3 + H + 0.55) - 0.55 + 0.1
 R <- numeric(6); R[1] <- CANVAS_H - 0.25
 for (k in 2:6) R[k] <- R[k - 1] - 0.3 - H[k - 1] - 0.55
 top <- R - 0.3; bot <- top - H
@@ -75,8 +81,11 @@ b <- rbind(
       paste0(it("NR1H3"), " PP4 \u2264 0.23"), paste0(it("ZNF408"), " PP4 \u2264 0.60"))),
   box(3.35, 6.40, top[5], H[5], BLUE, "FECD cis-MR", c("eQTLGen blood", sprintf("N = 31,684; F = %.0f", fd$F_set),
       "European FECD GWAS:", paste0("OR ", FE_OR, ", *P* = ", fmt_p(fe$pval), " (null)"))),
-  box(6.65, 9.90, top[5], H[5], YEL,  "Glaucoma cis-MR", c("eQTLGen blood, 4 instruments",
-      paste0("IVW OR ", GL_OR, ", *P* = ", fmt_p(t3$pval)))),
+  box(6.65, 8.225, top[5], H[5], YEL, "Colocalisation", c(paste0(it("NR1H3"), " eQTL:"),
+      paste0("PP4 ", pp4("NR1H3 eQTL (blood)"), " blood,"), paste0(pp4("NR1H3 eQTL (fibroblast)"), " fibroblasts"),
+      "FECD GWAS:", paste0("PP4 ", pp4("FECD (EUR)")))),
+  box(8.325, 9.90, top[5], H[5], YEL, "cis-MR", c("eQTLGen blood,", "4 instruments", paste0("IVW OR ", GL_OR, ","),
+      paste0("*P* = ", fmt_p(t3$pval)))),
   # (vi) result
   box(0.10, 9.90, top[6], H[6], RED, "11p11.2: suggestive FECD locus, effector gene unresolved",
       c("FECD: sub-threshold TWAS, no colocalisation, fine-mapping unresolved, MR null, no association in FinnGen H18.5",
@@ -90,13 +99,13 @@ sect <- data.table(x = 0.1, y = R, lab = c("(i) Study design and data acquisitio
 head_r <- data.table(x = 8.275, y = R[1], lab = "Cross-trait analysis: glaucoma")
 
 # arrows: x, from y, to y (one per target box)
-L1 <- 1.625; L2 <- 4.875; RC <- 8.275
+L1 <- 1.625; L2 <- 4.875; RC <- 8.275; GC1 <- (6.65 + 8.225) / 2; GC2 <- (8.325 + 9.90) / 2
 # the two glaucoma data boxes sit at equal widths either side of the column's centre line, and one arrow runs down
 # that line from between them, so every arrow in the glaucoma column is centred
 arr <- data.table(
-  x    = c(3.25, L1, L2, L1, L2, L1, L2, L1, L2, RC, RC, RC, RC, RC),          # glaucoma column: one arrow per row
-  y    = c(bot[1], bot[2], bot[2], bot[3], bot[3], bot[4], bot[4], bot[5], bot[5], bot[1], bot[2], bot[3], bot[4], bot[5]),
-  yend = c(top[2], top[3], top[3], top[4], top[4], top[5], top[5], top[6], top[6], top[2], top[3], top[4], top[5], top[6]))
+  x    = c(3.25, L1, L2, L1, L2, L1, L2, L1, L2, RC, RC, RC, GC1, GC2, GC1, GC2),   # glaucoma: two boxes in row (v)
+  y    = c(bot[1], bot[2], bot[2], bot[3], bot[3], bot[4], bot[4], bot[5], bot[5], bot[1], bot[2], bot[3], bot[4], bot[4], bot[5], bot[5]),
+  yend = c(top[2], top[3], top[3], top[4], top[4], top[5], top[5], top[6], top[6], top[2], top[3], top[4], top[5], top[5], top[6], top[6]))
 arr[, yend := yend + 0.03]
 # locus prioritisation (FECD) -> NR1H3 in glaucoma: the cross-trait analyses follow up the prioritised locus
 harr <- data.table(x = 5.90, xend = 6.65 - 0.03, y = top[4] - H[4] / 2)
