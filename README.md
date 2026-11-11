@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14.1**, `NR1H3_FECD_code_bundle_20261110_v14.1`, 10 November 2026; the
+endothelial corneal dystrophy"* (release **v14.2**, `NR1H3_FECD_code_bundle_20261111_v14.2`, 11 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14.1 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v14.2 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -366,6 +366,15 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v14.2 (11 November 2026)
+
+Figure 7 only (step 70b): two labels in the study-design row now give the samples the analyses used. The 1000 Genomes
+box reads "n = 489" (was 503): FUSION and the cis-MR clumping use the FUSION LD reference (`data/ld_ref/LDREF`, 489
+Europeans, HapMap3 variants, GRCh37); 503 is the GRCh38 1000 Genomes panel of the fine-mapping steps (112a, 112, 113).
+The GTEx v8 box reads "403–430 EUR donors" (was "~500 donors each"), the European donors behind the FUSION weights
+(403 cultured fibroblasts, 411 oesophagus mucosa, 430 skin not sun exposed). No analysis, table or other figure
+changed; v14's reproducibility check applies unchanged (step 140 does not involve Figure 7).
 
 ## Changes for release v14.1 (10 November 2026)
 

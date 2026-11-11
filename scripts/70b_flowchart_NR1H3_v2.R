@@ -8,6 +8,9 @@
 #   lines in taller boxes, one arrow per box, gene symbols in italics and P-values as a x 10^b (fig_common.R).
 #   Every statistic is read from the pipeline outputs: S-MultiXcan (steps 19b, 75), FECD cis-MR (step 91) and
 #   glaucoma cis-MR (step 89c).
+# 11 Nov 2026 (release v14.2): the 1000 Genomes box gives the size of the panel FUSION and the MR clumping use
+#   (FUSION LDREF, 489 Europeans; 503 is the GRCh38 panel of the fine-mapping steps 112-113), and the GTEx v8 box the
+#   European donors behind the FUSION weights (403 fibroblasts, 411 oesophagus mucosa, 430 skin; was "~500").
 #   Output: analysis/fig7_flowchart_NR1H3_v2.{pdf,svg,png} (+ Figure7.* when FIG_DIR is set)
 # ============================================================
 suppressPackageStartupMessages({ library(ggplot2); library(data.table) })
@@ -40,8 +43,8 @@ top <- R - 0.3; bot <- top - H
 b <- rbind(
   # (i) data
   box(0.10, 2.10, top[1], H[1], BLUE, "MVP FECD GWAS", c("Verma et al. 2024", "3,928 cases")),
-  box(2.25, 4.25, top[1], H[1], BLUE, "GTEx v8", c("MASHR and FUSION", "weights, 3 proxy tissues", "~500 donors each")),
-  box(4.40, 6.40, top[1], H[1], BLUE, "1000 Genomes", c("LD reference (EUR)", "phase 3; n = 503")),
+  box(2.25, 4.25, top[1], H[1], BLUE, "GTEx v8", c("MASHR and FUSION", "weights, 3 proxy tissues", "403–430 EUR donors")),
+  box(4.40, 6.40, top[1], H[1], BLUE, "1000 Genomes", c("LD reference (EUR)", "phase 3; n = 489")),
   box(6.65, 8.225, top[1], H[1], YEL,  "FinnGen R12", c("H7_GLAUCOMA", "26,591 cases")),
   box(8.325, 9.90, top[1], H[1], YEL,  "GTEx v8", c("MASHR models:", "brain cortex,", "fibroblasts, skin")),
   # (ii) preprocessing
