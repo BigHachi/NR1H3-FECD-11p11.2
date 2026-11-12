@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# NR1H3 / FECD manuscript pipeline — master script (release v14.7, 12 November 2026)
+# NR1H3 / FECD manuscript pipeline — master script (release v14.8, 13 November 2026)
 #
 # Reproduces every result in:
 #   "Integrative transcriptome-wide association, colocalisation, fine-mapping and Mendelian randomisation
@@ -12,7 +12,7 @@
 #   Table 1 S-MultiXcan ranking; Table 2 per-tissue NR1H3   [19c]
 #   Fig 3 / S6  colocalisation, full cis eQTL sumstats      [101c -> 102c -> 81c]
 #   S6 S_MultiXcan_rank (European S-MultiXcan ranking)     [19d -> 19e -> 19f]
-#   Fig 4 / S7  FECD cis-MR (EUR primary)                   [91, 83 -> 87 EUR]
+#   Fig 4 / S7  FECD cis-MR (EUR primary)                   [91, 83 -> 87 EUR; TSPAN10 rows of S7: 83a, 91, 83 _tspan10]
 #   Fig 5 / S8  cross-trait FUSION whole-blood conditional  [76d -> 76e, 76g]
 #   Glaucoma FUSION input matched to the LD-reference alleles  [60 -> 60b]
 #   Genome-wide glaucoma rank of NR1H3 (whole blood)        [76f June 2025 run; 76h rerun, allele-matched + first-record]
@@ -53,7 +53,7 @@ RUN () {
 }
 
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v14.7) started: $(date)"
+echo " NR1H3/FECD pipeline (release v14.8) started: $(date)"
 echo "============================================================"
 
 # ---- 0. INPUTS ----------------------------------------------
@@ -72,6 +72,7 @@ RUN 55b_verify_myopia_gwas.py         "refractive error: independent 1000G check
 RUN 60_prep_fusion_gwas.sh            "cross-trait GWAS -> FUSION format"
 RUN 60b_glaucoma_fusion_allele_match.py "glaucoma FUSION input matched to the LD-reference alleles (10 Nov 2026)"
 RUN 83a_extract_eqtlgen_nr1h3.sh      "eQTLGen NR1H3 cis-eQTLs"
+RUN 83a_extract_eqtlgen_tspan10.sh    "eQTLGen TSPAN10 cis-eQTLs (S7, release v14.8)"
 RUN 100_fetch_eqtl_catalogue_region.sh "full cis GTEx sumstats, NR1H3 region (step 108)" ENSG00000025434 11 46248300 48248400
 RUN 109a_fetch_gwascat_fecd.py        "GWAS Catalog FECD associations (step 109)"
 
@@ -114,6 +115,8 @@ RUN 113_focus_11p11.sh                "FOCUS gene-level fine-mapping (+ default-
 # ---- 4. CAUSAL INFERENCE, FECD (Fig 4, S7) ------------------
 RUN 91_mr_nr1h3_eur.R                 "primary cis-MR, European GWAS"
 RUN 83_mr_nr1h3_eqtlgen_fecd.R        "cis-MR, multi-ancestry sensitivity"
+RUN 91_mr_tspan10_eur.R               "TSPAN10 cis-MR, European GWAS (S7)"
+RUN 83_mr_tspan10_eqtlgen_fecd.R      "TSPAN10 cis-MR, multi-ancestry sensitivity (S7)"
 RUN 94_mr_ancestry_sidebyside.R       "ancestry comparison"
 RUN 88_verify_nr1h3_fecd_mr.R         "independent verification"
 RUN 87_nr1h3_fecd_mr_forest.R         "Figure 4" EUR
@@ -170,5 +173,5 @@ RUN 140_check_reported_tables.py      "Tables 1-3 and S1-S14 against this run"
 
 echo ""
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v14.7) finished: $(date)"
+echo " NR1H3/FECD pipeline (release v14.8) finished: $(date)"
 echo "============================================================"

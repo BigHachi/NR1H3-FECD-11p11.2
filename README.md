@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14.7**, `NR1H3_FECD_code_bundle_20261112_v14.7`, 12 November 2026; the
+endothelial corneal dystrophy"* (release **v14.8**, `NR1H3_FECD_code_bundle_20261113_v14.8`, 13 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14.7 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v14.8 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -21,7 +21,7 @@ in the manuscript's Code Availability statement).
 | `fusion_patch/` | the local patch to FUSION required to reproduce the FUSION results (see below) |
 | `analysis_outputs/` | the small result tables behind the main-text numbers, and the input-audit tables (steps 55, 55b, 55c), for checking without re-running |
 | `additional_outputs/` | the outputs requested in peer review on 29 October 2026, with the tables derived for the request (step 139; see *Additional outputs requested in review*) |
-| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.20; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
+| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.21; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
 | `pipeline_reference/full_pipeline_all_scripts.txt` | all bundled scripts concatenated, for reading in one place |
 
 ## Licence
@@ -142,6 +142,7 @@ Each reported output has one of three routes:
 | (`55c_audit_gwas_inputs.py`) | input audit of every GWAS; runs at the end, in section 7b, because it reads every analysis input |
 | `60_prep_fusion_gwas.sh` | cross-trait GWAS → FUSION format |
 | `83a_extract_eqtlgen_nr1h3.sh` | eQTLGen NR1H3 cis-eQTLs |
+| `83a_extract_eqtlgen_tspan10.sh` | eQTLGen TSPAN10 cis-eQTLs (S7, release v14.8) |
 | `100_fetch_eqtl_catalogue_region.sh` | full cis GTEx summary statistics for NR1H3, incl. whole blood (steps 79b, 108) |
 | `109a_fetch_gwascat_fecd.py` | GWAS Catalog FECD associations (step 109) |
 
@@ -189,6 +190,7 @@ Each reported output has one of three routes:
 |---|---|
 | `91_mr_nr1h3_eur.R` | primary cis-MR, European GWAS (IVW OR 1.06, P 0.37; F ≈ 597); exposure effects standardised from the eQTLGen Z with each instrument's eQTLGen N and allele frequency (`data/eqtl_eqtlgen/nr1h3_eqtlgen_af.tsv`, step 83a) |
 | `83_mr_nr1h3_eqtlgen_fecd.R` | multi-ancestry sensitivity → **S7** |
+| `83a_extract_eqtlgen_tspan10.sh`, `91_mr_tspan10_eur.R`, `83_mr_tspan10_eqtlgen_fecd.R` | the same cis-MR for TSPAN10 (17q25.3, the colocalising gene outside established loci; LD reference chromosome 17): 2 instruments (F ≈ 171), IVW only; European OR 0.67 (0.47–0.95), P 0.025; multi-ancestry OR 0.81, P 0.21 → **S7** TSPAN10 rows (release v14.8) |
 | `94_mr_ancestry_sidebyside.R`, `88_verify_nr1h3_fecd_mr.R` | ancestry comparison; independent check |
 | `87_nr1h3_fecd_mr_forest.R EUR` | **Figure 4** |
 
@@ -385,6 +387,22 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v14.8 (13 November 2026)
+
+- **TSPAN10 cis-MR (new S7 rows).** Steps `83a_extract_eqtlgen_tspan10.sh`, `91_mr_tspan10_eur.R` and
+  `83_mr_tspan10_eqtlgen_fecd.R` are copies of the NR1H3 steps 83a, 91 and 83 with only the gene (ENSG00000182612) and
+  the LD-reference chromosome (17) changed; the master script runs them after the NR1H3 steps. Two independent
+  eQTLGen whole-blood instruments remain (instrument-set F ≈ 171), so only the IVW estimate is computed: European FECD
+  GWAS OR 0.67 per SD (95% CI 0.47–0.95), P 0.025; multi-ancestry OR 0.81 (0.58–1.13), P 0.21. The estimate rests
+  largely on rs7217415 (Wald ratio OR 0.63, P 0.023).
+- Supplementary Tables v2.21: S7 has one TSPAN10 IVW row per FECD GWAS (egger_intercept n/a), legend and Contents
+  entry updated; every other cell is unchanged. Step 140 joins S7 on outcome GWAS, exposure and method.
+- **Checks.** Step 140: 0 mismatches against Tables 1–3 and Supplementary Tables S1–S14 v2.21. Clean-folder check: the
+  three new steps and step 140 were run from this bundle's scripts in the folder of the v14 reproducibility check; all
+  eight TSPAN10 outputs (exposure, allele-frequency and outcome files; MR results and diagnostics) are byte-identical
+  to the project's, and step 140 gives 0 mismatches (S12 not checked without the restricted Insawang et al. file). No
+  other script or output changed.
 
 ## Changes for release v14.7 (12 November 2026)
 

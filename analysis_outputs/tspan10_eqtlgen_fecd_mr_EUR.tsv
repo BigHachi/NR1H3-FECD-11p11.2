@@ -1,0 +1,2 @@
+id.exposure	id.outcome	outcome	exposure	method	nsnp	b	se	pval	OR	OR_lo	OR_hi
+TSPAN10_eQTLGen	FECD_EUR	FECD	TSPAN10 (eQTLGen blood)	Inverse variance weighted	2	-0.399137953912761	0.178033427045347	0.0249660881855213	0.670898141945381	0.473272725050407	0.951046390467199

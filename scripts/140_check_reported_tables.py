@@ -245,21 +245,23 @@ compare("S6_Colocalisation_FECD", rep, s6, ["ENSG", "tissue", "GWAS"],
 
 # ================= S7 FECD cis-MR =================
 s7 = []
-for lab, acc, nca, nco, f in (("European subset (primary)", "GCST90475865", 3473, 445239, "EUR"),
-                              ("Multi-ancestry (sensitivity)", "GCST90480062", 3928, 566393, "multiancestry")):
-    m = pd.read_csv(f"{B}/analysis/nr1h3_eqtlgen_fecd_mr_{f}.tsv", sep="\t")
-    dg = pd.read_csv(f"{B}/analysis/nr1h3_eqtlgen_fecd_mr_{f}_diagnostics.tsv", sep="\t").iloc[0]
+for gene, (lab, acc, nca, nco, f) in [(g, x) for g in ("nr1h3", "tspan10")       # TSPAN10 rows from v2.21 (13 Nov 2026)
+                                      for x in (("European subset (primary)", "GCST90475865", 3473, 445239, "EUR"),
+                                                ("Multi-ancestry (sensitivity)", "GCST90480062", 3928, 566393, "multiancestry"))]:
+    m = pd.read_csv(f"{B}/analysis/{gene}_eqtlgen_fecd_mr_{f}.tsv", sep="\t")
+    dg = pd.read_csv(f"{B}/analysis/{gene}_eqtlgen_fecd_mr_{f}_diagnostics.tsv", sep="\t").iloc[0]
     for _, r in m.iterrows():
         lo, hi = r.OR_lo, r.OR_hi
         if r.method == "MR Egger":                # CI from t with k - 2 df, consistent with the MR-Egger P-value
             from scipy.stats import t as tdist
             c = tdist.ppf(0.975, int(r.nsnp) - 2); lo, hi = math.exp(r.b - c * r.se), math.exp(r.b + c * r.se)
-        s7.append(dict(outcome_gwas=lab, gwas_accession=acc, n_cases=nca, n_controls=nco, method=r.method, nsnp=r.nsnp,
+        s7.append(dict(outcome_gwas=lab, gwas_accession=acc, n_cases=nca, n_controls=nco, exposure=r.exposure,
+                       method=r.method, nsnp=r.nsnp,
                        b=r.b, se=r.se, pval=r.pval, OR=r.OR, OR_lo=lo, OR_hi=hi, F_set=dg.F_set,
                        clump_kb=dg.clump_kb, Q_pval=dg.Q_pval, egger_intercept=dg.egger_int,
                        egger_intercept_p=dg.egger_int_p))
 rep = sheet("S7_cisMR_FECD")
-compare("S7_cisMR_FECD", rep, pd.DataFrame(s7), ["outcome_gwas", "method"],
+compare("S7_cisMR_FECD", rep, pd.DataFrame(s7), ["outcome_gwas", "exposure", "method"],
         ["gwas_accession", "n_cases", "n_controls", "nsnp", "b", "se", "pval", "OR", "OR_lo", "OR_hi", "F_set", "clump_kb",
          "Q_pval", "egger_intercept", "egger_intercept_p"])
 
