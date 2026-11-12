@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14.6**, `NR1H3_FECD_code_bundle_20261112_v14.6`, 12 November 2026; the
+endothelial corneal dystrophy"* (release **v14.7**, `NR1H3_FECD_code_bundle_20261112_v14.7`, 12 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14.6 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v14.7 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -21,7 +21,7 @@ in the manuscript's Code Availability statement).
 | `fusion_patch/` | the local patch to FUSION required to reproduce the FUSION results (see below) |
 | `analysis_outputs/` | the small result tables behind the main-text numbers, and the input-audit tables (steps 55, 55b, 55c), for checking without re-running |
 | `additional_outputs/` | the outputs requested in peer review on 29 October 2026, with the tables derived for the request (step 139; see *Additional outputs requested in review*) |
-| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.19; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
+| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.20; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
 | `pipeline_reference/full_pipeline_all_scripts.txt` | all bundled scripts concatenated, for reading in one place |
 
 ## Licence
@@ -119,8 +119,9 @@ Each reported output has one of three routes:
    v14.6, S8 came from a chromosome-11-only run in which every chr11 model entered the joint model (joint threshold
    0.05/463); with the genome-wide threshold NR1H3 is conditionally independent for refractive error (JOINT Z 5.2,
    P 2.4 × 10⁻⁷; it was conditioned away, P 4.0 × 10⁻⁴), although the joint model also keeps the correlated
-   neighbours SLC39A13 and C1QTNF4 with inflated effects of opposite sign to their marginal ones (NR1H3 JOINT.BETA
-   16.3, SE 3.2; marginal Z 6.1), so its independence from them is not robust; for IOP, NR1H3 (TWAS P 1.3 × 10⁻⁴) is
+   neighbours SLC39A13 and C1QTNF4. All three have inflated joint effects (JOINT.BETA: NR1H3 16.3, SE 3.2, marginal
+   Z 6.1; C1QTNF4 −16.1, SE 3.0, marginal Z −6.4), and that of SLC39A13 also reverses in sign (JOINT.BETA −20.9,
+   SE 5.0; marginal Z 6.3), so the independence of NR1H3 from them is not robust; for IOP, NR1H3 (TWAS P 1.3 × 10⁻⁴) is
    below the genome-wide threshold (6.3 × 10⁻⁶) and does not enter the conditional analysis. Glaucoma is unchanged
    (conditionally independent, third genome-wide).
 
@@ -384,6 +385,17 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v14.7 (12 November 2026)
+
+- **Wording only: no analysis, output, table value or figure changed.** *Notes for reviewers*, item 4, said that the
+  refractive-error joint model keeps SLC39A13 and C1QTNF4 "with inflated effects of opposite sign to their marginal
+  ones". Only SLC39A13 reverses in sign (marginal Z 6.3, JOINT.Z −4.2); C1QTNF4 keeps its sign (marginal Z −6.4,
+  JOINT.BETA −16.1). Item 4 now says that all three genes have inflated joint effects and that SLC39A13's also
+  reverses in sign; the S9 Panel A note says the same.
+- `reference/`: Supplementary Tables workbook v2.20 (v2.19 with only that S9 note changed; every value identical).
+- **Checks.** Step 140: 0 mismatches against Tables 1–3 and Supplementary Tables S1–S14 v2.20. The scripts are those
+  of v14.6 (only the release label in `run_full_pipeline.sh` changed), so v14.6's clean-folder check applies.
 
 ## Changes for release v14.6 (12 November 2026)
 
