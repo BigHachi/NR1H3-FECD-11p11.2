@@ -1,0 +1,23 @@
+trait	item	value
+IOP	models_with_TWAS_P	7976
+IOP	bonferroni_threshold	6.268806e-06
+IOP	jointly_included_genes	4
+IOP	top5_by_JOINT.P	PTPRJ (5.6), CAV2 (-5.1), ABO (4.9), ENSG00000262539.1 (4.8)
+IOP	NR1H3_TWAS.Z_TWAS.P	-3.835649, 1.25e-04
+IOP	NR1H3_genome_wide_status	below the genome-wide threshold, so not in the conditional analysis
+IOP	June2025_jointly_included_genes	4
+IOP	June2025_NR1H3_status	not jointly included
+IOP	jointly_included_in_both_runs	3
+IOP	only_in_rerun	ENSG00000262539.1
+IOP	only_in_June2025	MAPK8IP1P1
+Refractive error	models_with_TWAS_P	7946
+Refractive error	bonferroni_threshold	6.292474e-06
+Refractive error	jointly_included_genes	131
+Refractive error	top5_by_JOINT.P	RDH5 (-19.5), ZBTB38 (12.3), RBM45 (-11.3), CD55 (11.2), MYO1D (-10.9)
+Refractive error	NR1H3_TWAS.Z_TWAS.P	6.10937, 1.00e-09
+Refractive error	NR1H3_genome_wide_status	conditionally independent (rank 78 of 131 by JOINT.P; JOINT.Z 5.2, JOINT.P 2.4e-07)
+Refractive error	June2025_jointly_included_genes	135
+Refractive error	June2025_NR1H3_status	conditionally independent (rank 79; JOINT.Z 5.2, JOINT.P 2.4e-07)
+Refractive error	jointly_included_in_both_runs	129
+Refractive error	only_in_rerun	ENSG00000237854.3, TRIM38
+Refractive error	only_in_June2025	HIST1H2BD, PBX2, PRSS16, TAPBP, U91328.22, ZNF602P

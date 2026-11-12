@@ -40,7 +40,6 @@ Glaucoma	cis-MR	eQTLGen NR1H3	rs2171667	rs2171667	ambiguous_conflicting_source_r
 Glaucoma	cis-MR	eQTLGen NR1H3	rs112598354	rs112598354	ambiguous_conflicting_source_records	conflicting	2	A/C Z=-0.7508	A/C Z=-0.7508; T/C Z=2.53
 Glaucoma	cis-MR	eQTLGen NR1H3	rs58556689	rs58556689	ambiguous_conflicting_source_records	conflicting	2	C/A Z=-0.6748	C/A Z=-0.6748; G/A Z=0.2658
 Glaucoma	cis-MR	eQTLGen NR1H3	rs187629888	rs187629888	ambiguous_conflicting_source_records	conflicting	2	A/G Z=-1.378	A/G Z=-1.378; T/G Z=-0.679
-Glaucoma	FUSION	Whole_Blood FNBP4 (susie)	rs12798703	rs12798703	matched	conflicting	2	T/G Z=-1.966	A/G Z=-0.5336; T/G Z=-1.966 | LD ref T/G
 Glaucoma	FUSION	Whole_Blood NUP160 (top1)	rs12798703	rs12798703	matched	conflicting	2	T/G Z=-1.966	A/G Z=-0.5336; T/G Z=-1.966 | LD ref T/G
 Glaucoma	FUSION	Whole_Blood PTPRJ (susie)	rs12798703	rs12798703	matched	conflicting	2	T/G Z=-1.966	A/G Z=-0.5336; T/G Z=-1.966 | LD ref T/G
 IOP	S-PrediXcan	model variant (any gene)	chr22_42138065_C_T_b38	rs4993392	position_inconsistent		1	rs4993392 chr22_KI270928v1_alt:60413 T/C Z=-0.4883	

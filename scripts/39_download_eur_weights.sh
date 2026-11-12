@@ -38,6 +38,7 @@ TISSUES=(
   "Cells_Cultured_fibroblasts"
   "Esophagus_Mucosa"
   "Skin_Not_Sun_Exposed_Suprapubic"
+  "Whole_Blood"                      # cross-trait FUSION (steps 76h, 76i); downloaded by step 76d up to release v14.5
 )
 
 SUCCESS=()

@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# NR1H3 / FECD manuscript pipeline — master script (release v14.5, 12 November 2026)
+# NR1H3 / FECD manuscript pipeline — master script (release v14.6, 12 November 2026)
 #
 # Reproduces every result in:
 #   "Integrative transcriptome-wide association, colocalisation, fine-mapping and Mendelian randomisation
@@ -53,7 +53,7 @@ RUN () {
 }
 
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v14.5) started: $(date)"
+echo " NR1H3/FECD pipeline (release v14.6) started: $(date)"
 echo "============================================================"
 
 # ---- 0. INPUTS ----------------------------------------------
@@ -128,13 +128,15 @@ RUN 58_run_myopia_smultixcan.sh    ; RUN 59_analyse_myopia.R "refractive error S
 RUN 75_glaucoma_brain_panel.sh        "glaucoma: fibroblast + brain cortex + skin"
 RUN 75b_glaucoma_smultixcan_nobrain.sh "glaucoma: without brain cortex"
 RUN 77_glaucoma_wholeblood_panel.sh   "glaucoma: whole blood"
-RUN 76d_fusion_wb_conditional.sh      "FUSION whole-blood conditional, chr11 (S8)"
+# genome-wide whole-blood FUSION + conditional/joint (scripts/fusion_genomewide.sh, the procedure step 82 uses for
+# FECD): glaucoma, both inputs (helper scripts/76h_glaucoma_wb_genomewide_rank.py), then IOP and refractive error
+# (helper scripts/76i_crosstrait_wb_genomewide_summary.py); step 76d takes their chromosome-11 results for S8
+RUN 76h_glaucoma_wb_genomewide.sh     "genome-wide whole-blood FUSION + conditional, glaucoma (NR1H3 rank)"
+RUN 76i_crosstrait_wb_genomewide.sh   "genome-wide whole-blood FUSION + conditional, IOP and refractive error"
+RUN 76d_fusion_wb_conditional.sh      "chr11 whole-blood FUSION results from the genome-wide runs (S8)"
 RUN 76g_s8_crosstrait_fusion_wb_table.R "S8 table"
 RUN 76e_fig5_glaucoma_label.R         "Figure 5"
 RUN 76f_glaucoma_wb_conditional_rank.py "genome-wide glaucoma rank (external 2025 results file)"
-# genome-wide rerun, input as reported and allele-corrected; helpers scripts/76h_glaucoma_wb_genomewide_inputs.py
-# and scripts/76h_glaucoma_wb_genomewide_rank.py
-RUN 76h_glaucoma_wb_genomewide.sh     "genome-wide whole-blood FUSION + conditional, glaucoma (NR1H3 rank)"
 
 # ---- 6. CROSS-TRAIT CAUSAL INFERENCE (Table 3, Fig 6) -------
 RUN 89c_table3_crosstrait_cismr.R     "Table 3 (+ S9 Panel C)"
@@ -168,5 +170,5 @@ RUN 140_check_reported_tables.py      "Tables 1-3 and S1-S14 against this run"
 
 echo ""
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v14.5) finished: $(date)"
+echo " NR1H3/FECD pipeline (release v14.6) finished: $(date)"
 echo "============================================================"

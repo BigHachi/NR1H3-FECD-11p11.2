@@ -5,6 +5,9 @@
 #            445,239 controls) — matches the EUR FUSION weights
 #            and 1000G EUR LD, removing the multi-ancestry mismatch.
 #   Weights: GTExv8.EUR (fibroblast, esophagus, skin)
+#   12 Nov 2026: the TWAS runs through scripts/fusion_genomewide.sh, the procedure used for every trait (steps 76h,
+#   76i); the all-chromosome results equal the earlier per-chromosome loop's (models in the MHC were not in them
+#   before either), and the genome-wide conditional/joint analysis of the Bonferroni-significant models is added.
 #   Output:  results/twas_fecd_eurGWAS/{tissue}/...
 #            analysis/fecd_eurGWAS_twas_{all,significant}.tsv
 #   beta = ln(OR); SE reconstructed from CI (SE col is #NA in source)
@@ -50,51 +53,14 @@ else
 fi
 echo "  SNPs: $(($(wc -l < $FUS)-1))"
 
-# ---- 1b. Split by chromosome (FUSION reads one chromosome at a time; keeps memory low) ----
-# The FUSION file is an ordered subsequence of the raw GWAS, so chromosomes are assigned by
-# streaming both files together.
-if [ ! -s data/gwas/fecd_eur_fusion_bychr/chr22.tsv ]; then
-python3 - "$RAW" "$FUS" data/gwas/fecd_eur_fusion_bychr <<'PYEOF'
-import gzip, os, sys
-raw, fus, outdir = sys.argv[1:4]
-os.makedirs(outdir, exist_ok=True)
-fr = gzip.open(raw, 'rt'); hr = fr.readline().rstrip('\n').split('\t'); iC, iR = hr.index('chromosome'), hr.index('rsid')
-ff = open(fus); hdr = ff.readline()
-outs = {}
-def out(c):
-    if c not in outs:
-        outs[c] = open(os.path.join(outdir, f'chr{c}.tsv'), 'w'); outs[c].write(hdr)
-    return outs[c]
-line = ff.readline()
-for r in fr:                      # the FUSION file is an ordered subsequence of the raw GWAS
-    if not line: break
-    x = r.split('\t')
-    if x[iR] == line.split('\t', 1)[0]:
-        out(x[iC]).write(line); line = ff.readline()
-assert not line, f'unmatched FUSION row: {line[:60]}'
-for f in outs.values(): f.close()
-print('chromosomes written:', len(outs))
-PYEOF
-fi
-# ---- 2. FUSION TWAS over 3 EUR tissues ----
+# ---- 2. FUSION TWAS over 3 EUR tissues, with the genome-wide procedure shared by all traits ----
+# (scripts/fusion_genomewide.sh: per-chromosome inputs restricted to the LD-reference SNPs, FUSION.assoc_test,
+#  models in the MHC kept aside, genome-wide Bonferroni threshold, conditional/joint analysis of the significant models)
 for TISSUE in Cells_Cultured_fibroblasts Esophagus_Mucosa Skin_Not_Sun_Exposed_Suprapubic; do
-  WPOS="${WDIR}GTExv8.EUR.${TISSUE}.pos"
-  ODIR="${OUTBASE}/${TISSUE}"; mkdir -p "$ODIR"
   echo ""
   echo "--- ${TISSUE} ---"
-  for CHR in $(seq 1 22); do
-    OUTF="${ODIR}/fecd_eurGWAS_${TISSUE}_chr${CHR}"
-    [ -s "${OUTF}" ] && { echo "  chr${CHR} exists, skip"; continue; }   # resume
-    CHRSUM="data/gwas/fecd_eur_fusion_bychr/chr${CHR}.tsv"               # per-chr (low mem)
-    Rscript ${FUSION_DIR}/FUSION.assoc_test.R \
-      --sumstats ${CHRSUM} --weights ${WPOS} --weights_dir ${WDIR} \
-      --ref_ld_chr ${LDREF}. --chr ${CHR} --out "${OUTF}" --GWASN ${GWASN} \
-      > "logs/fecd_eurGWAS_${TISSUE}_chr${CHR}.log" 2>&1 || echo "  chr${CHR} warn"
-  done
-  COMB="${ODIR}/fecd_eurGWAS_${TISSUE}_all_chr.dat"
-  head -1 "${ODIR}/fecd_eurGWAS_${TISSUE}_chr1" > "${COMB}"
-  for CHR in $(seq 1 22); do tail -n +2 "${ODIR}/fecd_eurGWAS_${TISSUE}_chr${CHR}" >> "${COMB}" 2>/dev/null || true; done
-  echo "  genes: $(($(wc -l < ${COMB})-1))"
+  bash "$SCRIPTS_DIR/fusion_genomewide.sh" "fecd_eurGWAS_${TISSUE}" "$FUS" "${WDIR}GTExv8.EUR.${TISSUE}.pos" "${OUTBASE}/${TISSUE}"
+  echo "  genes: $(($(wc -l < ${OUTBASE}/${TISSUE}/fecd_eurGWAS_${TISSUE}_all_chr.dat)-1))"
 done
 echo ""
 echo "=== Done: $OUTBASE ==="

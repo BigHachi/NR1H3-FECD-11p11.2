@@ -3,7 +3,9 @@
 # Step 55c: Input audit of every GWAS used by the TWAS, conditional TWAS and cis-MR analyses
 #   FECD multi-ancestry (GCST90480062): S-PrediXcan / S-MultiXcan input (95a), cis-MR sensitivity (83)
 #   FECD European (GCST90475865): FUSION (82), 11p11.2 conditional FUSION (24b), primary cis-MR (91)
-#   Glaucoma, IOP, refractive error: S-PrediXcan (46/51/56), whole-blood FUSION + chr11 conditional (60, 76d),
+#   Glaucoma, IOP, refractive error: S-PrediXcan (46/51/56), whole-blood FUSION + chr11 conditional (60, 76h/76i
+#     genome-wide runs, chr11 taken by 76d; 12 Nov 2026: the conditional regions are rebuilt from the models that
+#     entered the joint model, i.e. those below the genome-wide threshold, {trait}_wb_chr11.sig.dat),
 #     cross-trait cis-MR (89b/89c). Refractive error starts from the identity-merged file of step 55
 #     (checked against the original METAL records by step 55b).
 # Every analysis input written by the pipeline is linked back to the source GWAS records and to the
@@ -221,7 +223,7 @@ TRAITS = [
          source="data/gwas/finngen_R12_H7_GLAUCOMA.gz",
          reader=lambda c: read_finngen("data/gwas/finngen_R12_H7_GLAUCOMA.gz", c),
          fusion="data/gwas/glaucoma_gwas_fusion.tsv", fusion_subsets=["data/gwas/glaucoma_gwas_fusion_chr11.tsv"],
-         conditional=[("Whole_Blood", f"{WB}/glaucoma_wb_chr11.dat", f"{WB}/glaucoma_wb_chr11.joint")],
+         conditional=[("Whole_Blood", f"{WB}/glaucoma_wb_chr11.sig.dat", f"{WB}/glaucoma_wb_chr11.joint")],
          sprediXcan=("data/gwas/glaucoma_gwas_sprediXcan.txt.gz", "rsid",
                      [f"{MASHR5}/mashr_{t}.db" for t in ("Cells_Cultured_fibroblasts", "Esophagus_Mucosa",
                       "Skin_Not_Sun_Exposed_Suprapubic", "Brain_Cortex", "Whole_Blood")],
@@ -230,7 +232,7 @@ TRAITS = [
     dict(trait="IOP", label="Intraocular pressure (GCST009413)",
          source="data/gwas/iop_gwas_raw.txt.gz", reader=lambda c: read_iop("data/gwas/iop_gwas_raw.txt.gz", c),
          fusion="data/gwas/iop_gwas_fusion.tsv", fusion_subsets=["data/gwas/iop_gwas_fusion_chr11.tsv"],
-         conditional=[("Whole_Blood", f"{WB}/iop_wb_chr11.dat", f"{WB}/iop_wb_chr11.joint")],
+         conditional=[("Whole_Blood", f"{WB}/iop_wb_chr11.sig.dat", f"{WB}/iop_wb_chr11.joint")],
          sprediXcan=("data/gwas/iop_gwas_sprediXcan.txt.gz", "rsid",
                      [f"{MASHR5}/mashr_{t}.db" for t in ("Cells_Cultured_fibroblasts", "Esophagus_Mucosa",
                       "Skin_Not_Sun_Exposed_Suprapubic")], "results/sprediXcan/iop_{t}.csv"),
@@ -238,7 +240,7 @@ TRAITS = [
     dict(trait="Refractive_error", label="Refractive error (Hysi 2020), identity-merged file of step 55",
          source="data/gwas/myopia_gwas_full.tsv", reader=lambda c: read_myopia("data/gwas/myopia_gwas_full.tsv", c),
          fusion="data/gwas/myopia_gwas_fusion.tsv", fusion_subsets=["data/gwas/myopia_gwas_fusion_chr11.tsv"],
-         conditional=[("Whole_Blood", f"{WB}/myopia_wb_chr11.dat", f"{WB}/myopia_wb_chr11.joint")],
+         conditional=[("Whole_Blood", f"{WB}/myopia_wb_chr11.sig.dat", f"{WB}/myopia_wb_chr11.joint")],
          sprediXcan=("data/gwas/myopia_gwas_sprediXcan.txt.gz", "rsid",
                      [f"{MASHR5}/mashr_{t}.db" for t in ("Cells_Cultured_fibroblasts", "Esophagus_Mucosa",
                       "Skin_Not_Sun_Exposed_Suprapubic")], "results/sprediXcan/myopia_{t}.csv"),
@@ -885,8 +887,18 @@ def fusion_sensitivity(T, FIN, keyed):
         subprocess.run(["Rscript", f"{FUSION_DIR}/FUSION.assoc_test.R", "--sumstats", f"{od}/fusion_chr11_allele_consistent.tsv",
                         "--weights", f"{od}/wb_chr11.pos", "--weights_dir", "data/weights_eur", "--ref_ld_chr", ld,
                         "--chr", "11", "--out", f"{od}/wb_chr11.dat"], check=True, stdout=lg, stderr=lg)
+        # as in the reported runs (scripts/fusion_genomewide.sh): only models below the trait's genome-wide
+        # Bonferroni threshold enter the joint model
+        bonf = float(dict(l.rstrip("\n").split("\t") for l in open(T["conditional"][0][1].replace(".sig.dat", ".bonferroni.txt")))
+                     ["bonferroni_threshold"])
+        with open(f"{od}/wb_chr11.dat") as fi, open(f"{od}/wb_chr11.sig.dat", "w") as fo:
+            fo.write(fi.readline())
+            for line in fi:
+                p = line.rstrip("\n").split("\t")[-1]
+                if p != "NA" and float(p) < bonf:
+                    fo.write(line)
         subprocess.run(["Rscript", f"{FUSION_DIR}/FUSION.post_process.R", "--sumstats", f"{od}/fusion_chr11_allele_consistent.tsv",
-                        "--input", f"{od}/wb_chr11.dat", "--out", f"{od}/wb_chr11.joint", "--ref_ld_chr", ld, "--chr", "11",
+                        "--input", f"{od}/wb_chr11.sig.dat", "--out", f"{od}/wb_chr11.joint", "--ref_ld_chr", ld, "--chr", "11",
                         "--locus_win", "100000"], check=True, stdout=lg, stderr=lg)
     t0 = T["conditional"][0]
     a = {r["ID"]: r for r in read_dat(t0[1])}

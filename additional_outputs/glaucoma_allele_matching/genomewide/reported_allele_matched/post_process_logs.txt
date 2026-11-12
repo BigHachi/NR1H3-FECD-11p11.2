@@ -1,4 +1,4 @@
-==== post_chr1.log
+==== glaucoma_wb_post_chr1.log
 29 strictly non-overlapping loci
 consolidated to 3 non-overlapping loci with 100000 bp buffer
 locus 1 best GWAS Chisq	21.2
@@ -12,42 +12,39 @@ locus 3 best GWAS Chisq conditioned	6.65
 locus 3 best conditioned Chisq	50.1
 Warning message:
 In sqrt(1 - snp.ge.ld %*% (cur.dinv) %*% t(snp.ge.ld)) : NaNs produced
-==== post_chr2.log
+==== glaucoma_wb_post_chr2.log
 9 strictly non-overlapping loci
 consolidated to 1 non-overlapping loci with 100000 bp buffer
 WARNING: no models in CLUMP 1 had an absolute marginal association statistic higher than 1.96. Skipping
-==== post_chr3.log
+==== glaucoma_wb_post_chr3.log
 6 strictly non-overlapping loci
 consolidated to 1 non-overlapping loci with 100000 bp buffer
 locus 1 best GWAS Chisq	25.2
 locus 1 best GWAS Chisq conditioned	0
 locus 1 best conditioned Chisq	11.1
-==== post_chr4.log
+==== glaucoma_wb_post_chr4.log
 8 strictly non-overlapping loci
 consolidated to 1 non-overlapping loci with 100000 bp buffer
 locus 1 best GWAS Chisq	166
 locus 1 best GWAS Chisq conditioned	73.1
 locus 1 best conditioned Chisq	73.1
-==== post_chr6.log
-14 strictly non-overlapping loci
-consolidated to 2 non-overlapping loci with 100000 bp buffer
+==== glaucoma_wb_post_chr6.log
+5 strictly non-overlapping loci
+consolidated to 1 non-overlapping loci with 100000 bp buffer
 locus 1 best GWAS Chisq	67.4
 locus 1 best GWAS Chisq conditioned	74.1
 locus 1 best conditioned Chisq	74.1
-locus 2 best GWAS Chisq	48.2
-locus 2 best GWAS Chisq conditioned	12
-locus 2 best conditioned Chisq	35.3
-==== post_chr8.log
+==== glaucoma_wb_post_chr8.log
 5 strictly non-overlapping loci
 consolidated to 1 non-overlapping loci with 100000 bp buffer
 WARNING: no models in CLUMP 1 had an absolute marginal association statistic higher than 1.96. Skipping
-==== post_chr9.log
+==== glaucoma_wb_post_chr9.log
 25 strictly non-overlapping loci
 consolidated to 3 non-overlapping loci with 100000 bp buffer
 WARNING: no models in CLUMP 1 had an absolute marginal association statistic higher than 2.39. Skipping
 WARNING: no models in CLUMP 2 had an absolute marginal association statistic higher than 2.39. Skipping
 WARNING: no models in CLUMP 3 had an absolute marginal association statistic higher than 2.39. Skipping
-==== post_chr11.log
+==== glaucoma_wb_post_chr11.log
 10 strictly non-overlapping loci
 consolidated to 2 non-overlapping loci with 100000 bp buffer
 locus 1 best GWAS Chisq	64.2
@@ -56,13 +53,13 @@ locus 1 best conditioned Chisq	11.1
 locus 2 best GWAS Chisq	31.7
 locus 2 best GWAS Chisq conditioned	13.7
 locus 2 best conditioned Chisq	23.1
-==== post_chr14.log
+==== glaucoma_wb_post_chr14.log
 8 strictly non-overlapping loci
 consolidated to 1 non-overlapping loci with 100000 bp buffer
 locus 1 best GWAS Chisq	53.1
 locus 1 best GWAS Chisq conditioned	19.7
 locus 1 best conditioned Chisq	38.2
-==== post_chr15.log
+==== glaucoma_wb_post_chr15.log
 4 strictly non-overlapping loci
 consolidated to 2 non-overlapping loci with 100000 bp buffer
 locus 1 best GWAS Chisq	40.6
@@ -71,11 +68,11 @@ locus 1 best conditioned Chisq	11.8
 locus 2 best GWAS Chisq	410
 locus 2 best GWAS Chisq conditioned	229
 locus 2 best conditioned Chisq	253
-==== post_chr17.log
+==== glaucoma_wb_post_chr17.log
 2 strictly non-overlapping loci
 consolidated to 1 non-overlapping loci with 100000 bp buffer
 WARNING: no models in CLUMP 1 had an absolute marginal association statistic higher than 1.96. Skipping
-==== post_chr22.log
+==== glaucoma_wb_post_chr22.log
 15 strictly non-overlapping loci
 consolidated to 3 non-overlapping loci with 100000 bp buffer
 locus 1 best GWAS Chisq	36.5

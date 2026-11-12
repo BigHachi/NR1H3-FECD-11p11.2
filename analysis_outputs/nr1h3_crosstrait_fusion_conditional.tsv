@@ -1,6 +1,6 @@
 trait	tissue	method	TWAS_Z	TWAS_P	JOINT_Z	JOINT_P	conditional_status
-glaucoma	whole_blood	FUSION	-7.7	1.2e-14	-7.7	1.2e-14	conditionally_independent
-iop	whole_blood	FUSION	-3.8356	1.3e-04	-1.1330	0.25720	conditioned_away
-myopia	whole_blood	FUSION	6.1094	1.0e-09	3.5409	4.0e-04	conditioned_away
+glaucoma	whole_blood	FUSION	-7.72052	1.159e-14	-7.7	1.2e-14	conditionally_independent
+iop	whole_blood	FUSION	-3.835649	0.0001252	NA	NA	not_in_joint_model
+myopia	whole_blood	FUSION	6.10937	1e-09	5.2	2.4e-07	conditionally_independent
 FECD_fibroblast	cultured_fibroblasts	FUSION_EUR	-3.74	1.85e-4	NA	NA	conditionally_independent
 FECD_skin	skin_not_sun_exposed	FUSION_EUR	-3.53	4.21e-4	NA	NA	NA

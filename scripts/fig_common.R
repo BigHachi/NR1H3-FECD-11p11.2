@@ -101,15 +101,22 @@ svg_to_pdf <- function(svg, pdf, width, height) {
                sprintf("@page{size:%sin %sin;margin:0}html,body{margin:0;padding:0}svg{display:block;width:%sin;height:%sin}",
                        width, height, width, height), "</style></head><body>", x, "</body></html>"), html, useBytes = TRUE)
   out <- normalizePath(pdf, mustWork = FALSE)
-  prof <- tempfile("chrome_profile_")     # own profile per call: concurrent or interactive Chrome sessions can block
   unlink(out)
-  system2(chrome, c("--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--no-first-run",
-                    "--no-default-browser-check", paste0("--user-data-dir=", shQuote(prof)),
-                    "--virtual-time-budget=30000",   # large SVGs (Figure 1: ~9,500 points) are printed before they finish drawing without it
-                    paste0("--print-to-pdf=", shQuote(out)), shQuote(paste0("file://", html))),
-          stdout = FALSE, stderr = FALSE, timeout = 180)
-  unlink(c(html, prof), recursive = TRUE)
-  if (!file.exists(out)) message("Chrome did not write ", pdf)
+  # 12 Nov 2026: up to three attempts. Under heavy CPU load headless Chrome occasionally stalls until the timeout
+  # without writing the file; a fresh profile and a second attempt then succeed (the output is the same).
+  for (attempt in 1:3) {
+    prof <- tempfile("chrome_profile_")   # own profile per call: concurrent or interactive Chrome sessions can block
+    system2(chrome, c("--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--no-first-run",
+                      "--no-default-browser-check", paste0("--user-data-dir=", shQuote(prof)),
+                      "--virtual-time-budget=30000",   # large SVGs (Figure 1: ~9,500 points) are printed before they finish drawing without it
+                      paste0("--print-to-pdf=", shQuote(out)), shQuote(paste0("file://", html))),
+            stdout = FALSE, stderr = FALSE, timeout = 180)
+    unlink(prof, recursive = TRUE)
+    if (file.exists(out) && file.size(out) > 0) break
+    unlink(out)
+    message("Chrome did not write ", pdf, if (attempt < 3) "; retrying" else "")
+  }
+  unlink(html)
   invisible(file.exists(out))
 }
 

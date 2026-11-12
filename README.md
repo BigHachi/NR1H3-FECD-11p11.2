@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14.5**, `NR1H3_FECD_code_bundle_20261112_v14.5`, 12 November 2026; the
+endothelial corneal dystrophy"* (release **v14.6**, `NR1H3_FECD_code_bundle_20261112_v14.6`, 12 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14.5 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v14.6 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -12,6 +12,7 @@ in the manuscript's Code Availability statement).
 | `scripts/` | every script that produces a reported result (R, shell, Python), in run order below |
 | `scripts/run_full_pipeline.sh` | master script; runs the whole pipeline in order |
 | `scripts/config.sh`, `scripts/config.local.sh.example` | all paths and tool locations in one place |
+| `scripts/fusion_genomewide.sh` | the genome-wide FUSION TWAS + conditional/joint procedure used for every trait (FECD step 82; glaucoma 76h; IOP and refractive error 76i) |
 | `scripts/fig_common.R` | shared figure style and export (italic gene symbols; vector PDF, SVG and 600-dpi TIFF) used by every plotting step |
 | `scripts/00_download_inputs.sh` | downloads the public inputs and the pinned tools; checksums are verified where recorded and supplied to the download workflow |
 | `scripts/00_install_R_packages.R`, `scripts/environment_metaxcan.yml` | R packages and the MetaXcan Python environment, at the versions used |
@@ -20,7 +21,7 @@ in the manuscript's Code Availability statement).
 | `fusion_patch/` | the local patch to FUSION required to reproduce the FUSION results (see below) |
 | `analysis_outputs/` | the small result tables behind the main-text numbers, and the input-audit tables (steps 55, 55b, 55c), for checking without re-running |
 | `additional_outputs/` | the outputs requested in peer review on 29 October 2026, with the tables derived for the request (step 139; see *Additional outputs requested in review*) |
-| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.18; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
+| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.19; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
 | `pipeline_reference/full_pipeline_all_scripts.txt` | all bundled scripts concatenated, for reading in one place |
 
 ## Licence
@@ -110,6 +111,18 @@ Each reported output has one of three routes:
    conditional analysis (`Eye Conditional results 12_6_25 FinnGEN GTEV8 whole blood.xlsx`, read by step 76f). Step
    76h (since release v11) reruns that analysis on all 22 chromosomes, with the allele-matched input reported from
    release v14 and the first-record input reported up to v13; both place NR1H3 third (see *Changes for release v14*).
+4. **One genome-wide FUSION procedure for every trait (release v14.6).** FECD (step 82), glaucoma (76h), IOP and
+   refractive error (76i) all run `scripts/fusion_genomewide.sh`: per-chromosome inputs restricted to the 1000G EUR
+   LD-reference SNPs, FUSION.assoc_test, models in the MHC kept aside (FUSION writes them to a separate file), a
+   genome-wide Bonferroni threshold (0.05 / models with a TWAS P), and FUSION.post_process (100-kb window) on the
+   models below it. The chromosome-11 results in S8 and Figure 5 are those of the genome-wide runs (step 76d). Before
+   v14.6, S8 came from a chromosome-11-only run in which every chr11 model entered the joint model (joint threshold
+   0.05/463); with the genome-wide threshold NR1H3 is conditionally independent for refractive error (JOINT Z 5.2,
+   P 2.4 × 10⁻⁷; it was conditioned away, P 4.0 × 10⁻⁴), although the joint model also keeps the correlated
+   neighbours SLC39A13 and C1QTNF4 with inflated effects of opposite sign to their marginal ones (NR1H3 JOINT.BETA
+   16.3, SE 3.2; marginal Z 6.1), so its independence from them is not robust; for IOP, NR1H3 (TWAS P 1.3 × 10⁻⁴) is
+   below the genome-wide threshold (6.3 × 10⁻⁶) and does not enter the conditional analysis. Glaucoma is unchanged
+   (conditionally independent, third genome-wide).
 
 ## Run order and manuscript mapping (release v14)
 
@@ -140,7 +153,7 @@ Each reported output has one of three routes:
 | `19e_fecd_eur_smultixcan.sh` | European 3-tissue S-PrediXcan + S-MultiXcan (`results/multixcan/fecd_eur_smultixcan_remapped.txt`; 17,303 genes with a P; 93% of model SNPs used per tissue) |
 | `19f_fecd_eur_smultixcan_rank.py` | European ranking (`analysis/fecd_eur_smultixcan_ranking.tsv`); checks that every gene ranked down to NR1H3 (23rd) is in the S6 gene list and writes each S6 gene's European rank into `data/tophits21/genes_coloc.tsv` (→ 102c → 81c → **S6** `S_MultiXcan_rank`; `analysis/fecd_eur_smultixcan_S6_genes.tsv`). Table 1 and S2 use the multi-ancestry run (19b) |
 | `95b_alltissue_smultixcan_fecd.sh` | 49-tissue S-MultiXcan → **S11** |
-| `82_fecd_eur_matched_twas.sh` | FUSION, European GWAS, 3 tissues → **S3**, Figure 1, FECD values in Figure 5 |
+| `82_fecd_eur_matched_twas.sh` | FUSION, European GWAS, 3 tissues, with `fusion_genomewide.sh` → **S3**, Figure 1, FECD values in Figure 5 (plus a genome-wide conditional/joint analysis of the Bonferroni-significant models, not reported) |
 | `19c_tables1_2_twas_summary.py` | **Table 1** (S-MultiXcan ranking, `analysis/table2_smultixcan_ranking.tsv`), **Table 2** (NR1H3 per tissue, `analysis/table1_nr1h3_znf408_sprediXcan.tsv`), per-tissue FDR. The file names predate the swap of Tables 1 and 2 in manuscript v3.9. |
 | `69b_fig1_fig2_v2.R` | **Figures 1–2** |
 | `24b_fusion_11p11_conditional.sh` | conditional analysis within 11p11.2, European GWAS (NR1H3 independent in fibroblasts, not skin); runs minp 1 (→ **S5**) and minp 0.05 |
@@ -183,15 +196,16 @@ Each reported output has one of three routes:
 |---|---|
 | `46_…` → `47_…` → `48_…` → `49_analyse_glaucoma.R` | glaucoma S-PrediXcan / S-MultiXcan |
 | `75_glaucoma_brain_panel.sh` | fibroblast + brain cortex + skin panel (S-MultiXcan P 3.0 × 10⁻⁸) |
-| `75b_glaucoma_smultixcan_nobrain.sh` | without brain cortex (P 8.5 × 10⁻⁶, not Bonferroni) |
+| `75b_glaucoma_smultixcan_nobrain.sh` | without brain cortex (P 8.4 × 10⁻⁶, not Bonferroni) |
 | `77_glaucoma_wholeblood_panel.sh` | whole-blood S-PrediXcan (Z −7.63) |
 | `51_…`–`54_analyse_iop.R`, `56_…`–`59_analyse_myopia.R` | IOP and refractive-error S-PrediXcan / S-MultiXcan (S9 Panel D) |
 | `60b_glaucoma_fusion_allele_match.py` | glaucoma FUSION input matched to the LD-reference alleles at multi-allelic FinnGen sites → `data/gwas/glaucoma_gwas_fusion.tsv`, `analysis/glaucoma_fusion_allele_matching.tsv` (1,056 records replaced, 8 dropped) |
-| `76d_fusion_wb_conditional.sh` | FUSION whole-blood TWAS + conditional/joint, chr11 → **S8**, S9 Panel A (glaucoma also rerun with the first-record input of releases up to v13, for comparison) |
+| `76h_glaucoma_wb_genomewide.sh` (+ `76h_glaucoma_wb_genomewide_rank.py`) | genome-wide whole-blood FUSION TWAS + conditional/joint with `fusion_genomewide.sh`, glaucoma, with the allele-matched input (`allele_corrected/`, reported) and the first-record input of releases up to v13 (`as_reported/`) → `analysis/glaucoma_wb_genomewide_joint_ranking.tsv`, `analysis/glaucoma_wb_genomewide_rerun_summary.tsv`; NR1H3 third in both (7,966 models with a P outside the MHC; Bonferroni 6.3 × 10⁻⁶; 20 jointly included genes) |
+| `76i_crosstrait_wb_genomewide.sh` (+ `76i_crosstrait_wb_genomewide_summary.py`) | the same for IOP and refractive error → `analysis/crosstrait_wb_genomewide_summary.tsv` (NR1H3 status, comparison with the June 2025 run when its workbook is present), `analysis/crosstrait_wb_genomewide_joint_ranking.tsv` |
+| `76d_fusion_wb_conditional.sh` | chromosome-11 whole-blood FUSION results of the genome-wide runs (steps 76h, 76i; conditional status with the genome-wide threshold) → **S8**, S9 Panel A, `analysis/nr1h3_crosstrait_fusion_conditional.tsv`; glaucoma also with the first-record input of releases up to v13, for comparison |
 | `76e_fig5_glaucoma_label.R` | **Figure 5** |
 | `76g_s8_crosstrait_fusion_wb_table.R` | **S8** table from the step-76d outputs |
 | `76f_glaucoma_wb_conditional_rank.py` | genome-wide rank of NR1H3 for glaucoma (third, after LOXL1-AS1 and AFAP1), from the June 2025 workstation run |
-| `76h_glaucoma_wb_genomewide.sh` (+ `76h_glaucoma_wb_genomewide_inputs.py`, `76h_glaucoma_wb_genomewide_rank.py`) | genome-wide whole-blood FUSION TWAS + conditional/joint (Bonferroni-significant models, MHC included) with the allele-matched input (`allele_corrected/`, reported) and the first-record input of releases up to v13 (`as_reported/`) → `analysis/glaucoma_wb_genomewide_joint_ranking.tsv`, `analysis/glaucoma_wb_genomewide_rerun_summary.tsv`; NR1H3 third in both |
 
 ### 6 · Cross-trait causal inference → Table 3, Figure 6, S9 Panels C–D
 | Script | Output |
@@ -218,8 +232,8 @@ regions (rebuilt as `FUSION.post_process.R` builds them) and the cis-MR instrume
 `analysis/input_audit/`: `input_audit_summary.tsv` (counts), `input_audit_records.tsv` (each ambiguous-conflicting,
 allele- or position-inconsistent or unverified record that a reported analysis uses), `twas_model_coverage.tsv`,
 `fusion_conditional_regions.tsv`, `cis_instrument_coverage.tsv`, `mr_instruments_verified.tsv` and, when a conditional
-region holds an allele-inconsistent weight SNP, `fusion_allele_sensitivity.tsv` (step 76d rerun with allele-consistent
-records; FUSION files in `results/input_audit_sensitivity/`). Since release v14 no conditional region does, so that
+region holds an allele-inconsistent weight SNP, `fusion_allele_sensitivity.tsv` (chr11 FUSION rerun with allele-consistent
+records, joint model of the models below the genome-wide threshold; FUSION files in `results/input_audit_sensitivity/`). Since release v14 no conditional region does, so that
 file is not written. The cis-MR MAF filter is applied to the eQTLGen allele frequency, as in the cis-MR steps.
 Results: *Notes for reviewers*.
 
@@ -281,8 +295,8 @@ re-estimates nothing. See *Additional outputs requested in review*.
     is a different allele from the reference SNP although FinnGen also has the matching record; as a result 575 SNPs
     reach FUSION with alleles that do not match the reference (FUSION uses such Z-scores without alignment) and 496 are
     dropped as strand-ambiguous (other GWAS: 0–13 and 0–4). One such SNP
-    lies in the whole-blood conditional region (rs12798703, a weight SNP of PTPRJ and FNBP4, not NR1H3). Rerunning
-    step 76d with the allele-consistent FinnGen record for all 53 affected chr11 SNPs (`fusion_allele_sensitivity.tsv`)
+    lay in the whole-blood conditional region of releases up to v14.5 (rs12798703, a weight SNP of PTPRJ and FNBP4, not
+    NR1H3; since v14.6 neither gene enters the glaucoma joint model). Rerunning the chromosome-11 analysis of those releases with the allele-consistent FinnGen record for all 53 affected chr11 SNPs (`fusion_allele_sensitivity.tsv`)
     leaves NR1H3 unchanged (TWAS Z −7.72; joint Z −7.7, P 1.2 × 10⁻¹⁴) and the jointly included genes unchanged
     (BANF1, ME3, NR1H3); the largest change on chr11 is |ΔZ| 0.34 (RNASEH2C, 65.7 Mb). The glaucoma S-PrediXcan input
     is unaffected (S-PrediXcan drops records whose alleles differ from the model's).
@@ -308,16 +322,20 @@ step 45, and the input of releases up to v13) does not match the 1000G EUR refer
 alleles match is used (1,056 records); 8 records with no matching record are dropped so that FUSION imputes them
 instead of using them unaligned. This folder compares the reported (allele-matched) results with the first-record
 results of releases up to v13. `allele_matching_records.tsv` lists every record replaced or dropped.
-- `chr11/`: FUSION whole-blood TWAS (GTEx v8 EUR weights) and FUSION.post_process conditional/joint analysis (1000G
-  EUR LD, 100-kb window), all 463 chr11 models, `reported_allele_matched/` (the run behind S8, step 76d; identical to
-  the v13 `allele_corrected/` outputs) and `first_record_v13/` (identical to the S8 values of releases up to v13);
-  `chr11_first_record_vs_reported.tsv` puts all 463 models side by side. 41 models differ (largest |ΔZ| 0.34,
-  RNASEH2C: Z 1.17 → 1.50); NR1H3 is unchanged (TWAS Z −7.72; JOINT Z −7.7, P 1.2 × 10⁻¹⁴), the same three genes are
-  jointly included (BANF1, ME3, NR1H3) and no gene changes joint/conditional status.
-- `genomewide/`: step 76h on all 22 chromosomes with both inputs: all marginal results (8,125 models including the
-  MHC, 8,111 with a P-value), the jointly included and dropped genes of every chromosome, the Bonferroni threshold
-  (0.05/8,111) and the post_process logs. 1,058 models differ (largest |ΔZ| 0.52, GTF2H5); NR1H3 is third with both
-  inputs (JOINT Z −7.7, P 1.2 × 10⁻¹⁴), behind LOXL1-AS1 and AFAP1, and the 24 jointly included genes are the same.
+- `chr11/`: the chromosome-11 rows of the genome-wide whole-blood runs (step 76h; GTEx v8 EUR weights; conditional/joint
+  analysis of the models below the genome-wide threshold, 1000G EUR LD, 100-kb window), all 463 chr11 models,
+  `reported_allele_matched/` (behind S8, step 76d) and `first_record_v13/`; `chr11_first_record_vs_reported.tsv` puts
+  all 463 models side by side. 41 models differ (largest |ΔZ| 0.34, RNASEH2C: Z 1.17 → 1.50); NR1H3 is unchanged
+  (TWAS Z −7.72; JOINT Z −7.7, P 1.2 × 10⁻¹⁴), the same two genes are jointly included (BANF1, NR1H3) and no gene
+  changes joint/conditional status. (Up to release v14.5 this folder held a chromosome-11-only run in which every chr11
+  model entered the joint model; BANF1, ME3 and NR1H3 were jointly included.)
+- `genomewide/`: step 76h on all 22 chromosomes with both inputs: all marginal results outside the MHC (7,980 models,
+  7,966 with a P-value; the 145 MHC models are in `glaucoma_wb_MHC.dat` upstream and not analysed further), the jointly
+  included and dropped genes of every chromosome, the Bonferroni threshold (0.05/7,966 = 6.3 × 10⁻⁶) and the
+  post_process logs. 1,058 models differ (largest |ΔZ| 0.52, GTF2H5); NR1H3 is third with both inputs (JOINT Z −7.7,
+  P 1.2 × 10⁻¹⁴), behind LOXL1-AS1 and AFAP1, and the 20 jointly included genes are the same. Up to release v14.5 the
+  MHC models were analysed too and four MHC genes (DDX39B, RPL32P1, HLA-DQB1, AGPAT1, all ranked below NR1H3) were
+  jointly included (24 genes).
   Summaries in `analysis_outputs/`: `glaucoma_wb_genomewide_joint_ranking.tsv`, `glaucoma_wb_genomewide_rerun_summary.tsv`.
 
 **cis-MR instruments** (`analysis_outputs/nr1h3_cismr_instruments_exposureN.tsv`, step 89c). For each outcome
@@ -366,6 +384,43 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v14.6 (12 November 2026)
+
+- **One genome-wide FUSION procedure for every trait.** New `scripts/fusion_genomewide.sh` (per-chromosome inputs
+  restricted to the 1000G EUR LD-reference SNPs; FUSION.assoc_test; models in the MHC kept aside; genome-wide
+  Bonferroni threshold; FUSION.post_process, 100-kb window, on the models below it) is now run by step 82 (FECD,
+  3 tissues), step 76h (glaucoma, both inputs; `76h_glaucoma_wb_genomewide_inputs.py` is no longer needed) and new step
+  76i (IOP and refractive error, genome-wide, as the June 2025 workstation run had them). The GTEx v8 EUR whole-blood
+  weights are now downloaded by step 39. The master script runs 76h and 76i before 76d.
+- **FECD unchanged.** The FUSION results of the three tissues (S3, Figure 1) and the 11p11.2 conditional analysis (S5)
+  are byte-identical to release v14.5 (models in the MHC were never in them). Step 82 also writes a genome-wide
+  conditional/joint analysis of its Bonferroni-significant models (not reported).
+- **Glaucoma.** Marginal results identical. The MHC models are no longer in the conditional analysis: 20 jointly included
+  genes instead of 24 (DDX39B, RPL32P1, HLA-DQB1 and AGPAT1 drop out, all ranked below NR1H3); NR1H3 is still third,
+  behind LOXL1-AS1 and AFAP1 (JOINT Z −7.7, P 1.2 × 10⁻¹⁴).
+- **S8 and the cross-trait conditional status.** Step 76d takes the chromosome-11 results from the genome-wide runs, so
+  the conditional status uses each trait's genome-wide threshold (6.3 × 10⁻⁶) instead of every chr11 model entering
+  the joint model (0.05/463). Refractive error: NR1H3 conditionally independent (JOINT Z 5.2, P 2.4 × 10⁻⁷; rank 78 of
+  131 genome-wide), alongside the correlated neighbours SLC39A13 and C1QTNF4 (see *Notes for reviewers*, item 4); it
+  was conditioned away (P 4.0 × 10⁻⁴). IOP: NR1H3 below the genome-wide threshold, not in the conditional analysis (it
+  was conditioned away, P 0.26). Glaucoma: unchanged. Supplementary Tables v2.19 (S8: conditional status of every chr11
+  row; S9: Panel A, its note, Panel D and the legend); every other table is unchanged.
+- **Figure 5.** The glaucoma label reads Z = −7.72 (was −7.70): step 76d now reads NR1H3's marginal Z at full precision
+  from the results file (P = 2Φ(−|Z|), FUSION's formula) instead of the rounded joint-model file. Figures 1–4, 6 and 7
+  are unchanged.
+- **Input audit (55c) and additional outputs (139)** follow the new runs: the whole-blood conditional regions are rebuilt
+  from the models that entered the joint model.
+- `fig_common.R`: headless Chrome PDF printing is retried up to three times (it occasionally stalled under heavy CPU
+  load). Run-order table: the no-brain-cortex S-MultiXcan P is 8.4 × 10⁻⁶ (the output; was given as 8.5 × 10⁻⁶).
+- **Checks.** Step 140: 0 mismatches against Tables 1–3 and Supplementary Tables S1–S14 v2.19. All seven figures
+  regenerate; only Figure 5 differs from v14.5 (the label above). Clean-folder check: the steps this release changes
+  (39, 82, 24b, 76h, 76i, 76d, 76g, 76e, 76f, 70b, 55c, 139, 139b, 140) were rerun from this bundle's scripts in the
+  folder of the v14 reproducibility check (public inputs only): step 140 gives 0 mismatches (S12 not checked without
+  the restricted Insawang et al. file), and 976 of 990 outputs are byte-identical to the project's. The others differ
+  only in the run-folder path (4 FUSION .report files), the PDF creation date (7 figures; identical when rendered) or
+  the non-public inputs (the June 2025 comparison in `crosstrait_wb_genomewide_*.tsv`; the 4 July 2026 S-MultiXcan run
+  kept in `additional_outputs/fecd_european_smultixcan/`), plus one log left from an earlier project run.
 
 ## Changes for release v14.5 (12 November 2026)
 

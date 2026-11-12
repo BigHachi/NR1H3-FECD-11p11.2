@@ -1,7 +1,7 @@
 run	models_with_TWAS_P	bonferroni_threshold	jointly_included_genes	NR1H3_rank	top5_by_JOINT.P (JOINT.Z)
 June2025			24	3	LOXL1-AS1 (-13.7), AFAP1 (-9.7), NR1H3 (-7.7), AL512329.2 (7.2), TCF12 (-6.2)
-as_reported	8111	6.164468e-06	24	3	LOXL1-AS1 (-13.7), AFAP1 (-9.7), NR1H3 (-7.7), AL512329.2 (7.2), TCF12 (-6.2)
-allele_corrected	8111	6.164468e-06	24	3	LOXL1-AS1 (-13.7), AFAP1 (-9.7), NR1H3 (-7.7), AL512329.2 (7.2), TCF12 (-6.2)
+as_reported	7966	6.276676e-06	20	3	LOXL1-AS1 (-13.7), AFAP1 (-9.7), NR1H3 (-7.7), AL512329.2 (7.2), TCF12 (-6.2)
+allele_corrected	7966	6.276676e-06	20	3	LOXL1-AS1 (-13.7), AFAP1 (-9.7), NR1H3 (-7.7), AL512329.2 (7.2), TCF12 (-6.2)
 
 models_with_changed_TWAS.Z_after_correction	1058
 largest_abs_change_TWAS.Z	0.5171	GTF2H5

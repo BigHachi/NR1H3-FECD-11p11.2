@@ -1,2 +1,3 @@
-models_with_TWAS_P	8111
-bonferroni_threshold	6.164468e-06
+models_with_TWAS_P	7966
+bonferroni_threshold	6.276676e-06
+bonferroni_significant_models	28

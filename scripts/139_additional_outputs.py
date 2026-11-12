@@ -116,7 +116,7 @@ for s, lab in (("as_reported", "first_record_v13"), ("allele_corrected", "report
     cat(chrs(".joint.joint_included.dat"), f"{o}/glaucoma_wb_all_chr.joint_included.dat")
     cat(chrs(".joint.joint_dropped.dat"), f"{o}/glaucoma_wb_all_chr.joint_dropped.dat")
     with open(f"{o}/post_process_logs.txt", "w") as fo:
-        for f in sorted(glob.glob(f"{d}/post_chr*.log"), key=lambda x: int(x.rsplit("chr", 1)[1][:-4])):
+        for f in sorted(glob.glob(f"{d}/glaucoma_wb_post_chr*.log"), key=lambda x: int(x.rsplit("chr", 1)[1][:-4])):
             fo.write(f"==== {os.path.basename(f)}\n" + open(f).read())
     print(f"{os.path.relpath(o, OUT)}/: {len(os.listdir(o))} files")
 
