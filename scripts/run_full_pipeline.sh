@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# NR1H3 / FECD manuscript pipeline — master script (release v14.9, 13 November 2026)
+# NR1H3 / FECD manuscript pipeline — master script (release v15.0, 13 November 2026)
 #
 # Reproduces every result in:
 #   "Integrative transcriptome-wide association, colocalisation, fine-mapping and Mendelian randomisation
@@ -53,7 +53,7 @@ RUN () {
 }
 
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v14.9) started: $(date)"
+echo " NR1H3/FECD pipeline (release v15.0) started: $(date)"
 echo "============================================================"
 
 # ---- 0. INPUTS ----------------------------------------------
@@ -146,6 +146,7 @@ RUN 89c_table3_crosstrait_cismr.R     "Table 3 (+ S9 Panel C)"
 RUN 89b_nr1h3_cismr_standardised_perSNP_N.R "Figure 6"
 RUN 79b_coloc_nr1h3_glaucoma_fullcis.R "NR1H3 eQTL x glaucoma coloc, full cis (S9 Panel D)"
 RUN 108_coloc_nr1h3_glaucoma_fullcis.R "FECD x glaucoma GWAS coloc at 11p11.2"
+RUN 108b_coloc_fecd_refractive_17q25.R "FECD x refractive-error GWAS coloc at 17q25.3 (TSPAN10; release v15.0)"
 
 # ---- 7. FIGURE 7 --------------------------------------------
 RUN 70b_flowchart_NR1H3_v2.R          "Figure 7"
@@ -173,5 +174,5 @@ RUN 140_check_reported_tables.py      "Tables 1-3 and S1-S14 against this run"
 
 echo ""
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v14.9) finished: $(date)"
+echo " NR1H3/FECD pipeline (release v15.0) finished: $(date)"
 echo "============================================================"

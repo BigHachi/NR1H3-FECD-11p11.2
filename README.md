@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14.9**, `NR1H3_FECD_code_bundle_20261113_v14.9`, 13 November 2026; the
+endothelial corneal dystrophy"* (release **v15.0**, `NR1H3_FECD_code_bundle_20261113_v15.0`, 13 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14.9 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v15.0 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -216,6 +216,7 @@ Each reported output has one of three routes:
 | `89c_table3_crosstrait_cismr.R` | **Table 3** (all estimators; bootstrap seed fixed) and S9 Panel C; exposure standardised with eQTLGen N and allele frequency |
 | `89b_nr1h3_cismr_standardised_perSNP_N.R` | **Figure 6**, drawn from the step 89c output: glaucoma odds ratio, IOP mmHg, refractive error SD units (`analysis/nr1h3_cismr_fig6_values.tsv`) |
 | `79b_coloc_nr1h3_glaucoma_fullcis.R` | NR1H3 eQTL × glaucoma colocalisation on full cis summary statistics (fibroblast PP4 0.41; whole blood 0.74, 0.59 at p12 = 5 × 10⁻⁶; skin 0.04; oesophagus 0.02) → S9 Panel D |
+| `108b_coloc_fecd_refractive_17q25.R` | FECD x refractive error colocalisation at 17q25.3 (TSPAN10) and the refraction direction of the FECD risk allele (release v15.0) |
 | `108_coloc_nr1h3_glaucoma_fullcis.R` | FECD × glaucoma GWAS colocalisation at 11p11.2 (PP4 0.01; PP3 0.75) |
 
 ### 7 · Figure 7
@@ -387,6 +388,26 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v15.0 (13 November 2026)
+
+- **Table 1 "P value of locus" uses MAF >= 1%.** Step 19c now takes the smallest multi-ancestry FECD GWAS P within 1 Mb
+  of each gene's TSS among variants with minor allele frequency >= 1%, the filter of the colocalisation, fine-mapping and
+  cis-MR analyses. Without it, ultra-rare variants set the value at three loci outside the established regions:
+  ZNF408 3.5e-5 -> 3.6e-5, SHISA9 1.1e-7 -> 5.1e-5, TSPAN10 2.5e-7 -> 5.2e-5 (rs117831598, MAF 0.0002, had set the
+  TSPAN10 value). Every other row, and Table 2, is unchanged; `reference/manuscript_tables.tsv` is updated.
+
+- **FECD x refractive error at 17q25.3 (new step 108b).** `108b_coloc_fecd_refractive_17q25.R` colocalises the FECD
+  GWAS (European primary, multi-ancestry sensitivity) with the Hysi et al. refractive-error GWAS at the TSPAN10 locus
+  (TSS +/- 1.05 Mb), with the coloc.abf set-up of step 108 (refractive-error effects standardised from Z, per-variant N and
+  allele frequency). PP4 = 0.86 (European) and 0.83 (multi-ancestry); the FECD risk allele at the lead variant rs6565597
+  (T; OR 1.11, P 7.3e-5) is associated with more myopic refraction (Z -11.1, P 1.8e-28). Outputs:
+  `analysis_outputs/coloc_17q25_fecd_refractive.tsv`, `..._direction.tsv`. Note: the smallest FECD P within 1 Mb of the
+  TSPAN10 TSS (2.5e-7, Table 1 "P value of locus") is an ultra-rare variant (rs117831598, MAF 0.0002) absent from the
+  refractive-error GWAS; the common-variant lead is rs6565597.
+- **Checks.** Step 140: 0 mismatches against Tables 1–3 (Table 1 as above) and Supplementary Tables S1–S14 v2.21. Steps
+  19c and 108b were rerun from this bundle's scripts in the clean folder of the v14 reproducibility check; their outputs
+  are byte-identical to the project's. No other script or output changed.
 
 ## Changes for release v14.9 (13 November 2026)
 

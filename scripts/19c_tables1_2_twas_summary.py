@@ -6,7 +6,9 @@
 #            within tissue (manuscript: FDR 0.36 fib, 0.053 skin, 0.95 oesophagus;
 #            ZNF408 0.029 fib, 0.022 skin).
 #   Table 1 (from manuscript v3.9; file table2_*): S-MultiXcan genes ranked 1..NR1H3, with "P value of locus" = smallest
-#            multi-ancestry FECD GWAS P within +/-1 Mb of the gene TSS (TSS from step 109).
+#            multi-ancestry FECD GWAS P within +/-1 Mb of the gene TSS (TSS from step 109), among variants with minor
+#            allele frequency >= 1% (13 Nov 2026, release v15.0: the MAF filter of the colocalisation, fine-mapping and
+#            cis-MR analyses; without it ultra-rare variants set the value at some loci, e.g. TSPAN10 and 11p11.2).
 #            Cytoband and FECD locus label are curated annotations (below).
 #   Gene labels follow data/gene_symbol_display.tsv (same as Figures 1-3).
 # ============================================================
@@ -59,13 +61,14 @@ tss = {r["ENSG"]: (r["chr"], int(r["tss"])) for r in csv.DictReader(open(f"{B}/a
 win = {ens(r["gene"]): tss[ens(r["gene"])] for r in top if ens(r["gene"]) in tss}
 best = {e: None for e in win}
 with gzip.open(f"{B}/data/gwas/fecd_gwas_full.tsv.gz", "rt") as f:
-    h = f.readline().rstrip("\n").split("\t"); iC, iB, iP = h.index("CHR"), h.index("BP"), h.index("P")
+    h = f.readline().rstrip("\n").split("\t"); iC, iB, iP, iF = h.index("CHR"), h.index("BP"), h.index("P"), h.index("FREQ")
     for line in f:
         x = line.split("\t")
         for e, (c, t) in win.items():
             if x[iC] == c and abs(int(x[iB]) - t) <= 1_000_000:
-                try: p = float(x[iP])
+                try: p = float(x[iP]); fq = float(x[iF])
                 except ValueError: continue
+                if min(fq, 1 - fq) < 0.01: continue          # MAF >= 1% (release v15.0)
                 if best[e] is None or p < best[e]: best[e] = p
 with open(f"{B}/analysis/table2_smultixcan_ranking.tsv", "w") as f:
     f.write("rank\tsymbol\tENSG\tsmultixcan_P\tcytoband\tFECD_locus\tlocus_min_GWAS_P_1Mb\n")
