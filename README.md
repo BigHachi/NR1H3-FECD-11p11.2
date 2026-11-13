@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v14.8**, `NR1H3_FECD_code_bundle_20261113_v14.8`, 13 November 2026; the
+endothelial corneal dystrophy"* (release **v14.9**, `NR1H3_FECD_code_bundle_20261113_v14.9`, 13 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v14.8 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v14.9 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -162,7 +162,7 @@ Each reported output has one of three routes:
 | `109_fecd_reported_loci.py` | 51 reported FECD loci and classification of TWAS genes → **S12** |
 | `109b_insawang_11p11_lookup.py` | 11p11.2 in the Insawang et al. meta-analysis (Discussion) |
 | `97b_egene_status_nr1h3_znf408.py` | GTEx eGene status of NR1H3 and ZNF408; skin genome-wide eQTLs absent from the LD reference |
-| `110_nr1h3_endothelium_fecd_vs_control.R` | NR1H3 / ZNF408 in FECD vs control corneal endothelium (DESeq2 `~ batch + status` only; the sample sheet for **S14**) |
+| `110_nr1h3_endothelium_fecd_vs_control.R` | NR1H3 / ZNF408 (and TSPAN10, from release v14.9) in FECD vs control corneal endothelium (DESeq2 `~ batch + status` only; the sample sheet for **S14**) |
 
 ### 2 · FinnGen look-up → S4
 | Script | Output |
@@ -387,6 +387,17 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v14.9 (13 November 2026)
+
+- **TSPAN10 in step 110.** `110_nr1h3_endothelium_fecd_vs_control.R` (corneal endothelium, FECD vs control; DESeq2
+  ~ batch + status, unchanged) now also reports TSPAN10, the colocalising gene outside established loci:
+  median normalised count 40 in FECD and 9 in controls, log2 fold change 1.82, nominal P 0.006
+  (`analysis_outputs/nr1h3_endothelium_fecd_vs_control.tsv`, as reported in the Results). The NR1H3, ZNF408 and TCF4
+  rows are byte-identical to release v14.8.
+- **Checks.** Step 140: 0 mismatches against Tables 1–3 and Supplementary Tables S1–S14 v2.21 (no table changed). Step
+  110 was rerun from this bundle's scripts in the clean folder of the v14 reproducibility check; its outputs are
+  byte-identical to the project's. No other script or output changed.
 
 ## Changes for release v14.8 (13 November 2026)
 

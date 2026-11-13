@@ -1,6 +1,6 @@
 #!/usr/bin/env Rscript
 # ============================================================
-# Step 110 (review point 7): NR1H3 (and ZNF408) expression in FECD versus
+# Step 110 (review point 7): NR1H3 (and ZNF408, TCF4; TSPAN10 from release v14.9) expression in FECD versus
 #   control corneal endothelium, published bulk RNA-seq (Wieben et al., Mayo):
 #   GSE112201 (24 FECD: 18 CTG18.1 RE+, 6 RE-; 4 controls; batches 1-3)
 #   + the 2 controls of GSE101872 (whose 5 FECD samples are the GSE112201
@@ -42,7 +42,7 @@ dds <- DESeqDataSetFromMatrix(cnt, as.data.frame(meta), ~ batch + status)
 dds <- DESeq(dds, quiet = TRUE)
 norm <- counts(dds, normalized = TRUE)
 out <- list()
-for (g in c("NR1H3","ZNF408","TCF4")) {
+for (g in c("NR1H3","ZNF408","TCF4","TSPAN10")) {   # TSPAN10 added 13 Nov 2026 (release v14.9; manuscript Results)
   if (!g %in% rownames(dds)) { cat(g, "filtered (low counts)\n"); next }
   r <- results(dds, name = "status_FECD_vs_Control")[g, ]
   out[[g]] <- data.table(gene = g,
