@@ -4,7 +4,7 @@ S2_FECD_S-MultiXcan_all	17285	345700	0	exact; row order identical
 S3_FUSION_all	28071	533349	0	exact; row order identical
 S10_NR1H3_ZNF408_49tissues	95	760	0	exact; row order identical
 S11_S-MultiXcan_49tissues	22222	222220	0	exact; row order identical
-S4_FinnGen_lookup	12	120	0	
+S4_FinnGen_lookup	12	108	0	
 S5_Conditional_11p11.2	38	190	0	
 S6_Colocalisation_FECD	162	2430	0	
 S7_cisMR_FECD	10	150	0	

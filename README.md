@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v15.1**, `NR1H3_FECD_code_bundle_20261113_v15.1`, 13 November 2026; the
+endothelial corneal dystrophy"* (release **v15.2**, `NR1H3_FECD_code_bundle_20261113_v15.2`, 13 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v15.1 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v15.2 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -21,7 +21,7 @@ in the manuscript's Code Availability statement).
 | `fusion_patch/` | the local patch to FUSION required to reproduce the FUSION results (see below) |
 | `analysis_outputs/` | the small result tables behind the main-text numbers, and the input-audit tables (steps 55, 55b, 55c), for checking without re-running |
 | `additional_outputs/` | the outputs requested in peer review on 29 October 2026, with the tables derived for the request (step 139; see *Additional outputs requested in review*) |
-| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.21; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
+| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.22; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
 | `pipeline_reference/full_pipeline_all_scripts.txt` | all bundled scripts concatenated, for reading in one place |
 
 ## Licence
@@ -167,7 +167,6 @@ Each reported output has one of three routes:
 | Script | Output |
 |---|---|
 | `84b_finngen_replication_H184_H185.sh` | NR1H3 / ZNF408 S-PrediXcan in H18.4 and H18.5 → **S4** |
-| `84c_finngen_replication_power.py` | power at each gene's discovery effect size, per tissue (NR1H3: 17–21% H18.4, 36–45% H18.5; ZNF408: 24% and 51%) → S4 |
 
 ### 3 · Colocalisation → Figure 3, S6
 | Script | Output |
@@ -252,7 +251,7 @@ step; without Chrome the PDF is skipped with a message. Set `CHROME` to the brow
 re-estimates nothing. See *Additional outputs requested in review*.
 
 ### 8 · Check of the reported tables
-`140_check_reported_tables.py` writes S1, S2, S3, S10, S11 and the S4 power column exactly as reported (`analysis/supplementary/`) and checks every value in manuscript Tables 1–3 and Supplementary Tables S1–S14 (copies in `reference/`) against the outputs of the run (`analysis/reported_tables_check.tsv`, mismatches in `analysis/reported_tables_mismatches.tsv`); the run fails on any mismatch.
+`140_check_reported_tables.py` writes S1, S2, S3, S10 and S11 exactly as reported (`analysis/supplementary/`) and checks every value in manuscript Tables 1–3 and Supplementary Tables S1–S14 (copies in `reference/`) against the outputs of the run (`analysis/reported_tables_check.tsv`, mismatches in `analysis/reported_tables_mismatches.tsv`); the run fails on any mismatch.
 
 ---
 
@@ -387,6 +386,13 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v15.2 (13 November 2026)
+
+- **S4 without the power column.** The manuscript no longer reports power for the FinnGen look-up, so Supplementary
+  Table S4 (workbook v2.22) drops its power column, step `84c_finngen_replication_power.py` is removed from the
+  pipeline, and step 140 no longer checks that column. Every other table cell, script and output is unchanged.
+- **Checks.** Step 140: 0 mismatches against Tables 1–3 and Supplementary Tables S1–S14 v2.22.
 
 ## Changes for release v15.1 (13 November 2026)
 

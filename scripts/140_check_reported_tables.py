@@ -2,7 +2,7 @@
 # ============================================================
 # Step 140: check the reported tables against the pipeline outputs.
 #   (1) Writes the supplementary tables that are pure exports of pipeline outputs, exactly as they appear in the
-#       workbook (row order, rounding, derived columns): S1, S2, S3, S10, S11 and the S4 power column ->
+#       workbook (row order, rounding, derived columns): S1, S2, S3, S10, S11 (S4 has no power column from release v15.2) ->
 #       analysis/supplementary/<sheet>.tsv
 #   (2) Compares every data cell of the supplementary workbook (S1-S14) and of manuscript Tables 1-3 with the
 #       outputs of this run. S1, S2, S3, S10 and S11 must match the exports exactly. Elsewhere a reported number must
@@ -203,7 +203,6 @@ fu = fusion_eur()     # unrounded FUSION outputs (European GWAS) for the S9 Pane
 
 # ================= S4 FinnGen look-up =================
 fg = pd.read_csv(f"{B}/analysis/nr1h3_finngen_replication_H184_vs_H185.tsv", sep="\t")
-pw = pd.read_csv(f"{B}/analysis/nr1h3_finngen_lookup_power.tsv", sep="\t")
 disc = {}
 for t in T3:
     d = pd.read_csv(f"{SPX}/fecd_{t}.csv"); d["ENSG"] = d.gene.map(ensg)
@@ -216,13 +215,11 @@ o["discovery_p"] = [disc.get((g, t), (None, None))[1] for g, t in zip(o.gene, o.
 o["concordant_direction"] = [("n/a" if dz is None or pd.isna(dz) else ("yes" if np.sign(dz) == np.sign(fz) else "no"))
                              for dz, fz in zip(o.discovery_z, o.finngen_z)]
 o["P_below_0.025"] = np.where(o.finngen_p < 0.025, "yes", "no")
-o = o.merge(pw[["gene", "endpoint", "tissue", "power"]], on=["gene", "endpoint", "tissue"], how="left")
-o["power"] = o.power.map(lambda x: None if pd.isna(x) else round(x, 2))
 o.to_csv(f"{OUTD}/S4_FinnGen_lookup.tsv", sep="\t", index=False, na_rep="")
 rep = sheet("S4_FinnGen_lookup")
 compare("S4_FinnGen_lookup", rep, o, ["gene", "endpoint", "tissue"],
         ["ICD10", "cases", "controls", "discovery_z", "discovery_p", "finngen_z", "finngen_p", "concordant_direction",
-         "P_below_0.025", "power"])
+         "P_below_0.025"])
 
 # ================= S5 conditional 11p11.2 =================
 s5 = []

@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# NR1H3 / FECD manuscript pipeline — master script (release v15.1, 13 November 2026)
+# NR1H3 / FECD manuscript pipeline — master script (release v15.2, 13 November 2026)
 #
 # Reproduces every result in:
 #   "Integrative transcriptome-wide association, colocalisation, fine-mapping and Mendelian randomisation
@@ -19,7 +19,7 @@
 #   Table 3 / S9C cross-trait cis-MR                        [83a eQTLGen allele frequencies -> 89c]
 #   Fig 6   cross-trait cis-MR, each outcome on its own scale [89c -> 89b]
 #   Fig 7   study flow diagram                              [70b]
-#   S4 FinnGen look-up [84b, 84c]; S5 [24b]; S10-S11 [95, 95b]; S12 [109a -> 109]
+#   S4 FinnGen look-up [84b]; S5 [24b]; S10-S11 [95, 95b]; S12 [109a -> 109]
 #   S9 D coloc glaucoma [79b]; S13 fine-mapping 11p11.2 [112a -> 112, 112b, 113]; S14 RNA-seq samples [110]
 #   Input audit of the TWAS, conditional TWAS and cis-MR inputs of every GWAS   [55, 55b, 55c]
 #   Additional outputs requested in review (29 Oct 2026; analysis/additional_outputs/)   [139]
@@ -53,7 +53,7 @@ RUN () {
 }
 
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v15.1) started: $(date)"
+echo " NR1H3/FECD pipeline (release v15.2) started: $(date)"
 echo "============================================================"
 
 # ---- 0. INPUTS ----------------------------------------------
@@ -96,7 +96,6 @@ RUN 110_nr1h3_endothelium_fecd_vs_control.R "corneal endothelium FECD vs control
 
 # ---- 2. FINNGEN LOOK-UP (S4) --------------------------------
 RUN 84b_finngen_replication_H184_H185.sh "NR1H3/ZNF408 in FinnGen H18.4 and H18.5"
-RUN 84c_finngen_replication_power.py  "look-up power, per gene and tissue (S4)"
 
 # ---- 3. COLOCALISATION (Fig 3, S6) --------------------------
 # full GTEx v8 cis summary statistics (eQTL Catalogue r6); replaces the significant-pairs-only input of 83b/89/81b
@@ -174,5 +173,5 @@ RUN 140_check_reported_tables.py      "Tables 1-3 and S1-S14 against this run"
 
 echo ""
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v15.1) finished: $(date)"
+echo " NR1H3/FECD pipeline (release v15.2) finished: $(date)"
 echo "============================================================"
