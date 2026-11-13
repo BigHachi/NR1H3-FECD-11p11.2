@@ -1,5 +1,5 @@
-gwas	variant	role	FECD_risk_allele	FECD_OR_risk	FECD_P	refractive_Z_of_risk_allele	refractive_P	direction
-EUR	rs6565597	FECD lead in window	T	1.11111111111111	7.293e-05	-11.069	1.773e-28	more myopic
-EUR	rs9895741	FECD x refractive-error coloc top variant	A	1.1	0.0001782	-11.601	4.082e-31	more myopic
-multiancestry	rs6565597	FECD lead in window	T	1.11148160497944	5.23e-05	-11.069	1.773e-28	more myopic
-multiancestry	rs9895741	FECD x refractive-error coloc top variant	A	1.098	0.000275	-11.601	4.082e-31	more myopic
+gwas	variant	id	role	FECD_risk_allele	FECD_OR_risk	FECD_P	refractive_Z_of_risk_allele	refractive_P	direction
+EUR	rs6565597	81559795:C:T	FECD lead in window	T	1.11111111111111	7.293e-05	-11.069	1.773e-28	more myopic
+EUR	rs9895741	81636805:A:G	FECD x refractive-error coloc top variant	A	1.1	0.0001782	-11.601	4.082e-31	more myopic
+multiancestry	rs6565597	81559795:C:T	FECD lead in window	T	1.11148160497944	5.23e-05	-11.069	1.773e-28	more myopic
+multiancestry	rs9895741	81636805:A:G	FECD x refractive-error coloc top variant	A	1.098	0.000275	-11.601	4.082e-31	more myopic

@@ -10,21 +10,25 @@
 suppressPackageStartupMessages({ library(data.table); library(TwoSampleMR) })
 BASE  <- Sys.getenv("FECD_BASE", path.expand("~/FECD_GWAS"))
 PLINK <- file.path(BASE,"software/plink/plink")
-LD    <- file.path(BASE,"data/ld_ref/LDREF/1000G.EUR.11")
 N_EQTL <- 31684L
+# 13 Nov 2026 (release v15.1): gene and LD-reference chromosome are arguments, so the same step serves every gene
+#   taken to cis-MR. usage: Rscript 83_mr_nr1h3_eqtlgen_fecd.R [GENE CHR]   (default: NR1H3 11; also run as TSPAN10 17)
+args <- commandArgs(TRUE); GENE <- if (length(args)) args[1] else "NR1H3"; CHRN <- if (length(args) > 1) args[2] else "11"
+G <- function(s) gsub("nr1h3", tolower(GENE), gsub("NR1H3", GENE, s, fixed = TRUE), fixed = TRUE)
+LD    <- file.path(BASE, paste0("data/ld_ref/LDREF/1000G.EUR.", CHRN))
 
 # ---- eQTLGen NR1H3 cis-eQTLs ----
-e <- fread(file.path(BASE,"data/eqtl_eqtlgen/nr1h3_eqtlgen.txt"))
+e <- fread(file.path(BASE,G("data/eqtl_eqtlgen/nr1h3_eqtlgen.txt")))
 e <- e[, .(SNP, A1e=AssessedAllele, A2e=OtherAllele, Z=Zscore, N=NrSamples)]
 # eQTLGen frequency of the assessed allele (exposure source; 10 Nov 2026, review: up to release v13 the
 # outcome GWAS frequency was used). Standardises the exposure Z and defines the MAF filter.
-af <- fread(file.path(BASE,"data/eqtl_eqtlgen/nr1h3_eqtlgen_af.tsv"))
+af <- fread(file.path(BASE,G("data/eqtl_eqtlgen/nr1h3_eqtlgen_af.tsv")))
 e <- merge(e, af[, .(SNP, AlleleA, AlleleB, AlleleB_all)], by="SNP")
 e[, eaf_eqtl := fifelse(A1e==AlleleB, AlleleB_all, fifelse(A1e==AlleleA, 1-AlleleB_all, NA_real_))]
 e <- e[is.finite(eaf_eqtl), .(SNP, A1e, A2e, Z, N, eaf_eqtl)]
 
 # ---- FECD GWAS (outcome) matched rows ----
-g <- fread(file.path(BASE,"data/gwas/fecd_nr1h3_eqtlgen_region.tsv"))
+g <- fread(file.path(BASE,G("data/gwas/fecd_nr1h3_eqtlgen_region.tsv")))
 setnames(g, c("A1","A2","BETA","SE","P","FREQ"),
             c("A1_gwas","A2_gwas","BETA_gwas","SE_gwas","P_gwas","FREQ_gwas"))
 
@@ -49,7 +53,7 @@ system(sprintf("%s --bfile %s --clump %s --clump-p1 5e-8 --clump-p2 1 --clump-r2
 clumped <- fread(paste0(co,".clumped"))$SNP
 unlink(c(cf, paste0(co,c(".clumped",".log",".nosex"))))
 ins <- m[SNP %in% clumped]
-cat(sprintf("eQTLGen NR1H3 cis-eQTLs: %d in FECD GWAS | genome-wide-sig: %d | clumped independent: %d\n",
+cat(sprintf(G("eQTLGen NR1H3 cis-eQTLs: %d in FECD GWAS | genome-wide-sig: %d | clumped independent: %d\n"),
             nrow(m), nrow(cands), nrow(ins)))
 
 # ---- set-level F (Pierce/Burgess) ----
@@ -65,8 +69,8 @@ if (Fset <= 10) { cat("Excluded: weak instruments\n"); quit(status=0) }
 exp_dat <- format_data(as.data.frame(ins), type="exposure", snp_col="SNP",
   beta_col="beta_eqtl", se_col="se_eqtl",
   effect_allele_col="A1e", other_allele_col="A2e", eaf_col="eaf_eqtl")
-exp_dat$exposure <- "NR1H3 (eQTLGen blood)"
-exp_dat$id.exposure <- "NR1H3_eQTLGen"   # fixed IDs (format_data draws random ones) -> byte-identical reruns
+exp_dat$exposure <- G("NR1H3 (eQTLGen blood)")
+exp_dat$id.exposure <- G("NR1H3_eQTLGen")   # fixed IDs (format_data draws random ones) -> byte-identical reruns
 exp_dat$pval.exposure <- 2*pnorm(-abs(ins$Z))
 out_dat <- format_data(as.data.frame(ins), type="outcome", snp_col="SNP",
   beta_col="BETA_gwas", se_col="SE_gwas", pval_col="P_gwas",
@@ -79,17 +83,17 @@ cat(sprintf("Valid instruments after harmonisation: %d\n\n", nrow(dat)))
 set.seed(2024)  # weighted median/mode SEs are bootstrapped -> seed for reproducible P
 res <- mr(dat, method_list=c("mr_ivw","mr_egger_regression","mr_weighted_median","mr_weighted_mode"))
 res$OR <- exp(res$b); res$OR_lo <- exp(res$b-1.96*res$se); res$OR_hi <- exp(res$b+1.96*res$se)
-cat("=== NR1H3 (eQTLGen) -> FECD: MR estimates ===\n")
+cat(G("=== NR1H3 (eQTLGen) -> FECD: MR estimates ===\n"))
 print(as.data.table(res)[,.(method, nsnp, b=round(b,3), se=round(se,3),
        OR=round(OR,3), CI=sprintf("%.2f-%.2f",OR_lo,OR_hi), P=signif(pval,3))])
 iv <- res[res$method=="Inverse variance weighted",]
-cat(sprintf("\n>>> IVW: OR=%.3f (%.2f-%.2f), P=%.2e -> higher NR1H3 %s FECD risk\n",
+cat(sprintf(G("\n>>> IVW: OR=%.3f (%.2f-%.2f), P=%.2e -> higher NR1H3 %s FECD risk\n"),
             exp(iv$b), exp(iv$b-1.96*iv$se), exp(iv$b+1.96*iv$se), iv$pval,
             ifelse(iv$b>0,"INCREASES","DECREASES")))
 het <- mr_heterogeneity(dat); ple <- mr_pleiotropy_test(dat)
 cat(sprintf("Heterogeneity IVW Q P=%.3g | Egger intercept=%.4f (P=%.3g)\n",
             het$Q_pval[het$method=="Inverse variance weighted"], ple$egger_intercept, ple$pval))
-fwrite(as.data.table(res), file.path(BASE,"analysis/nr1h3_eqtlgen_fecd_mr_multiancestry.tsv"), sep="\t", quote=FALSE)
+fwrite(as.data.table(res), file.path(BASE,G("analysis/nr1h3_eqtlgen_fecd_mr_multiancestry.tsv")), sep="\t", quote=FALSE)
 
 # ---- diagnostics sidecar: so downstream figures never hardcode these ----
 diag <- data.table(
@@ -103,5 +107,5 @@ diag <- data.table(
   Q_pval        = het$Q_pval[het$method=="Inverse variance weighted"],
   egger_int     = ple$egger_intercept,
   egger_int_p   = ple$pval)
-fwrite(diag, file.path(BASE,"analysis/nr1h3_eqtlgen_fecd_mr_multiancestry_diagnostics.tsv"), sep="\t", quote=FALSE)
-cat(sprintf("Wrote analysis/nr1h3_eqtlgen_fecd_mr_multiancestry{,_diagnostics}.tsv\n"))
+fwrite(diag, file.path(BASE,G("analysis/nr1h3_eqtlgen_fecd_mr_multiancestry_diagnostics.tsv")), sep="\t", quote=FALSE)
+cat(sprintf(G("Wrote analysis/nr1h3_eqtlgen_fecd_mr_multiancestry{,_diagnostics}.tsv\n")))

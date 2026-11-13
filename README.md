@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v15.0**, `NR1H3_FECD_code_bundle_20261113_v15.0`, 13 November 2026; the
+endothelial corneal dystrophy"* (release **v15.1**, `NR1H3_FECD_code_bundle_20261113_v15.1`, 13 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v15.0 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v15.1 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -142,7 +142,6 @@ Each reported output has one of three routes:
 | (`55c_audit_gwas_inputs.py`) | input audit of every GWAS; runs at the end, in section 7b, because it reads every analysis input |
 | `60_prep_fusion_gwas.sh` | cross-trait GWAS → FUSION format |
 | `83a_extract_eqtlgen_nr1h3.sh` | eQTLGen NR1H3 cis-eQTLs |
-| `83a_extract_eqtlgen_tspan10.sh` | eQTLGen TSPAN10 cis-eQTLs (S7, release v14.8) |
 | `100_fetch_eqtl_catalogue_region.sh` | full cis GTEx summary statistics for NR1H3, incl. whole blood (steps 79b, 108) |
 | `109a_fetch_gwascat_fecd.py` | GWAS Catalog FECD associations (step 109) |
 
@@ -190,7 +189,7 @@ Each reported output has one of three routes:
 |---|---|
 | `91_mr_nr1h3_eur.R` | primary cis-MR, European GWAS (IVW OR 1.06, P 0.37; F ≈ 597); exposure effects standardised from the eQTLGen Z with each instrument's eQTLGen N and allele frequency (`data/eqtl_eqtlgen/nr1h3_eqtlgen_af.tsv`, step 83a) |
 | `83_mr_nr1h3_eqtlgen_fecd.R` | multi-ancestry sensitivity → **S7** |
-| `83a_extract_eqtlgen_tspan10.sh`, `91_mr_tspan10_eur.R`, `83_mr_tspan10_eqtlgen_fecd.R` | the same cis-MR for TSPAN10 (17q25.3, the colocalising gene outside established loci; LD reference chromosome 17): 2 instruments (F ≈ 171), IVW only; European OR 0.67 (0.47–0.95), P 0.025; multi-ancestry OR 0.81, P 0.21 → **S7** TSPAN10 rows (release v14.8) |
+| `83a_extract_eqtlgen_nr1h3.sh TSPAN10 ENSG00000182612`, `91_mr_nr1h3_eur.R TSPAN10 17`, `83_mr_nr1h3_eqtlgen_fecd.R TSPAN10 17` | the same steps run for TSPAN10 (17q25.3, the colocalising gene outside established loci; LD reference chromosome 17): 2 instruments (F ≈ 171), IVW only; European OR 0.67 (0.47–0.95), P 0.025; multi-ancestry OR 0.81, P 0.21 → **S7** TSPAN10 rows (release v14.8) |
 | `94_mr_ancestry_sidebyside.R`, `88_verify_nr1h3_fecd_mr.R` | ancestry comparison; independent check |
 | `87_nr1h3_fecd_mr_forest.R EUR` | **Figure 4** |
 
@@ -388,6 +387,31 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v15.1 (13 November 2026)
+
+- **One script per analysis.** The TSPAN10 analyses no longer use copied scripts. Steps `83a_extract_eqtlgen_nr1h3.sh`,
+  `91_mr_nr1h3_eur.R` and `83_mr_nr1h3_eqtlgen_fecd.R` take the gene (and LD-reference chromosome) as arguments, and
+  step `108_coloc_nr1h3_glaucoma_fullcis.R` takes the second trait and the locus; the master script runs each once with
+  its defaults (NR1H3; glaucoma at 11p11.2) and once for TSPAN10 (refractive error at 17q25.3). The copies
+  `83a_extract_eqtlgen_tspan10.sh`, `91_mr_tspan10_eur.R`, `83_mr_tspan10_eqtlgen_fecd.R` and
+  `108b_coloc_fecd_refractive_17q25.R` are removed. All NR1H3 outputs, the glaucoma colocalisation and all TSPAN10 MR
+  outputs are byte-identical to release v15.0.
+- **Correction, FECD x refractive error.** Step 108b of v15.0 filtered the refractive-error GWAS by position but not by
+  chromosome (`CHR == CHR` compared the column with itself), so records from other chromosomes at the same position
+  and allele pair could be matched to chromosome-17 FECD variants (7,868 matched variants; 7,720 with the chromosome
+  filter). Corrected values: PP4 = 0.865 (European; was 0.864) and 0.835 (multi-ancestry; was 0.834); the top variant
+  (rs9895741) and the direction at the FECD lead rs6565597 (risk allele T, more myopic, Z -11.1) are unchanged.
+- **Input checks for the TSPAN10 instruments.** rs7217415 (A/G) and rs34232035 (T/C) are on chromosome 17 in eQTLGen,
+  the FECD GWAS and the LD reference, are not strand-ambiguous, and their allele frequencies agree across sources. One
+  multi-allelic site in the region (rs72858871) has two FECD records; its eQTL Z (4.5) is below the instrument
+  threshold, so it does not enter the analysis.
+  Of 518 eQTLGen TSPAN10 cis-eQTL variants, 513 are in the FECD GWAS; six genome-wide-significant ones are absent from
+  both FECD files and from the LD reference, so they could not have been selected by clumping. The full input audit
+  (step 55c: allele, position and multi-allelic checks of every TWAS, conditional and cis-MR input) was rerun and
+  its six output files are byte-identical to release v15.0.
+- **Checks.** Step 140: 0 mismatches. The changed steps were rerun from this bundle's scripts in the clean folder of the
+  v14 reproducibility check: all 19 outputs are byte-identical to the project's.
 
 ## Changes for release v15.0 (13 November 2026)
 
