@@ -360,17 +360,13 @@ sp = sp.rename(columns={"pos": "pos_GRCh38", "ea": "effect_allele", "oa": "other
                         "PIP": "SuSiE_PIP"}).assign(chr="11")
 pbb = panel13("Panel B")
 compare("S13 Panel B", pbb, sp, ["rsid"], [c for c in pbb.columns if c != "rsid"], subset=True)
-ab = pd.read_csv(f"{B}/results/finemap_11p11/abf_credible_sets.tsv", sep="\t")
-ab = ab.rename(columns={"id": "variant_id", "pos": "pos_GRCh38", "p": "P", "PIP": "ABF_PIP"})
-for start, st in (("Panel C", "European"), ("Panel D", "Multi-ancestry")):
-    pp = panel13(start)
-    compare(f"S13 {start}", pp, ab[ab.set == st], ["variant_id"], [c for c in pp.columns if c != "variant_id"], subset=True)
+# the approximate-Bayes-factor credible-set panels were removed in Supplementary Tables v2.23; panels re-lettered
 ec = pd.read_csv(f"{B}/analysis/eqtlcat_susie_11p11.tsv", sep="\t")
-pe = panel13("Panel E")
-compare("S13 Panel E", pe, ec, ["tissue", "ENSG", "credible_set"], [c for c in pe.columns if c not in ("tissue", "ENSG", "credible_set")])
+pe = panel13("Panel C")
+compare("S13 Panel C", pe, ec, ["tissue", "ENSG", "credible_set"], [c for c in pe.columns if c not in ("tissue", "ENSG", "credible_set")])
 fo = pd.read_csv(f"{B}/results/focus_11p11/focus_11p11_summary.tsv", sep="\t", keep_default_na=False, na_values=["NA", ""])   # gene "NULL" = null model
 fo = fo.rename(columns={"twas_z": "TWAS_z", "PIP": "model_PIP", "gene_summed_PIP": "gene_sum_of_model_PIPs"})
-for start in ("Panel F", "Panel G"):
+for start in ("Panel D", "Panel E"):
     pp = panel13(start)
     compare(f"S13 {start}", pp, fo, ["region", "gene", "tissue"], [c for c in pp.columns if c not in ("region", "gene", "tissue")], subset=True)
 

@@ -1,10 +1,10 @@
 # Code availability: NR1H3 (LXRα) at 11p11.2 in Fuchs endothelial corneal dystrophy
 
 Analysis code for the manuscript *"Integrative post-GWAS analyses nominate 11p11.2 as a candidate locus for Fuchs
-endothelial corneal dystrophy"* (release **v15.2**, `NR1H3_FECD_code_bundle_20261113_v15.2`, 13 November 2026; the
+endothelial corneal dystrophy"* (release **v15.3**, `NR1H3_FECD_code_bundle_20261113_v15.3`, 13 November 2026; the
 version used for the article). It is provided so that editors, reviewers and readers can inspect and reproduce every
 reported result. The code is maintained in a version-controlled GitHub repository, where later corrections or
-compatibility updates are recorded as new releases; release v15.2 is the one archived on Zenodo for the article (links
+compatibility updates are recorded as new releases; release v15.3 is the one archived on Zenodo for the article (links
 in the manuscript's Code Availability statement).
 
 | Path | Contents |
@@ -21,7 +21,7 @@ in the manuscript's Code Availability statement).
 | `fusion_patch/` | the local patch to FUSION required to reproduce the FUSION results (see below) |
 | `analysis_outputs/` | the small result tables behind the main-text numbers, and the input-audit tables (steps 55, 55b, 55c), for checking without re-running |
 | `additional_outputs/` | the outputs requested in peer review on 29 October 2026, with the tables derived for the request (step 139; see *Additional outputs requested in review*) |
-| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.22; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
+| `reference/` | the reported tables (Supplementary Tables S1–S14 workbook v2.24; manuscript Tables 1–3 as printed), which step 140 compares with a run's outputs |
 | `pipeline_reference/full_pipeline_all_scripts.txt` | all bundled scripts concatenated, for reading in one place |
 
 ## Licence
@@ -152,7 +152,7 @@ Each reported output has one of three routes:
 | `19b_rerun_fecd_smultixcan_remapped.sh` | 3-tissue S-MultiXcan (17,285 genes) → **S2** |
 | `19d_prep_fecd_eur_sprediXcan.py` | European FECD GWAS (GCST90475865) → S-PrediXcan format as for the multi-ancestry GWAS (steps 11, 17): beta = ln(OR), SE from the 95% CI; then step 95a matches it to the MASHR model variants by chromosome, GRCh38 position and allele pair (`data/gwas/fecd_eur_alltissue_sprediXcan.txt.gz`) |
 | `19e_fecd_eur_smultixcan.sh` | European 3-tissue S-PrediXcan + S-MultiXcan (`results/multixcan/fecd_eur_smultixcan_remapped.txt`; 17,303 genes with a P; 93% of model SNPs used per tissue) |
-| `19f_fecd_eur_smultixcan_rank.py` | European ranking (`analysis/fecd_eur_smultixcan_ranking.tsv`); checks that every gene ranked down to NR1H3 (23rd) is in the S6 gene list and writes each S6 gene's European rank into `data/tophits21/genes_coloc.tsv` (→ 102c → 81c → **S6** `S_MultiXcan_rank`; `analysis/fecd_eur_smultixcan_S6_genes.tsv`). Table 1 and S2 use the multi-ancestry run (19b) |
+| `19f_fecd_eur_smultixcan_rank.py` | European ranking (`analysis/fecd_eur_smultixcan_ranking.tsv`); checks that every gene with European S-MultiXcan P < 10⁻⁴ (23 genes) is in the S6 gene list and writes each S6 gene's European rank into `data/tophits21/genes_coloc.tsv` (→ 102c → 81c → **S6** `S_MultiXcan_rank`; `analysis/fecd_eur_smultixcan_S6_genes.tsv`). Table 1 and S2 use the multi-ancestry run (19b) |
 | `95b_alltissue_smultixcan_fecd.sh` | 49-tissue S-MultiXcan → **S11** |
 | `82_fecd_eur_matched_twas.sh` | FUSION, European GWAS, 3 tissues, with `fusion_genomewide.sh` → **S3**, Figure 1, FECD values in Figure 5 (plus a genome-wide conditional/joint analysis of the Bonferroni-significant models, not reported) |
 | `19c_tables1_2_twas_summary.py` | **Table 1** (S-MultiXcan ranking, `analysis/table2_smultixcan_ranking.tsv`), **Table 2** (NR1H3 per tissue, `analysis/table1_nr1h3_znf408_sprediXcan.tsv`), per-tissue FDR. The file names predate the swap of Tables 1 and 2 in manuscript v3.9. |
@@ -173,13 +173,13 @@ Each reported output has one of three routes:
 |---|---|
 | `101c_fetch_coloc_allpairs.sh` (run with `GENES=data/tophits21/genes_coloc.tsv`) | all variant–gene pairs in each gene's cis window, eQTL Catalogue r6 (GTEx v8), 27 genes × 3 tissues |
 | `102c_coloc_abf_allgenes.R` | coloc.abf, European GWAS (primary) and multi-ancestry GWAS (sensitivity); priors p1 = p2 = 10⁻⁴, p12 = 10⁻⁵, PP4 also at p12 = 5 × 10⁻⁶ |
-| `81c_fecd_coloc_heatmap_fullcis.R` | **Figure 3** and **S6** (gene list: European S-MultiXcan ranks 1–23, down to NR1H3, plus four genes from earlier versions of S6; `S_MultiXcan_rank` from step 19f) (NR1H3 PP4 0.08 fibroblasts / 0.23 skin / 0.14 oesophagus; ZNF408 ≤ 0.60; PP4 ≥ 0.8 for PIDD1, EPB41L2, PANO1, TNS3, TSPAN10) |
+| `81c_fecd_coloc_heatmap_fullcis.R` | **Figure 3** and **S6** (gene list: the 23 genes with European S-MultiXcan P < 10⁻⁴, plus four genes from earlier versions of S6; `S_MultiXcan_rank` from step 19f) (NR1H3 PP4 0.08 fibroblasts / 0.23 skin / 0.14 oesophagus; ZNF408 ≤ 0.60; PP4 ≥ 0.8 for PIDD1, EPB41L2, PANO1, TNS3, TSPAN10) |
 
 ### 3b · Fine-mapping at 11p11.2 → S13
 | Script | Output |
 |---|---|
 | `112a_ld_1000g_11p11.sh` | 1000 Genomes GRCh38 European LD panel for chr11:46.2–48.3 Mb, and the European GWAS for the region |
-| `112_finemap_11p11.R` | SuSiE-RSS (L = 10; LD-mismatch and allele-flip checks) and single-variant ABF credible sets: no 95% SuSiE credible set (max PIP 0.016, rs3136447); ABF 95% sets of 6,902 (European) and 5,118 (multi-ancestry) variants |
+| `112_finemap_11p11.R` | SuSiE-RSS (L = 10; LD-mismatch and allele-flip checks) and single-variant ABF credible sets (ABF sets are written but not reported from release v15.3): no 95% SuSiE credible set (max PIP 0.016, rs3136447); ABF 95% sets of 6,902 (European) and 5,118 (multi-ancestry) variants |
 | `112b_eqtlcat_susie_11p11.py` | eQTL Catalogue SuSiE credible sets in the region (none for NR1H3 or ZNF408) |
 | `113_focus_11p11.sh` | FOCUS gene-level fine-mapping: summed PIP ZNF408 0.39, ARHGAP1 0.28, NR1H3 0.21 (null 0.026); default-LD-block sensitivity ZNF408 0.47, NR1H3 0.43, ARHGAP1 0.33 |
 
@@ -386,6 +386,18 @@ Batch 1 is therefore the only batch that shares instrument, read length and depo
 Sources: GEO series matrices GSE101872, GSE112201-GPL11154 and GSE112201-GPL20301 (downloaded by step 00); NCBI SRA
 run information (fetched by step 139 from NCBI E-utilities and cached as `data/endothelium_rnaseq/sra_runinfo.xml`).
 The sample-level assignments are in S14.
+
+## Changes for release v15.3 (13 November 2026)
+
+- **Approximate-Bayes-factor credible sets no longer reported.** The manuscript now reports SuSiE-RSS as its only
+  variant-level fine-mapping, so Supplementary Table S13 (workbook v2.23 onwards) drops the two ABF items of Panel A
+  and the two ABF panels; the former Panels E, F and G are Panels C, D and E. Step 140 checks the re-lettered panels.
+  Step 112 is unchanged and still writes `results/finemap_11p11/abf_credible_sets.tsv`, which no table uses.
+- **Colocalisation gene list stated as a threshold.** The S6 gene list is described as every gene with European
+  S-MultiXcan P < 10⁻⁴ (23 genes; previously described as ranks 1–23) plus the four genes kept from earlier versions.
+  The genes and every result are the same. Step 19f now applies the threshold and labels the selection
+  `P < 1e-4` in `analysis/fecd_eur_smultixcan_S6_genes.tsv`; the S6 legend (workbook v2.24) is reworded.
+- **Checks.** Step 140: 0 mismatches against Tables 1–3 and Supplementary Tables S1–S14 v2.24.
 
 ## Changes for release v15.2 (13 November 2026)
 

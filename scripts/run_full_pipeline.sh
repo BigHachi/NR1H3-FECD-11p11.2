@@ -1,6 +1,6 @@
 #!/bin/bash
 # ============================================================
-# NR1H3 / FECD manuscript pipeline — master script (release v15.2, 13 November 2026)
+# NR1H3 / FECD manuscript pipeline — master script (release v15.3, 13 November 2026)
 #
 # Reproduces every result in:
 #   "Integrative transcriptome-wide association, colocalisation, fine-mapping and Mendelian randomisation
@@ -53,7 +53,7 @@ RUN () {
 }
 
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v15.2) started: $(date)"
+echo " NR1H3/FECD pipeline (release v15.3) started: $(date)"
 echo "============================================================"
 
 # ---- 0. INPUTS ----------------------------------------------
@@ -107,7 +107,7 @@ RUN 81c_fecd_coloc_heatmap_fullcis.R  "Figure 3 + S6"
 
 # ---- 3b. FINE-MAPPING AT 11p11.2 (S13) ----------------------
 RUN 112a_ld_1000g_11p11.sh            "1000G GRCh38 European LD panel + European GWAS region"
-RUN 112_finemap_11p11.R               "SuSiE-RSS + ABF credible sets"
+RUN 112_finemap_11p11.R               "SuSiE-RSS fine-mapping (S13)"
 RUN 112b_eqtlcat_susie_11p11.py       "eQTL Catalogue SuSiE eQTL credible sets"
 RUN 113_focus_11p11.sh                "FOCUS gene-level fine-mapping (+ default-block sensitivity)"
 
@@ -173,5 +173,5 @@ RUN 140_check_reported_tables.py      "Tables 1-3 and S1-S14 against this run"
 
 echo ""
 echo "============================================================"
-echo " NR1H3/FECD pipeline (release v15.2) finished: $(date)"
+echo " NR1H3/FECD pipeline (release v15.3) finished: $(date)"
 echo "============================================================"
